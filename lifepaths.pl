@@ -96,4 +96,3 @@ character_path(LifePaths) :-
     % print_message(debug, constraints(Constraints)),
     satisfies_constraints(Constraints, LifePaths).
 
-% findall(X, setting(X, _), Bag). %% find all settings into a list called bag
