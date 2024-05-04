@@ -35,6 +35,11 @@ test(all_lifepath_providers_have_valid_lifepaths, all(Lp = [])) :-
     member(Lp, LpNames),
     \+ lp(Lp).
 
+test(all_lifepath_requirements_have_valid_lifepaths, all(Lp = [])) :-
+    findall(Name, lp_requires(Name, _), LpNames),
+    member(Lp, LpNames),
+    \+ lp(Lp).
+
 %% Lifepath Rules 
 % simplified predicate for testing when we dont care about constraints
 
@@ -59,10 +64,12 @@ test(satisfy_requrements_lifepath_with_later_lps, [nondet]) :-
 test(satisfy_requrements_lifepath_fails, [fail]) :-  
     satisfy_requirement(lifepath(farmer), [born_peasant]).
 
-test(satisfies_requirements_lifepath, [nondet]) :-
-    satisfies_requirements(auger, [midwife, farmer], []).
-test(satisfies_requirements_lifepath_flag_female, [nondet]) :-
-    satisfies_requirements(auger, [country_wife], [max(lifepaths, 3)]).
+test(satisifies_requirements_lifepath_with_no_requirements, all(Conditions = [[]])) :-
+    satisfies_requirements(farmer, [], Conditions).
+test(satisfies_requirements_lifepath, all(Conditions = [[]])) :-
+    satisfies_requirements(auger, [midwife, farmer], Conditions).
+test(satisfies_requirements_lifepath_flag_female, all(Conditions = [[max(lifepaths, 3)]])) :-
+    satisfies_requirements(auger, [country_wife], Conditions).
 
 test(character_path_validates_born_character, [nondet]) :- 
     character_path([born_peasant]).
