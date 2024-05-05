@@ -33,17 +33,31 @@ satisfy_requirement(not(Requirement), Lifepaths) :-
 % constraints are collected and checked later. skip them now.
 satisfy_requirement(constraint(_), _). 
 
+map_satreq(Lifepaths, Constraint) :- 
+    satisfy_requirement(Constraint, Lifepaths).
+
+unwrap_constraint(constraint(C), C).
+
 satisfies_requirements(Lifepath, ChosenLifepaths, Constraints) :-
     % lifepaths with no requirements are automatically satisfied
-    (\+ lp_requires(Lifepath, _),
-    Constraints = []) 
+    (
+        \+ lp_requires(Lifepath, _),
+        Constraints = []
+    ) 
     ;
     % otherwise satisfy the specified
-    lp_requires(Lifepath, Requirements),
-    memberchk(Requirement, Requirements),
-    satisfy_requirement(Requirement, ChosenLifepaths), 
-    findall(Constraint, Requirement = constraint(Constraint), Constraints).
-
+    (
+        findall(
+            Requirements, (
+                lp_requires(Lifepath, Requirements), 
+                maplist(map_satreq(ChosenLifepaths), Requirements)
+            ), 
+            AllReqs
+        ),
+        member(Reqs, AllReqs),
+        findall(C, (member(R, Reqs), unwrap_constraint(R, C)), Constraints)
+    )
+    .
 
 satisfy_constraint(max(lifepaths, N), Lifepaths) :-
     length(Lifepaths, LN),

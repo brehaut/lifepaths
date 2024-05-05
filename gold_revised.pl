@@ -65,6 +65,8 @@ lp(village_born, villager, page(bwg, 165), 10, [peasant, servitude, sea, religio
 lp(kid, villager, page(bwg, 165), 4, [peasant, city, religious, soldier, sea, servitude, outcast]).
 lp(idiot, villager, page(bwg, 165), 10, [outcast, peasant]).
 
+lp(serving_girl, villager, page(bwg, 167), 3, [peasant, city, court, religious, soldier, sea, servitude, outcast]).
+
 % lp_requires(LifepathName, Requirements)
 % Requirements is a list of requirements that must all be satisfied
 % alternative requirements are specified with separate lp_requires facts.
@@ -112,3 +114,8 @@ lp_provides(idiot, trait(problems)).
 lp_provides(idiot, trait(alcoholic)).
 lp_provides(idiot, trait(abused)).
 lp_provides(idiot, trait(handicapped)).
+
+lp_provides(serving_girl, flag(female)).
+lp_provides(serving_girl, trait(bored)).
+lp_provides(serving_girl, trait(bitter)).
+lp_provides(serving_girl, trait(comely)).

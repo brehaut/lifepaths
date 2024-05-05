@@ -68,8 +68,9 @@ test(satisifies_requirements_lifepath_with_no_requirements, all(Conditions = [[]
     satisfies_requirements(farmer, [], Conditions).
 test(satisfies_requirements_lifepath, all(Conditions = [[]])) :-
     satisfies_requirements(auger, [midwife, farmer], Conditions).
+
 test(satisfies_requirements_lifepath_flag_female, all(Conditions = [[max(lifepaths, 3)]])) :-
-    satisfies_requirements(auger, [country_wife], Conditions).
+    satisfies_requirements(auger, [serving_girl], Conditions).
 
 test(character_path_validates_born_character, [nondet]) :- 
     character_path([born_peasant]).
