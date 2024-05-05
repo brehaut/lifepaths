@@ -1,14 +1,13 @@
 :- use_module(gold_revised).
 
-lp(Name) :- lp(Name, _, _, _, _).
-lp(Name, Setting) :- lp(Name, Setting, _, _, _).
+lp(Id) :- lp(Id, _, _, _).
 
-lp_stock(Name, Stock) :- 
-    lp(Name, Setting, _, _, _),
+lp_stock(id(_, Setting), Stock) :- 
     setting(Setting, Stock).
 
-lp_leads(Name, Leads):-     
-    lp(Name, Setting, _, _, LpLeads),
+
+lp_leads(id(Name, Setting), Leads):-     
+    lp(id(Name, Setting), _, _, LpLeads),
     (LpLeads = any_except(Exclude)
         -> (
             setting(Setting, Stock),
@@ -17,35 +16,51 @@ lp_leads(Name, Leads):-
         )    
         ;        
         (    
-            lp(Name, _ , _, _, Leads)
+            lp(id(Name, Setting), _, _, Leads)
         )
     ).
             
     
 
-lp_years(Name, Years):- lp(Name, _, _, Years, _).
+lp_years(Name, Years):- lp(Name, _, Years, _).
 
 % born is a common enough cast that its worth handling specifically
+
 is_born_lp(Lifepath) :- 
-    atom_concat(born_, _, Lifepath);
-    atom_concat(_, "_born", Lifepath).
+    id(Name, _) = Lifepath 
+    -> (
+        atom_concat(born_, _, Name);
+        atom_concat(_, "_born", Name)
+    )
+    ; 
+    ( 
+        atom_concat(born_, _, Lifepath);
+        atom_concat(_, "_born", Lifepath)
+    ).
+    
 
 requirement_is_constraint(constraint(_)).
 
+% wrapping the goal in negated findall removes a choicepoint but feels gross. 
+% theres got to be a nicer way to do this.
+any_satisfies(Goal, List) :-
+    \+ findall(L, (member(L, List), call(Goal, L)), []).
+
 % satisfy_requirement resolves individual lifepath requirements
 satisfy_requirement(flag(FlagName), Lifepaths) :-
-    member(Lifepath, Lifepaths),
-    lp_provides(Lifepath, flag(FlagName)).
+    any_satisfies([Lifepath]>>lp_provides(Lifepath, flag(FlagName)), Lifepaths).    
 
 satisfy_requirement(trait(TraitName), Lifepaths) :-
-    member(Lifepath, Lifepaths),
-    lp_provides(Lifepath, trait(TraitName)).
+    any_satisfies([Lifepath]>>lp_provides(Lifepath, trait(TraitName)), Lifepaths).
+
 satisfy_requirement(lifepath(Lifepath), Lifepaths) :-
     % print_message(debug, log(Lifepath, Lifepaths)),
-    member(Lifepath, Lifepaths).
+    member(id(Lifepath, _), Lifepaths).
+
 satisfy_requirement(position(N), Lifepaths) :-
     length(Lifepaths, Len),
     Len =:= N - 1.
+
 satisfy_requirement(not(Requirement), Lifepaths) :-
     \+ Requirement = constraint(_),
     \+ satisfy_requirement(Requirement, Lifepaths).
@@ -100,10 +115,11 @@ available_lifepath([], Available, []) :-
 
 available_lifepath(ChosenLifepaths, Available, Constraints) :-
     ChosenLifepaths = [LastLp|_],
-    lp(LastLp, LastSetting),
+    LastLp = id(_, LastSetting),
     lp_leads(LastLp, Leads),
+    id(_, Setting) = Available,
     member(Setting, [LastSetting|Leads]),
-    lp(Available, Setting),
+    lp(Available), % confirm that the lifepath exists.
     \+ is_born_lp(Available),
     satisfies_requirements(Available, ChosenLifepaths, Constraints).
 
@@ -120,13 +136,19 @@ character_path([First|Rest], Selected, Constraints) :-
     append(NewConstraints, LaterConstraints, Constraints),
     character_path(Rest, [First|Selected], LaterConstraints).
 
+wrap_id(Name, Out) :-
+    atom(Name) -> (
+        lp(id(Name, Setting), _, _, _),
+        Out = id(Name, Setting)
+    ) ; Out = Name. 
+
 % character_path(LifepathNames)
 %
 % character_path checks a set of lifepaths against the constraints.
 % This is the main event.
 character_path([]) :- fail.
 character_path(LifePaths) :- 
-    character_path(LifePaths, [], Constraints),
-    % print_message(debug, constraints(Constraints)),
+    maplist(wrap_id, LifePaths, NormalizedLifePaths),
+    character_path(NormalizedLifePaths, [], Constraints),
     satisfies_constraints(Constraints, LifePaths).
 
