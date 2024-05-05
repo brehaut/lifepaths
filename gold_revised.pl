@@ -66,8 +66,13 @@ lp(kid, villager, page(bwg, 165), 4, any_except([noble, court])).
 lp(idiot, villager, page(bwg, 165), 10, [outcast, peasant]).
 lp(pilgrim, villager, page(bwg, 166), 2, [religious, servitude, city]).
 lp(conscript, villager, page(bwg, 166), 1, [servitude, soldier, outcast]).
+lp(groom, villager, page(bwg, 166), 4, [peasant, city, soldier]).
+lp(runner, villager, page(bwg, 166), 6, [city, peasant, soldier]).
+lp(village_peddler, villager, page(bwg, 166), 5, [peasant, servitude, city, outcast]).
+lp(shopkeeper, villager, page(bwg, 166), 6, [city, peasant]).
 
 lp(serving_girl, villager, page(bwg, 167), 3, any_except([noble])).
+
 
 % lp_requires(LifepathName, Requirements)
 % Requirements is a list of requirements that must all be satisfied
