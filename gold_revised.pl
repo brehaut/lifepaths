@@ -62,10 +62,12 @@ lp(recluse_wizard, peasant, page(bwg, 164), 15, [outcast, villager, city, court]
 lp(country_wife, peasant, page(bwg, 164), 10, [religious]).
 
 lp(village_born, villager, page(bwg, 165), 10, [peasant, servitude, sea, religious]).
-lp(kid, villager, page(bwg, 165), 4, [peasant, city, religious, soldier, sea, servitude, outcast]).
+lp(kid, villager, page(bwg, 165), 4, any_except([noble, court])).
 lp(idiot, villager, page(bwg, 165), 10, [outcast, peasant]).
+lp(pilgrim, villager, page(bwg, 166), 2, [religious, servitude, city]).
+lp(conscript, villager, page(bwg, 166), 1, [servitude, soldier, outcast]).
 
-lp(serving_girl, villager, page(bwg, 167), 3, [peasant, city, court, religious, soldier, sea, servitude, outcast]).
+lp(serving_girl, villager, page(bwg, 167), 3, any_except([noble])).
 
 % lp_requires(LifepathName, Requirements)
 % Requirements is a list of requirements that must all be satisfied

@@ -1,9 +1,28 @@
 :- use_module(gold_revised).
 
 lp(Name) :- lp(Name, _, _, _, _).
-lp(Name, Setting):- lp(Name, Setting, _, _, _).
+lp(Name, Setting) :- lp(Name, Setting, _, _, _).
 
-lp_lead(Name, Lead):- lp(Name, _, _, _, Leads), member(Lead, Leads).
+lp_stock(Name, Stock) :- 
+    lp(Name, Setting, _, _, _),
+    setting(Setting, Stock).
+
+lp_leads(Name, Leads):-     
+    lp(Name, Setting, _, _, LpLeads),
+    (LpLeads = any_except(Exclude)
+        -> (
+            setting(Setting, Stock),
+            findall(S, setting(S, Stock), AllSettings),
+            subtract(AllSettings, Exclude, Leads)
+        )    
+        ;        
+        (    
+            lp(Name, _ , _, _, Leads)
+        )
+    ).
+            
+    
+
 lp_years(Name, Years):- lp(Name, _, _, Years, _).
 
 % born is a common enough cast that its worth handling specifically
@@ -81,7 +100,8 @@ available_lifepath([], Available, []) :-
 
 available_lifepath(ChosenLifepaths, Available, Constraints) :-
     ChosenLifepaths = [LastLp|_],
-    lp(LastLp, LastSetting, _, _, Leads),
+    lp(LastLp, LastSetting),
+    lp_leads(LastLp, Leads),
     member(Setting, [LastSetting|Leads]),
     lp(Available, Setting),
     \+ is_born_lp(Available),
