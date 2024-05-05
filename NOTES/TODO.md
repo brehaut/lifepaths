@@ -18,3 +18,19 @@ Lots of things to do.
    or by processing it and writing out prolog. 
     * The requirements and some property definitions would still need to be 
       entered by hand.
+
+# Character Path optimizations
+
+The current `character_path` predicate is bruteforce and doesn’t take 
+advantage of the structure of lifepaths or characters in any way. It starts
+from a born lifepath and works its way to the end of the list and if it runs
+out it runs out. 
+
+This is fine for checking an existing character path against the lifepath 
+constraints. But it’s not suitable for exploration both in terms of 
+performance and user experience.
+
+A better implementation would start from a set of target lifepaths, calculate
+all the requirement options, and then work backward trying to resolve those.
+This has the benefit that it can look only at lifepaths that provide the 
+requirements rather than all lifepaths.
