@@ -139,8 +139,9 @@ character_path([First|Rest], Selected, Constraints) :-
 normalize_lifepath_name(-(Name, Setting), id(Name, Setting)).
 normalize_lifepath_name(Name, Normalized) :-
     atom(Name) -> (
-        lp(id(Name, Setting), _, _, _),
-        Normalized = id(Name, Setting)
+        (findall(Setting, lp(id(Name, Setting), _, _, _), [Setting]),
+        Normalized = id(Name, Setting)) 
+        ; throw(ambiguous_lifepath(Name))
     ) ; Normalized = Name. 
 
 % character_path(LifepathNames)
