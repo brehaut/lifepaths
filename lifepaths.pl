@@ -136,11 +136,12 @@ character_path([First|Rest], Selected, Constraints) :-
     append(NewConstraints, LaterConstraints, Constraints),
     character_path(Rest, [First|Selected], LaterConstraints).
 
-wrap_id(Name, Out) :-
+normalize_lifepath_name(-(Name, Setting), id(Name, Setting)).
+normalize_lifepath_name(Name, Normalized) :-
     atom(Name) -> (
         lp(id(Name, Setting), _, _, _),
-        Out = id(Name, Setting)
-    ) ; Out = Name. 
+        Normalized = id(Name, Setting)
+    ) ; Normalized = Name. 
 
 % character_path(LifepathNames)
 %
@@ -148,7 +149,7 @@ wrap_id(Name, Out) :-
 % This is the main event.
 character_path([]) :- fail.
 character_path(LifePaths) :- 
-    maplist(wrap_id, LifePaths, NormalizedLifePaths),
+    maplist(normalize_lifepath_name, LifePaths, NormalizedLifePaths),
     character_path(NormalizedLifePaths, [], Constraints),
     satisfies_constraints(Constraints, LifePaths).
 
