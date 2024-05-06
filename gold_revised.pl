@@ -80,7 +80,6 @@ lp(id(serving_girl, villager), page(bwg, 167), 3, any_except([noble])).
 %
 % some requirements are 'constraint' structures. these are collected to
 % be checked at the end of lifepath selection rather than during.
-lp_requires(id(born_peasant, peasant), [born]).
 lp_requires(id(head_of_household, peasant), [not(position(2))]).
 lp_requires(id(elder, peasant), [constraint(min(age, 50))]).
 lp_requires(id(midwife, peasant), [flag(female)]).
