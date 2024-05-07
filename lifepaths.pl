@@ -56,15 +56,24 @@ satisfy_requirement(trait(TraitName), Lifepaths) :-
 
 satisfy_requirement(lifepath(Lifepath), Lifepaths) :-
     % print_message(debug, log(Lifepath, Lifepaths)),
-    member(id(Lifepath, _), Lifepaths).
+    member(id(Lifepath, _), Lifepaths), !.
 
 satisfy_requirement(position(N), Lifepaths) :-
     length(Lifepaths, Len),
     Len =:= N - 1.
 
+% boolean requirements operations
 satisfy_requirement(not(Requirement), Lifepaths) :-
     \+ Requirement = constraint(_),
     \+ satisfy_requirement(Requirement, Lifepaths).
+
+satisfy_requirement(or(Requirements), Lifepaths) :-
+    exists(([Requirement]>>satisfy_requirement(Requirement, Lifepaths)), Requirements).
+
+satisfy_requirement(and(Requirements), Lifepaths) :-
+    foreach(member(Requirement, Requirements), satisfy_requirement(Requirement, Lifepaths)).
+    
+
 % constraints are collected and checked later. skip them now.
 satisfy_requirement(constraint(_), _). 
 
