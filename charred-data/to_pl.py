@@ -28,15 +28,15 @@ def to_pl_list(list):
 def process_lifepath(name_atom, setting_atom, lifepath_json):
     time = lifepath_json['time']
     leads = [settings_map[lead] for lead in lifepath_json['key_leads']]
-    return f"lp(id({name_atom}, {setting_atom}), page(bwg, 0), {time}, {to_pl_list(leads)})."
+    return f"lifepath(id({name_atom}, {setting_atom}), page(bwg, 0), {time}, {to_pl_list(leads)})."
 
 
 def process_provides(name_atom, setting_atom, kind, list):
-    return (f"lp_provides(id({name_atom}, {setting_atom}), {kind}({string_to_atom(i)}))." for i in list if isinstance(i, str))
+    return (f"lifepath_provides(id({name_atom}, {setting_atom}), {kind}({string_to_atom(i)}))." for i in list if isinstance(i, str))
 
 def process_file(filename):
     lp_facts = []
-    lp_provides_facts = []
+    lifepath_provides_facts = []
 
     with open(filename, "r") as f:
         data = json.load(f)
@@ -46,10 +46,10 @@ def process_file(filename):
             for lifepath_name, details in lifepaths.items():
                 lp_name = string_to_atom(lifepath_name)
                 lp_facts.append(process_lifepath(lp_name, setting_atom, details))
-                lp_provides_facts.extend(process_provides(lp_name, setting_atom, "traits", details.get("traits", [])))
-                lp_provides_facts.extend(process_provides(lp_name, setting_atom, "skill", sum(details.get("skills", []), [])))
+                lifepath_provides_facts.extend(process_provides(lp_name, setting_atom, "traits", details.get("traits", [])))
+                lifepath_provides_facts.extend(process_provides(lp_name, setting_atom, "skill", sum(details.get("skills", []), [])))
 
-    print("\n".join(lp_facts) + "\n\n" + "\n".join(lp_provides_facts))
+    print("\n".join(lp_facts) + "\n\n" + "\n".join(lifepath_provides_facts))
         
     
 process_file("man.json")

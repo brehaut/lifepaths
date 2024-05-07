@@ -6,7 +6,7 @@
 
 %% TODO: make these exhaustive
 test(all_lifepaths_have_valid_settings, all(Lp-Setting = [])) :- 
-    lp(id(Lp, Setting)),
+    lifepath(id(Lp, Setting)),
     \+ setting(Setting, _).
 
 test(all_settings_have_valid_stocks, all(Stock = [])) :-
@@ -21,24 +21,24 @@ page_in_range(Book, Page) :-
     (Start =< Page, Page =< End).
     
 test(all_lifepaths_have_valid_pages, all(_ = [])) :-
-    lp(_, page(Book, Number), _, _),
+    lifepath(_, page(Book, Number), _, _),
     (\+ page_in_range(Book, Number)).
 
 test(all_lifepaths_have_valid_leads, all(Lead = [])) :-
-    lp(id(_, SettingName), _, _, Leads),
+    lifepath(id(_, SettingName), _, _, Leads),
     member(Lead, Leads),
     setting(SettingName, Stock),
     \+ setting(Lead, Stock).
 
 test(all_lifepath_providers_have_valid_lifepaths, all(Lp = [])) :-
-    findall(Name, lp_provides(Name, _), LpNames),
+    findall(Name, lifepath_provides(Name, _), LpNames),
     member(Lp, LpNames),
-    \+ lp(Lp).
+    \+ lifepath(Lp).
 
 test(all_lifepath_requirements_have_valid_lifepaths, all(Lp = [])) :-
-    findall(Name, lp_requires(Name, _), LpNames),
+    findall(Name, lifepath_requires(Name, _), LpNames),
     member(Lp, LpNames),
-    \+ lp(Lp).
+    \+ lifepath(Lp).
 
 %% Lifepath Rules 
 % simplified predicate for testing when we dont care about constraints

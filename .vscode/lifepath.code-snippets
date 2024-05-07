@@ -7,19 +7,19 @@
 
     "Lifepath": {
         "prefix": ["lp"],
-        "body": ["lp(id(${1:name}, ${2:setting}), page(${3:bwg}, ${4:page}), ${5:year}, [${6:leads}])."],
+        "body": ["lifepath(id(${1:name}, ${2:setting}), page(${3:bwg}, ${4:page}), ${5:year}, [${6:leads}])."],
         "description": "A lifepath summary"
     },
 
     "Lifepath Provides": {
-        "prefix": ["lpp", "lp_p", "lp_provides"],
-        "body": ["lp_provides(id(${1:name}, ${2:setting}), ${3|trait,skill,flag|}(${4:property}))."],
+        "prefix": ["lpp", "lp_p", "lifepath_provides"],
+        "body": ["lifepath_provides(id(${1:name}, ${2:setting}), ${3|trait,skill,flag|}(${4:property}))."],
         "description": "A property provided by a lifepath"
     },
 
     "Lifepath Requires": {
-        "prefix": ["lpr", "lp_r", "lp_requires"],
-        "body": ["lp_requires(id(${1:name}, ${2:setting}), [${3|lifepath,trait,skill,flag,not,and,or|}(${4:property})])."],
+        "prefix": ["lpr", "lp_r", "lifepath_requires"],
+        "body": ["lifepath_requires(id(${1:name}, ${2:setting}), [${3|lifepath,trait,skill,flag,not,and,or|}(${4:property})])."],
         "description": "A property required by a lifepath"
     }
 }

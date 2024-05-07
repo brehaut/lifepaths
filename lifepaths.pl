@@ -1,13 +1,13 @@
 :- use_module(gold_revised).
 
-lp(Id) :- lp(Id, _, _, _).
+lifepath(Id) :- lifepath(Id, _, _, _).
 
 lp_stock(id(_, Setting), Stock) :- 
     setting(Setting, Stock).
 
 
 lp_leads(id(Name, Setting), Leads):-     
-    lp(id(Name, Setting), _, _, LpLeads),
+    lifepath(id(Name, Setting), _, _, LpLeads),
     (LpLeads = any_except(Exclude)
         -> (
             setting(Setting, Stock),
@@ -16,17 +16,17 @@ lp_leads(id(Name, Setting), Leads):-
         )    
         ;        
         (    
-            lp(id(Name, Setting), _, _, Leads)
+            lifepath(id(Name, Setting), _, _, Leads)
         )
     ).
             
     
 
-lp_years(Name, Years):- lp(Name, _, Years, _).
+lp_years(Name, Years):- lifepath(Name, _, Years, _).
 
 % born is a common enough cast that its worth handling specifically
 
-is_born_lp(Lifepath) :- 
+is_born_lifepath(Lifepath) :- 
     id(Name, _) = Lifepath 
     -> (
         atom_concat(born_, _, Name);
@@ -49,10 +49,10 @@ exists(Goal, [Head|Tail]) :-
 
 % satisfy_requirement resolves individual lifepath requirements
 satisfy_requirement(flag(FlagName), Lifepaths) :-
-    exists([Lifepath]>>lp_provides(Lifepath, flag(FlagName)), Lifepaths).    
+    exists([Lifepath]>>lifepath_provides(Lifepath, flag(FlagName)), Lifepaths).    
 
 satisfy_requirement(trait(TraitName), Lifepaths) :-
-    exists([Lifepath]>>lp_provides(Lifepath, trait(TraitName)), Lifepaths).
+    exists([Lifepath]>>lifepath_provides(Lifepath, trait(TraitName)), Lifepaths).
 
 satisfy_requirement(lifepath(Lifepath), Lifepaths) :-
     % print_message(debug, log(Lifepath, Lifepaths)),
@@ -85,7 +85,7 @@ unwrap_constraint(constraint(C), C).
 satisfies_requirements(Lifepath, ChosenLifepaths, Constraints) :-
     % lifepaths with no requirements are automatically satisfied
     (
-        \+ lp_requires(Lifepath, _),
+        \+ lifepath_requires(Lifepath, _),
         Constraints = []
     ) 
     ;
@@ -93,7 +93,7 @@ satisfies_requirements(Lifepath, ChosenLifepaths, Constraints) :-
     (
         findall(
             Requirements, (
-                lp_requires(Lifepath, Requirements), 
+                lifepath_requires(Lifepath, Requirements), 
                 maplist(map_satreq(ChosenLifepaths), Requirements)
             ), 
             AllReqs
@@ -120,8 +120,8 @@ satisfies_constraints(Constraints, Lifepaths) :-
 % constraints are extracted from requirements, and are used to check
 % a character once all lifepaths have been chosen.
 available_lifepath([], Available, []) :- 
-    lp(Available), 
-    is_born_lp(Available).    
+    lifepath(Available), 
+    is_born_lifepath(Available).    
 
 available_lifepath(ChosenLifepaths, Available, Constraints) :-
     ChosenLifepaths = [LastLp|_],
@@ -129,8 +129,8 @@ available_lifepath(ChosenLifepaths, Available, Constraints) :-
     lp_leads(LastLp, Leads),
     id(_, Setting) = Available,
     member(Setting, [LastSetting|Leads]),
-    lp(Available), % confirm that the lifepath exists.
-    \+ is_born_lp(Available),
+    lifepath(Available), % confirm that the lifepath exists.
+    \+ is_born_lifepath(Available),
     satisfies_requirements(Available, ChosenLifepaths, Constraints).
 
 character_age([], 0).
@@ -149,7 +149,7 @@ character_path([First|Rest], Selected, Constraints) :-
 normalize_lifepath_name(-(Name, Setting), id(Name, Setting)).
 normalize_lifepath_name(Name, Normalized) :-
     atom(Name) -> (
-        (findall(Setting, lp(id(Name, Setting), _, _, _), [Setting]),
+        (findall(Setting, lifepath(id(Name, Setting), _, _, _), [Setting]),
         Normalized = id(Name, Setting)) 
         ; throw(ambiguous_lifepath(Name))
     ) ; Normalized = Name. 
