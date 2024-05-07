@@ -41,17 +41,18 @@ is_born_lp(Lifepath) :-
 
 requirement_is_constraint(constraint(_)).
 
-% wrapping the goal in negated findall removes a choicepoint but feels gross. 
-% theres got to be a nicer way to do this.
-any_satisfies(Goal, List) :-
-    \+ findall(L, (member(L, List), call(Goal, L)), []).
+% exists(Goal, List) checks if any item in the List satisfies Goal
+% roughly the existential version of foreach.
+exists(_, []) :- fail.
+exists(Goal, [Head|Tail]) :-
+    call(Goal, Head), !; exists(Goal, Tail).
 
 % satisfy_requirement resolves individual lifepath requirements
 satisfy_requirement(flag(FlagName), Lifepaths) :-
-    any_satisfies([Lifepath]>>lp_provides(Lifepath, flag(FlagName)), Lifepaths).    
+    exists([Lifepath]>>lp_provides(Lifepath, flag(FlagName)), Lifepaths).    
 
 satisfy_requirement(trait(TraitName), Lifepaths) :-
-    any_satisfies([Lifepath]>>lp_provides(Lifepath, trait(TraitName)), Lifepaths).
+    exists([Lifepath]>>lp_provides(Lifepath, trait(TraitName)), Lifepaths).
 
 satisfy_requirement(lifepath(Lifepath), Lifepaths) :-
     % print_message(debug, log(Lifepath, Lifepaths)),
