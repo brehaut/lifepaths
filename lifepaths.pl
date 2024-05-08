@@ -22,21 +22,14 @@ lp_leads(id(Name, Setting), Leads):-
             
     
 
-lp_years(Name, Years):- lifepath(Name, _, Years, _).
+lp_years(Id, Years):- lifepath(Id, _, Years, _).
 
 % born is a common enough cast that its worth handling specifically
 
-is_born_lifepath(Lifepath) :- 
-    id(Name, _) = Lifepath 
-    -> (
-        atom_concat(born_, _, Name);
-        atom_concat(_, "_born", Name)
-    )
-    ; 
-    ( 
-        atom_concat(born_, _, Lifepath);
-        atom_concat(_, "_born", Lifepath)
-    ).
+is_born_lifepath(id(Id, _)) :- 
+    (atom_concat(born_, _, Id);
+    atom_concat(_, "_born", Id)), 
+    !.
     
 
 requirement_is_constraint(constraint(_)).
