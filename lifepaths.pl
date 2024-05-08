@@ -41,41 +41,41 @@ exists(Goal, [Head|Tail]) :-
     call(Goal, Head), !; exists(Goal, Tail).
 
 % satisfy_requirement resolves individual lifepath requirements
-satisfy_requirement(flag(FlagName), Lifepaths) :-
-    exists([Lifepath]>>lifepath_provides(Lifepath, flag(FlagName)), Lifepaths).    
+satisfy_requirement(flag(FlagName), CharProps, Lifepaths) :-
+    (
+        exists([Lifepath]>>lifepath_provides(Lifepath, flag(FlagName)), Lifepaths)
+        ; (memberchk(flag(FlagName), CharProps))       
+    ), !.    
 
-satisfy_requirement(trait(TraitName), Lifepaths) :-
+satisfy_requirement(trait(TraitName), _, Lifepaths) :-
     exists([Lifepath]>>lifepath_provides(Lifepath, trait(TraitName)), Lifepaths).
 
-satisfy_requirement(lifepath(Lifepath), Lifepaths) :-
-    % print_message(debug, log(Lifepath, Lifepaths)),
+satisfy_requirement(lifepath(Lifepath), _, Lifepaths) :-
     member(id(Lifepath, _), Lifepaths), !.
 
-satisfy_requirement(position(N), Lifepaths) :-
+satisfy_requirement(position(N), _, Lifepaths) :-
     length(Lifepaths, Len),
     Len =:= N - 1.
 
 % boolean requirements operations
-satisfy_requirement(not(Requirement), Lifepaths) :-
+satisfy_requirement(not(Requirement), CharProps,  Lifepaths) :-
     \+ Requirement = constraint(_),
-    \+ satisfy_requirement(Requirement, Lifepaths).
+    \+ satisfy_requirement(Requirement, CharProps, Lifepaths).
 
-satisfy_requirement(or(Requirements), Lifepaths) :-
-    exists(([Requirement]>>satisfy_requirement(Requirement, Lifepaths)), Requirements).
+satisfy_requirement(or(Requirements), CharProps, Lifepaths) :-
+    exists(([Requirement]>>satisfy_requirement(Requirement, CharProps, Lifepaths)), Requirements).
 
-satisfy_requirement(and(Requirements), Lifepaths) :-
-    foreach(member(Requirement, Requirements), satisfy_requirement(Requirement, Lifepaths)).
+satisfy_requirement(and(Requirements), CharProps, Lifepaths) :-
+    foreach(member(Requirement, Requirements), satisfy_requirement(Requirement, CharProps, Lifepaths)).
     
 
 % constraints are collected and checked later. skip them now.
-satisfy_requirement(constraint(_), _). 
+satisfy_requirement(constraint(_), _, _). 
 
-map_satreq(Lifepaths, Constraint) :- 
-    satisfy_requirement(Constraint, Lifepaths).
+map_satreq(CharProps, Lifepaths, Constraint) :- 
+    satisfy_requirement(Constraint, CharProps, Lifepaths).
 
-unwrap_constraint(constraint(C), C).
-
-satisfies_requirements(Lifepath, ChosenLifepaths, Constraints) :-
+satisfies_requirements(Lifepath, CharProps, ChosenLifepaths, Constraints) :-
     % lifepaths with no requirements are automatically satisfied
     (
         \+ lifepath_requires(Lifepath, _),
@@ -87,12 +87,12 @@ satisfies_requirements(Lifepath, ChosenLifepaths, Constraints) :-
         findall(
             Requirements, (
                 lifepath_requires(Lifepath, Requirements), 
-                maplist(map_satreq(ChosenLifepaths), Requirements)
+                maplist(map_satreq(CharProps, ChosenLifepaths), Requirements)
             ), 
             AllReqs
         ),
         member(Reqs, AllReqs),
-        findall(C, (member(R, Reqs), unwrap_constraint(R, C)), Constraints)
+        findall(C, (member(R, Reqs), (constraint(C) = R)), Constraints)
     )
     .
 
@@ -112,11 +112,11 @@ satisfies_constraints(Constraints, Lifepaths) :-
 % (and any constraints) based on the lifepaths taken so far.
 % constraints are extracted from requirements, and are used to check
 % a character once all lifepaths have been chosen.
-available_lifepath([], Available, []) :- 
+available_lifepath([], _, Available, []) :- 
     lifepath(Available), 
     is_born_lifepath(Available).    
 
-available_lifepath(ChosenLifepaths, Available, Constraints) :-
+available_lifepath(ChosenLifepaths, CharProps, Available, Constraints) :-
     ChosenLifepaths = [LastLp|_],
     LastLp = id(_, LastSetting),
     lp_leads(LastLp, Leads),
@@ -124,7 +124,7 @@ available_lifepath(ChosenLifepaths, Available, Constraints) :-
     member(Setting, [LastSetting|Leads]),
     lifepath(Available), % confirm that the lifepath exists.
     \+ is_born_lifepath(Available),
-    satisfies_requirements(Available, ChosenLifepaths, Constraints).
+    satisfies_requirements(Available, CharProps, ChosenLifepaths, Constraints).
 
 character_age([], 0).
 character_age([Lifepath|Lifepaths], Age) :-
@@ -133,11 +133,11 @@ character_age([Lifepath|Lifepaths], Age) :-
     Age is PriorAge + Years.
 
 
-character_path([], _, []).
-character_path([First|Rest], Selected, Constraints) :-
-    available_lifepath(Selected, First, NewConstraints),
+character_path_(_, [], _, []).
+character_path_(CharProps, [First|Rest], Selected, Constraints) :-
+    available_lifepath(Selected, CharProps, First, NewConstraints),
     append(NewConstraints, LaterConstraints, Constraints),
-    character_path(Rest, [First|Selected], LaterConstraints).
+    character_path_(CharProps, Rest, [First|Selected], LaterConstraints).
 
 normalize_lifepath_name(-(Name, Setting), id(Name, Setting)) :- !.
 normalize_lifepath_name(id(Name, Setting), id(Name, Setting)) :- !.
@@ -147,15 +147,22 @@ normalize_lifepath_name(Name, Normalized) :-
         Normalized = id(Name, Setting), !
     ) ; throw(ambiguous_lifepath(Name)).
 
+
+% currently we only support one type of prop, and that is flags
+normalize_character_property(flag(Prop), flag(Prop)).
+normalize_character_property(Prop, flag(Prop)).
     
+
 
 % character_path(LifepathNames)
 %
 % character_path checks a set of lifepaths against the constraints.
 % This is the main event.
-character_path([]) :- fail.
-character_path(LifePaths) :- 
+character_path(_, []) :- fail.
+character_path(CharProps, LifePaths) :- 
     maplist(normalize_lifepath_name, LifePaths, NormalizedLifePaths),
-    character_path(NormalizedLifePaths, [], Constraints),
+    maplist(normalize_character_property, CharProps, NormalizedProps),
+    character_path_(NormalizedProps, NormalizedLifePaths, [], Constraints),
     satisfies_constraints(Constraints, NormalizedLifePaths).
 
+character_path(Lifepaths) :- character_path([], Lifepaths).
