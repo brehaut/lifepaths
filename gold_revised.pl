@@ -102,7 +102,7 @@ lifepath_requires(id(kid, villager), [position(2), not(lifepath(kid))]).
 %
 % Why is female a flag? Taking some lifepaths, such as country_wife, implicitly
 % indicate that the character is female. Alternatively you can supply flags 
-% to the program separately from target lifepaths [TODO]
+% to the program separately from target lifepaths
 lifepath_provides(id(farmer, peasant), trait(hoarding)).
 lifepath_provides(id(midwife, peasant), trait(bedside_manner)).
 lifepath_provides(id(lazy_stayabout, peasant), trait(a_little_fat)).
