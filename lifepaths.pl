@@ -146,13 +146,15 @@ character_path([First|Rest], Selected, Constraints) :-
     append(NewConstraints, LaterConstraints, Constraints),
     character_path(Rest, [First|Selected], LaterConstraints).
 
-normalize_lifepath_name(-(Name, Setting), id(Name, Setting)).
+normalize_lifepath_name(-(Name, Setting), id(Name, Setting)) :- !.
+normalize_lifepath_name(id(Name, Setting), id(Name, Setting)) :- !.
 normalize_lifepath_name(Name, Normalized) :-
-    atom(Name) -> (
-        (findall(Setting, lifepath(id(Name, Setting), _, _, _), [Setting]),
-        Normalized = id(Name, Setting)) 
-        ; throw(ambiguous_lifepath(Name))
-    ) ; Normalized = Name. 
+    (
+        findall(Setting, lifepath(id(Name, Setting), _, _, _), [Setting]),
+        Normalized = id(Name, Setting), !
+    ) ; throw(ambiguous_lifepath(Name)).
+
+    
 
 % character_path(LifepathNames)
 %
@@ -162,5 +164,5 @@ character_path([]) :- fail.
 character_path(LifePaths) :- 
     maplist(normalize_lifepath_name, LifePaths, NormalizedLifePaths),
     character_path(NormalizedLifePaths, [], Constraints),
-    satisfies_constraints(Constraints, LifePaths).
+    satisfies_constraints(Constraints, NormalizedLifePaths).
 
