@@ -70,8 +70,41 @@ lifepath(id(groom, villager), page(bwg, 166), 4, [peasant, city, soldier]).
 lifepath(id(runner, villager), page(bwg, 166), 6, [city, peasant, soldier]).
 lifepath(id(village_peddler, villager), page(bwg, 166), 5, [peasant, servitude, city, outcast]).
 lifepath(id(shopkeeper, villager), page(bwg, 166), 6, [city, peasant]).
+lifepath(id(clerk, villager), page(bwg, 166), 4, [city, outcast, soldier]).
+lifepath(id(sailor, villager), page(bwg, 166), 5, [soldier, city, peasant, servitude, sea]).
+lifepath(id(laborer, villager), page(bwg, 166), 4, [soldier, outcast, servitude, peasant]).
+lifepath(id(miner, villager), page(bwg, 166), 3, [soldier, outcast, servitude, peasant]).
+lifepath(id(taskmaster, villager), page(bwg, 166), 6, [city, outcast, soldier]).
 
 lifepath(id(serving_girl, villager), page(bwg, 167), 3, any_except([noble])).
+lifepath(id(hosteller, villager), page(bwg, 167), 6, [city, peasant]).
+lifepath(id(village_tough, villager), page(bwg, 167), 3, [soldier, city, peasant, servitude]).
+lifepath(id(village_sergeant, villager), page(bwg, 167), 5, [soldier, servitude, outcast]).
+lifepath(id(corrupt_sergeant, villager), page(bwg, 167), 5, [soldier, servitude, court]).
+lifepath(id(tailor, villager), page(bwg, 167), 5, [city, peasant]).
+lifepath(id(tax_collector, villager), page(bwg, 167), 5, [city, peasant, outcast]).
+lifepath(id(cobbler, villager), page(bwg, 167), 8, [city, peasant, soldier]).
+lifepath(id(farrier, villager), page(bwg, 167), 5, [peasant, soldier, city]).
+
+lifepath(id(butcher, villager), page(bwg, 168), 6, [city, peasant, outcast]).
+lifepath(id(barber, villager), page(bwg, 168), 7, [city, peasant, outcast]).
+lifepath(id(brewer, villager), page(bwg, 168), 8, [city, peasant, court]).
+lifepath(id(acolyte, villager), page(bwg, 168), 7, [peasant, servitude, city, religious]).
+lifepath(id(failed_acolyte, villager), page(bwg, 168), 6, [outcast, soldier, peasant]).
+lifepath(id(village_priest, villager), page(bwg, 168), 8, any_except([noble, court])).
+lifepath(id(venal_priest, villager), page(bwg, 168), 9, any_except([noble, court])).
+lifepath(id(apprentice, villager), page(bwg, 168), 7, [city, peasant, soldier, sea]).
+lifepath(id(journeyman, villager), page(bwg, 168), 6, [city, peasant, soldier, sea]).
+lifepath(id(cloth_dyer, villager), page(bwg, 168), 5, [city, peasant]).
+
+lifepath(id(bowyer, villager), page(bwg, 169), 6, [soldier, outcast, peasant]).
+lifepath(id(master_craftsman, villager), page(bwg, 169), 10, [city, soldier]).
+lifepath(id(vintner, villager), page(bwg, 169), 10, [court, peasant]).
+lifepath(id(apiarist, villager), page(bwg, 169), 8, [city, peasant, court]).
+lifepath(id(mining_engineer, villager), page(bwg, 169), 8, [city, court, soldier]).
+lifepath(id(town_official, villager), page(bwg, 169), 5, [city, outcast, soldier]).
+lifepath(id(merchant, villager), page(bwg, 169), 7, [city, outcast, sea]).
+lifepath(id(village_wife, villager), page(bwg, 169), 8, [religious, city, servitude]).
 
 
 % lifepath_requires(LifepathName, Requirements)
@@ -104,14 +137,61 @@ lifepath_requires(id(kid, villager), [position(2), not(lifepath(kid))]).
 % indicate that the character is female. Alternatively you can supply flags 
 % to the program separately from target lifepaths
 lifepath_provides(id(farmer, peasant), trait(hoarding)).
+lifepath_provides(id(farmer, peasant), skill(farming)).
+lifepath_provides(id(farmer, peasant), skill(mending)).
+lifepath_provides(id(farmer, peasant), skill(animal_husbandry)).
+lifepath_provides(id(farmer, peasant), skill(weaving)).
+lifepath_provides(id(farmer, peasant), skill(cooking)).
+lifepath_provides(id(farmer, peasant), skill(sewing)).
+lifepath_provides(id(farmer, peasant), skill(firebuilding)).
+lifepath_provides(id(farmer, peasant), skill(sing)).
+lifepath_provides(id(head_of_household, peasant), skill(carpentry)).
+lifepath_provides(id(head_of_household, peasant), skill(hunting)).
+lifepath_provides(id(head_of_household, peasant), skill(haggling)).
+lifepath_provides(id(head_of_household, peasant), skill(almanac)).
 lifepath_provides(id(midwife, peasant), trait(bedside_manner)).
+lifepath_provides(id(midwife, peasant), skill(animal_husbandry)).
+lifepath_provides(id(midwife, peasant), skill(herbalism)).
+lifepath_provides(id(midwife, peasant), skill(midwifery)).
+lifepath_provides(id(midwife, peasant), skill(omen_wise)).
 lifepath_provides(id(lazy_stayabout, peasant), trait(a_little_fat)).
+lifepath_provides(id(lazy_stayabout, peasant), skill(lazy_wise)).
+lifepath_provides(id(lazy_stayabout, peasant), skill(peasant_wise)).
+lifepath_provides(id(lazy_stayabout, peasant), skill(wife_wise)).
+lifepath_provides(id(lazy_stayabout, peasant), skill(work_wise)).
 lifepath_provides(id(conscript, peasant), trait(flee_from_battle)).
+lifepath_provides(id(conscript, peasant), skill(foraging)).
+lifepath_provides(id(conscript, peasant), skill(battle_wise)).
+lifepath_provides(id(conscript, peasant), skill(rumor_wise)).
 lifepath_provides(id(peasant_pilgrim, peasant), trait(road_weary)).
 lifepath_provides(id(peasant_pilgrim, peasant), trait(alms_taker)).
+lifepath_provides(id(peasant_pilgrim, peasant), skill(doctrine)).
+lifepath_provides(id(peasant_pilgrim, peasant), skill(pilgrimage_wise)).
+lifepath_provides(id(peasant_pilgrim, peasant), skill(saint_wise)).
 lifepath_provides(id(miller, peasant), trait(lords_favorite)).
+lifepath_provides(id(miller, peasant), skill(miller)).
+lifepath_provides(id(miller, peasant), skill(brewer)).
+lifepath_provides(id(miller, peasant), skill(mending)).
+lifepath_provides(id(miller, peasant), skill(carpentry)).
 lifepath_provides(id(fisherman, peasant), trait(superstitious)).
+lifepath_provides(id(fisherman, peasant), skill(fishing)). 
+lifepath_provides(id(fisherman, peasant), skill(rigging)).
+lifepath_provides(id(fisherman, peasant), skill(knots)).
+lifepath_provides(id(fisherman, peasant), skill(mending)).
+lifepath_provides(id(fisherman, peasant), skill(cooking)).
+lifepath_provides(id(fisherman, peasant), skill(boarwright)).
 lifepath_provides(id(shepherd, peasant), trait(cry_wolf)).
+lifepath_provides(id(shepherd, peasant), skill(animal_husbandry)).
+lifepath_provides(id(shepherd, peasant), skill(sing)).
+lifepath_provides(id(shepherd, peasant), skill(climbing)).
+lifepath_provides(id(shepherd, peasant), skill(flute)).
+lifepath_provides(id(shepherd, peasant), skill(throwing)).
+lifepath_provides(id(woodcutter, peasant), skill(firebuilding)).
+lifepath_provides(id(woodcutter, peasant), skill(mending)).
+lifepath_provides(id(woodcutter, peasant), skill(foraging)).
+lifepath_provides(id(woodcutter, peasant), skill(orienteering)).
+lifepath_provides(id(woodcutter, peasant), skill(tree_wise)).
+
 lifepath_provides(id(trapper, peasant), trait(foul_smelling)).
 lifepath_provides(id(peddler, peasant), trait(blank_stare)).
 lifepath_provides(id(peddler, peasant), trait(glib)).
