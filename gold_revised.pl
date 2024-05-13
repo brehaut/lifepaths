@@ -712,3 +712,117 @@ lifepath_provides(id(coin_clipper, city), skill(intimidation)).
 lifepath_provides(id(coin_clipper, city), skill(counterfeiting)).
 lifepath_provides(id(coin_clipper, city), skill(coin_wise)).
 
+lifepath(id(pickpocket, city), page(bwg, 171), 4, [outcast, villager, servitude]).
+lifepath_provides(id(pickpocket, city), trait(plain_face)).
+lifepath_provides(id(pickpocket, city), skill(inconspicuous)).
+lifepath_provides(id(pickpocket, city), skill(streetwise)).
+lifepath_provides(id(pickpocket, city), skill(sleight_of_hand)).
+lifepath_provides(id(pickpocket, city), skill(crowd_wise)).
+
+lifepath(id(street_thug, city), page(bwg, 171), 3, [outcast, servitude, soldier]).
+lifepath_provides(id(street_thug, city), trait(cruel)).
+lifepath_provides(id(street_thug, city), trait(street_smart)).
+lifepath_provides(id(street_thug, city), skill(brawling)).
+lifepath_provides(id(street_thug, city), skill(intimidation)).
+lifepath_provides(id(street_thug, city), skill(streetwise)).
+lifepath_provides(id(street_thug, city), skill(darkened_streets_wise)).
+
+lifepath(id(criminal, city), page(bwg, 171), 5, [outcast, villager, soldier]).
+lifepath_provides(id(criminal, city), trait(cynical)).
+lifepath_provides(id(criminal, city), trait(poker_face)).
+lifepath_provides(id(criminal, city), trait(rainman)).
+lifepath_provides(id(criminal, city), trait(alert)).
+lifepath_provides(id(criminal, city), skill(inconspicuous)).
+lifepath_provides(id(criminal, city), skill(streetwise)).
+lifepath_provides(id(criminal, city), skill(intimidation)).
+lifepath_provides(id(criminal, city), skill(knives)).
+lifepath_provides(id(criminal, city), skill(climbing)).
+
+lifepath(id(confidence_man, city), page(bwg, 171), 4, [outcast, soldier, villager]).
+lifepath_provides(id(confidence_man, city), skill(falsehood)).
+lifepath_provides(id(confidence_man, city), skill(inconspicuous)).
+lifepath_provides(id(confidence_man, city), skill(disguise)).
+lifepath_provides(id(confidence_man, city), skill(persuasion)).
+lifepath_provides(id(confidence_man, city), skill(grift_wise)).
+
+lifepath(id(city_peddler, city), page(bwg, 171), 5, [villager, servitude, peasant, outcast]).
+lifepath_provides(id(city_peddler, city), trait(the_story)).
+lifepath_provides(id(city_peddler, city), skill(mending)).
+lifepath_provides(id(city_peddler, city), skill(sing)).
+lifepath_provides(id(city_peddler, city), skill(haggling)).
+lifepath_provides(id(city_peddler, city), skill(chandler)).
+lifepath_provides(id(city_peddler, city), skill(persuasion)).
+lifepath_provides(id(city_peddler, city), skill(inconspicuous)).
+lifepath_provides(id(city_peddler, city), skill(falsehood)).
+
+lifepath(id(sailor, city), page(bwg, 171), 5, [soldier, sea, peasant, servitude]).
+lifepath_provides(id(sailor, city), trait(superstitious)).
+lifepath_provides(id(sailor, city), skill(rigging)).
+lifepath_provides(id(sailor, city), skill(knots)).
+lifepath_provides(id(sailor, city), skill(brawling)).
+lifepath_provides(id(sailor, city), skill(sing)).
+lifepath_provides(id(sailor, city), skill(gambling)).
+
+lifepath(id(student, city), page(bwg, 171), 4, any_except([noble])).
+lifepath_provides(id(student, city), trait(rabble_rouser)).
+lifepath_provides(id(student, city), trait(drunk)).
+lifepath_provides(id(student, city), trait(geometric)).
+lifepath_provides(id(student, city), skill(write)).
+lifepath_provides(id(student, city), skill(read)).
+lifepath_provides(id(student, city), skill(philosophy)).
+lifepath_provides(id(student, city), skill(rule_of_law)).
+lifepath_provides(id(student, city), skill(history)).
+lifepath_provides(id(student, city), skill(symbology)).
+lifepath_provides(id(student, city), skill(anatomy)).
+lifepath_provides(id(student, city), skill(astrology)).
+lifepath_provides(id(student, city), skill(inconspicuous)).
+lifepath_provides(id(student, city), skill(streetwise)).
+lifepath_provides(id(student, city), skill(city_wise)).
+
+lifepath(id(ganymede, city), page(bwg, 171), 5, [outcast, servitude, court]).
+lifepath_provides(id(ganymede, city), trait(flamboyant)).
+lifepath_provides(id(ganymede, city), trait(comely)).
+lifepath_provides(id(ganymede, city), trait(sharp_dresser)).
+lifepath_provides(id(ganymede, city), trait(catalyst)).
+lifepath_provides(id(ganymede, city), skill(fashion_wise)).
+lifepath_provides(id(ganymede, city), skill(inconspicuous)).
+lifepath_provides(id(ganymede, city), skill(conspicuous)).
+lifepath_provides(id(ganymede, city), skill(soothing_platitudes)).
+
+lifepath(id(dilettante, city), page(bwg, 171), 3, [villager, court, outcast]).
+lifepath_provides(id(dilettante, city), trait(superstitious)).
+lifepath_provides(id(dilettante, city), trait(entropic)).
+lifepath_provides(id(dilettante, city), trait(cipher)).
+lifepath_provides(id(dilettante, city), skill(sorcery_wise)).
+lifepath_provides(id(dilettante, city), skill(obscure_history)).
+lifepath_provides(id(dilettante, city), skill(falsehood)).
+
+lifepath(id(neophyte_sorcerer, city), page(bwg, 171), 6, [villager, peasant, outcast, servitude]).
+lifepath_provides(id(neophyte_sorcerer, city), trait(extremely_respectful_of_ones_better)).
+lifepath_provides(id(neophyte_sorcerer, city), trait(bitter)).
+lifepath_provides(id(neophyte_sorcerer, city), trait(gifted)).
+lifepath_provides(id(neophyte_sorcerer, city), skill(write)).
+lifepath_provides(id(neophyte_sorcerer, city), skill(read)).
+lifepath_provides(id(neophyte_sorcerer, city), skill(research)).
+lifepath_provides(id(neophyte_sorcerer, city), skill(symbology)).
+lifepath_provides(id(neophyte_sorcerer, city), skill(great_masters_wise)).
+
+lifepath(id(temple_acolyte, city), page(bwg, 171), 5, [peasant, outcast, servitude, religious]).
+lifepath_provides(id(temple_acolyte, city), flag(acolyte)).
+lifepath_provides(id(temple_acolyte, city), trait(believer)).
+lifepath_provides(id(temple_acolyte, city), trait(tonsured)).
+lifepath_provides(id(temple_acolyte, city), trait(faithful)).
+lifepath_provides(id(temple_acolyte, city), skill(doctrine)).
+lifepath_provides(id(temple_acolyte, city), skill(bureaucracy)).
+lifepath_provides(id(temple_acolyte, city), skill(write)).
+lifepath_provides(id(temple_acolyte, city), skill(read)).
+lifepath_provides(id(temple_acolyte, city), skill(temple_wise)).
+
+lifepath(id(sculptor, city), page(bwg, 171), 5, [outcast, peasant, court]).
+lifepath_provides(id(sculptor, city), trait(passionate)).
+lifepath_provides(id(sculptor, city), skill(sculpture)).
+lifepath_provides(id(sculptor, city), skill(mason)).
+lifepath_provides(id(sculptor, city), skill(blacksmith)).
+lifepath_provides(id(sculptor, city), skill(carpentry)).
+lifepath_provides(id(sculptor, city), skill(stone_wise)).
+
