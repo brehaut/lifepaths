@@ -44,6 +44,11 @@ setting(sea, human).
 setting(servitude, human).
 setting(outcast, human).
 
+% flags are used for special cases of 
+flag(female).
+flag(acolyte).
+flag(guard).
+
 % lifepath(id(LifepathName, SettingName), PageNumber, Years, Leads)
 % lifepath defines a basic lifepath: its name, its setting (which transitively defines a stock), 
 % and the pagenumber for reference (page(book, page))
@@ -616,9 +621,94 @@ lifepath_provides(id(merchant, villager), skill(wholesale_wise)).
 lifepath_provides(id(merchant, villager), skill(landlord_wise)).
 
 lifepath(id(village_wife, villager), page(bwg, 169), 8, [religious, city, servitude]).
+lifepath_provides(id(village_wife, villager), flag(female)).
 lifepath_provides(id(village_wife, villager), skill(child_rearing)).
 lifepath_provides(id(village_wife, villager), skill(cooking)).
 
 
 %%% ----- CITY DWELLER SETTING ----- %%%
+
+lifepath(id(city_born, city), page(bwg, 170), 12, [servitude, court, noble, outcast]).
+
+lifepath(id(runner, city), page(bwg, 170), 3, [villager, soldier]).
+lifepath_provides(id(runner, city), skill(streetwise)).
+lifepath_provides(id(runner, city), skill(inconspicuous)).
+
+lifepath(id(urchin, city), page(bwg, 170), 2, [outcast, servitude, villager]).
+lifepath_requires(id(urchin, city), [position(2)]).
+lifepath_requires(id(urchin, city), [position(3)]).
+lifepath_provides(id(urchin, city), trait(sickly)).
+lifepath_provides(id(urchin, city), trait(fleet_of_foot)).
+lifepath_provides(id(urchin, city), trait(unheeded)).
+lifepath_provides(id(urchin, city), skill(inconspicuous)).
+lifepath_provides(id(urchin, city), skill(falsehood)).
+lifepath_provides(id(urchin, city), skill(streetwise)).
+lifepath_provides(id(urchin, city), skill(stealthy)).
+
+lifepath(id(beggar, city), page(bwg, 170), 5, [outcast, servitude, villager]).
+lifepath_provides(id(beggar, city), trait(lame)).
+lifepath_provides(id(beggar, city), trait(downtrodden)).
+lifepath_provides(id(beggar, city), trait(hurt)).
+lifepath_provides(id(beggar, city), trait(broken)).
+lifepath_provides(id(beggar, city), skill(beggardry)).
+lifepath_provides(id(beggar, city), skill(inconspicuous)).
+lifepath_provides(id(beggar, city), skill(persuasion)).
+lifepath_provides(id(beggar, city), skill(falsehood)).
+lifepath_provides(id(beggar, city), skill(city_wise)).
+lifepath_provides(id(beggar, city), skill(city_guard_wise)).
+lifepath_provides(id(beggar, city), skill(wealth_wise)).
+
+lifepath(id(courier, city), page(bwg, 170), 4, [villager, soldier]).
+lifepath_provides(id(courier, city), skill(riding)).
+lifepath_provides(id(courier, city), skill(streetwise)).
+lifepath_provides(id(courier, city), skill(countryside_wise)).
+
+lifepath(id(laborer, city), page(bwg, 170), 4, [soldier, outcast, servitude, peasant]).
+lifepath_provides(id(laborer, city), trait(drunk)).
+lifepath_provides(id(laborer, city), trait(mind_numbing_work)).
+lifepath_provides(id(laborer, city), skill(ditch_digging)).
+lifepath_provides(id(laborer, city), skill(hauling)).
+
+lifepath(id(pilgrim, city), page(bwg, 170), 2, [religious, servitude, villager]).
+lifepath_provides(id(pilgrim, city), trait(tall_tale_teller)).
+lifepath_provides(id(pilgrim, city), trait(stinky)).
+lifepath_provides(id(pilgrim, city), skill(religious_diatribe)).
+lifepath_provides(id(pilgrim, city), skill(city_wise)).
+lifepath_provides(id(pilgrim, city), skill(shrine_wise)).
+lifepath_provides(id(pilgrim, city), skill(doctrine)).
+
+lifepath(id(groom, city), page(bwg, 170), 4, [peasant, villager, soldier]).
+lifepath_provides(id(groom, city), trait(peripatetic)).
+lifepath_provides(id(groom, city), skill(road_wise)).
+lifepath_provides(id(groom, city), skill(driving)).
+lifepath_provides(id(groom, city), skill(riding)).
+lifepath_provides(id(groom, city), skill(animal_husbandry)).
+lifepath_provides(id(groom, city), skill(mending)).
+lifepath_provides(id(groom, city), skill(city_wise)).
+lifepath_provides(id(groom, city), skill(traveler_wise)).
+
+lifepath(id(duelist, city), page(bwg, 170), 4, [soldier, outcast, servitude]).
+lifepath_requires(id(duelist, city), [lifepath(squire)]).
+lifepath_requires(id(duelist, city), [setting(outcast)]).
+lifepath_requires(id(duelist, city), [setting(soldier)]).
+lifepath_requires(id(duelist, city), [flag(guard)]).
+lifepath_provides(id(duelist, city), trait(mercenary)).
+lifepath_provides(id(duelist, city), trait(cold_blooded)).
+lifepath_provides(id(duelist, city), trait(fearless)).
+lifepath_provides(id(duelist, city), skill(sword)).
+lifepath_provides(id(duelist, city), skill(brawling)).
+lifepath_provides(id(duelist, city), skill(two_fisted_fighting_training)).
+lifepath_provides(id(duelist, city), skill(streetwise)).
+lifepath_provides(id(duelist, city), skill(haggling)).
+lifepath_provides(id(duelist, city), skill(conspicuous)).
+lifepath_provides(id(duelist, city), skill(trial_by_combat_wise)).
+
+lifepath(id(coin_clipper, city), page(bwg, 170), 6, [outcast, court]).
+lifepath_provides(id(coin_clipper, city), trait(light_sleeper)).
+lifepath_provides(id(coin_clipper, city), skill(streetwise)).
+lifepath_provides(id(coin_clipper, city), skill(forgery)).
+lifepath_provides(id(coin_clipper, city), skill(falsehood)).
+lifepath_provides(id(coin_clipper, city), skill(intimidation)).
+lifepath_provides(id(coin_clipper, city), skill(counterfeiting)).
+lifepath_provides(id(coin_clipper, city), skill(coin_wise)).
 
