@@ -53,6 +53,9 @@ satisfy_requirement(trait(TraitName), _, Lifepaths) :-
 satisfy_requirement(lifepath(Lifepath), _, Lifepaths) :-
     member(id(Lifepath, _), Lifepaths), !.
 
+satisfy_requirement(setting(Setting), _, Lifepaths) :-
+    member(id(_, Setting), Lifepaths), !.   
+
 satisfy_requirement(position(N), _, Lifepaths) :-
     length(Lifepaths, Len),
     Len =:= N - 1.
