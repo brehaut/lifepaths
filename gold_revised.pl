@@ -1309,9 +1309,71 @@ lifepath_provides(id(magnate, city), skill(bandit_wise)).
 lifepath(id(city_wife, city), page(bwg, 176), 6, [religious]).
 lifepath_provides(id(city_wife, city), skill(child_rearing)).
 lifepath_provides(id(city_wife, city), skill(husband_wise)).
+lifepath_provides(id(city_wife, city), flag(female)).
 
 
 %%% ----- NOBLE DWELLER SETTING ----- %%%
 
 
+lifepath(id(born_noble, noble), page(bwg, 176), 8, any_except([])).
+lifepath_provides(id(born_noble, noble), trait(mark_of_priviledge)).
+lifepath_provides(id(born_noble, noble), trait(your_lordship)).
+lifepath_provides(id(born_noble, noble), trait(your_eminence)).
+lifepath_provides(id(born_noble, noble), trait(your_grace)).
 
+lifepath(id(bastard, noble), page(bwg, 176), 6, [outcast, soldier, city, religious]).
+lifepath_requires(id(bastard, noble), [position(2)]).
+lifepath_provides(id(bastard, noble), trait(bastard)).
+lifepath_provides(id(bastard, noble), trait(bitter)).
+lifepath_provides(id(bastard, noble), trait(cynical)).
+lifepath_provides(id(bastard, noble), trait(happy_go_lucky)).
+lifepath_provides(id(bastard, noble), skill(family_secret_wise)).
+lifepath_provides(id(bastard, noble), skill(etiquette)).
+lifepath_provides(id(bastard, noble), skill(extortion)).
+
+lifepath(id(page, noble), page(bwg, 176), 6, [soldier, city, servitude]).
+lifepath_requires(id(page, noble), [position(2)]).
+lifepath_provides(id(page, noble), skill(riding)).
+lifepath_provides(id(page, noble), skill(brawling)).
+lifepath_provides(id(page, noble), skill(write)).
+lifepath_provides(id(page, noble), skill(read)).
+lifepath_provides(id(page, noble), skill(read)).
+lifepath_provides(id(page, noble), skill(sword)).
+lifepath_provides(id(page, noble), skill(etiquette)).
+
+lifepath(id(student, noble), page(bwg, 176), 4, [city, court, religious]).
+lifepath_provides(id(student, noble), skill(write)).
+lifepath_provides(id(student, noble), skill(read)).
+lifepath_provides(id(student, noble), skill(rule_of_law)).
+lifepath_provides(id(student, noble), skill(oratory)).
+lifepath_provides(id(student, noble), skill(doctrine)).
+lifepath_provides(id(student, noble), skill(etiquette)).
+
+lifepath(id(squire, noble), page(bwg, 176), 6, [soldier, city, servitude, outcast]).
+lifepath_requires(id(squire, noble), [lifepath(page)]).
+lifepath_requires(id(squire, noble), [setting(soldier)]).
+lifepath_provides(id(squire, noble), skill(sword)).
+lifepath_provides(id(squire, noble), skill(mounted_combat_training)).
+lifepath_provides(id(squire, noble), skill(shield_training)).
+lifepath_provides(id(squire, noble), skill(armor_training)).
+lifepath_provides(id(squire, noble), skill(lance)).
+lifepath_provides(id(squire, noble), skill(knives)).
+lifepath_provides(id(squire, noble), skill(crossbow)).
+
+lifepath(id(arcane_devotee, noble), page(bwg, 176), 6, [city, court, outcast]).
+lifepath_provides(id(arcane_devotee, noble), trait(base_humility)).
+lifepath_provides(id(arcane_devotee, noble), trait(gifted)).
+lifepath_provides(id(arcane_devotee, noble), skill(calligraphy)).
+lifepath_provides(id(arcane_devotee, noble), skill(write)).
+lifepath_provides(id(arcane_devotee, noble), skill(read)).
+lifepath_provides(id(arcane_devotee, noble), skill(research)).
+lifepath_provides(id(arcane_devotee, noble), skill(symbology)).
+
+lifepath(id(religious_acolyte, noble), page(bwg, 176), 5, [city, religious, court]).
+lifepath_provides(id(religious_acolyte, noble), trait(tonsured)).
+lifepath_provides(id(religious_acolyte, noble), trait(faithful)).
+lifepath_provides(id(religious_acolyte, noble), skill(doctrine)).
+lifepath_provides(id(religious_acolyte, noble), skill(bureaucracy)).
+lifepath_provides(id(religious_acolyte, noble), skill(write)).
+lifepath_provides(id(religious_acolyte, noble), skill(read)).
+lifepath_provides(id(religious_acolyte, noble), skill(etiquette)).
