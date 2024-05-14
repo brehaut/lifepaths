@@ -1112,3 +1112,90 @@ lifepath_provides(id(plumber, city), skills(engineer)).
 lifepath_provides(id(plumber, city), skills(coppersmith)).
 lifepath_provides(id(plumber, city), skills(waterworks)).
 
+lifepath(id(locksmith, city), page(bwg, 175), 8, [peasant, villager]).
+lifepath_requires(id(locksmith, city), [lifepath(journeyman)]).
+lifepath_provides(id(locksmith, city), trait(steady_hands)).
+lifepath_provides(id(locksmith, city), skills(locksmith)).
+lifepath_provides(id(locksmith, city), skills(lock_wise)).
+
+lifepath(id(jeweler, city), page(bwg, 175), 9, [villager, peasant]).
+lifepath_requires(id(jeweler, city), [lifepath(journeyman)]).
+lifepath_provides(id(jeweler, city), trait(guarded)).
+lifepath_provides(id(jeweler, city), skills(jewler)).
+lifepath_provides(id(jeweler, city), skills(lapidary)).
+lifepath_provides(id(jeweler, city), skills(appraisal)).
+lifepath_provides(id(jeweler, city), skills(falsehood)).
+
+lifepath(id(gaol_warden, city), page(bwg, 175), 4, [outcast, court, soldier, villager]).
+lifepath_requires(id(gaol_warden, city), [lifepath(born_noble)]).
+lifepath_requires(id(gaol_warden, city), [lifepath(merchant)]).
+lifepath_requires(id(gaol_warden, city), [flag(sergant)]).
+lifepath_requires(id(gaol_warden, city), [lifepath(man_at_arms)]).
+lifepath_requires(id(gaol_warden, city), [lifepath(judge)]).
+
+lifepath(id(advocate, city), page(bwg, 175), 6, [outcast, court, villager]).
+lifepath_requires(id(advocate, city), [lifepath(student)]).
+lifepath_requires(id(advocate, city), [lifepath(young_lady)]).
+lifepath_provides(id(advocate, city), trait(shrewd)).
+lifepath_provides(id(advocate, city), skill(rule_of_law)).
+lifepath_provides(id(advocate, city), skill(bureaucracy)).
+lifepath_provides(id(advocate, city), skill(persuasion)).
+lifepath_provides(id(advocate, city), skill(history)).
+lifepath_provides(id(advocate, city), skill(rhetoric)).
+
+lifepath(id(doctor, city), page(bwg, 175), 7, [outcast, court, villager]).
+lifepath_requires(id(doctor, city), [lifepath(student)]).
+lifepath_requires(id(doctor, city), [lifepath(young_lady)]).
+lifepath_provides(id(doctor, city), trait(frustrated)).
+lifepath_provides(id(doctor, city), skill(anatomy)).
+lifepath_provides(id(doctor, city), skill(apothecary)).
+lifepath_provides(id(doctor, city), skill(bloodletting)).
+lifepath_provides(id(doctor, city), skill(surgery)).
+lifepath_provides(id(doctor, city), skill(soothing_platitudes)).
+
+lifepath(id(physician, city), page(bwg, 175), 5, [court, soldier, peasant]).
+lifepath_requires(id(physician, city), [lifepath(midwife)]).
+lifepath_requires(id(physician, city), [lifepath(young_lady)]).
+lifepath_requires(id(physician, city), [lifepath(student)]).
+lifepath_provides(id(physician, city), skill(herbalism)).
+lifepath_provides(id(physician, city), skill(apothecary)).
+lifepath_provides(id(physician, city), skill(anatomy)).
+lifepath_provides(id(physician, city), skill(research)).
+lifepath_provides(id(physician, city), skill(herbalist_wise)).
+
+lifepath(id(hospital_warden, city), page(bwg, 175), 4, [outcast, servitude, religious]).
+lifepath_requires(id(hospital_warden, city), [setting(noble)]).
+lifepath_requires(id(hospital_warden, city), [setting(court)]).
+lifepath_requires(id(hospital_warden, city), [setting(religious)]).
+lifepath_provides(id(hospital_warden, city), trait(overworked)).
+lifepath_provides(id(hospital_warden, city), trait(generous)).
+lifepath_provides(id(hospital_warden, city), trait(venal)).
+lifepath_provides(id(hospital_warden, city), trait(hypochondriac)).
+lifepath_provides(id(hospital_warden, city), skill(administration)).
+lifepath_provides(id(hospital_warden, city), skill(beggar_wise)).
+lifepath_provides(id(hospital_warden, city), skill(vagrant_wise)).
+lifepath_provides(id(hospital_warden, city), skill(leper_wise)).
+
+lifepath(id(banker, city), page(bwg, 175), 10, [court, noble]).
+lifepath_requires(id(banker, city), [lifepath(merchant)]).
+lifepath_requires(id(banker, city), [lifepath(moneylender)]).
+lifepath_requires(id(banker, city), [lifepath(steward)]).
+lifepath_requires(id(banker, city), [lifepath(accountant)]).
+lifepath_requires(id(banker, city), [lifepath(chamberlain)]).
+lifepath_provides(id(banker, city), trait(intense)).
+lifepath_provides(id(banker, city), skill(accounting)).
+lifepath_provides(id(banker, city), skill(administration)).
+lifepath_provides(id(banker, city), skill(currency_wise)).
+
+lifepath(id(merchant, city), page(bwg, 175), 6, [villager, peasant, court]).
+lifepath_requires(id(merchant, city), [lifepath(master_craftsman)]).
+lifepath_requires(id(merchant, city), [lifepath(master_of_horses)]).
+lifepath_requires(id(merchant, city), [lifepath(master_of_house)]).
+lifepath_requires(id(merchant, city), [lifepath(moneylender)]).
+lifepath_requires(id(merchant, city), [lifepath(steward)]).
+lifepath_requires(id(merchant, city), [lifepath(jeweler)]).
+lifepath_requires(id(merchant, city), [lifepath(saddler)]).
+lifepath_requires(id(merchant, city), [lifepath(armorer)]).
+lifepath_requires(id(merchant, city), [lifepath(cobbler)]).
+lifepath_requires(id(merchant, city), [lifepath(courtier)]).
+lifepath_requires(id(merchant, city), [lifepath(chamberlain)]).
