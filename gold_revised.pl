@@ -1199,3 +1199,119 @@ lifepath_requires(id(merchant, city), [lifepath(armorer)]).
 lifepath_requires(id(merchant, city), [lifepath(cobbler)]).
 lifepath_requires(id(merchant, city), [lifepath(courtier)]).
 lifepath_requires(id(merchant, city), [lifepath(chamberlain)]).
+
+lifepath(id(sorcerer, city), page(bwg, 175), 6, [villager, outcast, court]).
+lifepath_requires(id(sorcerer, city), [lifepath(neophyte_sorcerer)]).
+lifepath_requires(id(sorcerer, city), [lifepath(arcane_devotee)]).
+lifepath_requires(id(sorcerer, city), [lifepath(weather_witch)]).
+lifepath_provides(id(sorcerer, city), skill(sorcery)).
+lifepath_provides(id(sorcerer, city), skill(enchanting)).
+lifepath_provides(id(sorcerer, city), skill(calligraphy)).
+
+lifepath(id(temple_priest, city), page(bwg, 175), 5, any_except([noble])).
+lifepath_requires(id(temple_priest, city), [lifepath(religious_acolyte)]).
+lifepath_requires(id(temple_priest, city), [lifepath(temple_acolyte)]).
+lifepath_requires(id(temple_priest, city), [lifepath(militar_order)]).
+lifepath_provides(id(temple_priest, city), trait(vested)).
+lifepath_provides(id(temple_priest, city), trait(aloof)).
+lifepath_provides(id(temple_priest, city), trait(imperious)).
+lifepath_provides(id(temple_priest, city), trait(strong_willed)).
+lifepath_provides(id(temple_priest, city), skill(church_politics_wise)).
+lifepath_provides(id(temple_priest, city), skill(doctrine)).
+lifepath_provides(id(temple_priest, city), skill(oratory)).
+lifepath_provides(id(temple_priest, city), skill(suasion)).
+lifepath_provides(id(temple_priest, city), skill(symbology)).
+
+lifepath(id(judge, city), page(bwg, 175), 10, [court, villager]).
+lifepath_requires(id(judge, city), [lifepath(town_official)]).
+lifepath_requires(id(judge, city), [lifepath(tax_collector)]).
+lifepath_requires(id(judge, city), [lifepath(bailiff)]).
+lifepath_requires(id(judge, city), [lifepath(justiciar)]).
+lifepath_provides(id(judge, city), trait(ornery)).
+lifepath_provides(id(judge, city), trait(quick_witted)).
+lifepath_provides(id(judge, city), skill(rule_of_law)).
+lifepath_provides(id(judge, city), skill(amercement)).
+lifepath_provides(id(judge, city), skill(criminal_wise)).
+lifepath_provides(id(judge, city), skill(interogation)).
+
+lifepath(id(municipal_minister, city), page(bwg, 175), 9, [villager, court, outcast]).
+lifepath_requires(id(municipal_minister, city), [lifepath(town_official)]).
+lifepath_requires(id(municipal_minister, city), [lifepath(scholar)]).
+lifepath_requires(id(municipal_minister, city), [lifepath(priest)]).
+lifepath_requires(id(municipal_minister, city), [lifepath(bishop)]).
+lifepath_requires(id(municipal_minister, city), [lifepath(captain)]).
+lifepath_requires(id(municipal_minister, city), [lifepath(sea_captain)]).
+lifepath_requires(id(municipal_minister, city), [lifepath(artisan)]).
+lifepath_requires(id(municipal_minister, city), [lifepath(master_craftsman)]).
+lifepath_requires(id(municipal_minister, city), [lifepath(knight)]).
+lifepath_requires(id(municipal_minister, city), [lifepath(courtier)]).
+lifepath_requires(id(municipal_minister, city), [lifepath(master_of_horses)]).
+
+lifepath(id(artisan, city), page(bwg, 175), 10, [soldier, court]).
+lifepath_requires(id(artisan, city), [lifepath(apprentice_artisan)]).
+lifepath_requires(id(artisan, city), [lifepath(engineer)]).
+lifepath_requires(id(artisan, city), [lifepath(master_craftsman)]).
+lifepath_provides(id(artisan, city), trait(self_confident)).
+lifepath_provides(id(artisan, city), skill(jargon)).
+lifepath_provides(id(artisan, city), skill(mason)).
+lifepath_provides(id(artisan, city), skill(engineer)).
+lifepath_provides(id(artisan, city), skill(architect)).
+
+lifepath(id(master_craftsman, city), page(bwg, 175), 10, [villager, court, soldier]).
+lifepath_requires(id(master_craftsman, city), [and(
+    lifepath(journeyman), 
+    or([
+        lifepath(locksmith),
+        lifepath(plumber),
+        lifepath(engraver),
+        lifepath(saddler),
+        lifepath(blacksmith),
+        lifepath(armorer),
+        lifepath(atilliator),
+        lifepath(cobbler),
+        lifepath(bowyer),
+        lifepath(taskmaster)
+    ])
+)]).
+lifepath_provides(id(master_craftsman, city), trait(ambitious)).
+lifepath_provides(id(master_craftsman, city), trait(charismatic)).
+lifepath_provides(id(master_craftsman, city), skill(craftsman_wise)).
+lifepath_provides(id(master_craftsman, city), skill(artisan_wise)).
+lifepath_provides(id(master_craftsman, city), skill(materials_wise)).
+lifepath_provides(id(master_craftsman, city), skill(tools_wise)).
+
+lifepath(id(bishop, city), page(bwg, 175), 12, [court, religious]).
+lifepath_requires(id(bishop, city), [lifepath(archpriest)]).
+lifepath_requires(id(bishop, city), [lifepath(canon)]).
+lifepath_requires(id(bishop, city), [lifepath(steward)]).
+lifepath_requires(id(bishop, city), [lifepath(chamberlain)]).
+lifepath_requires(id(bishop, city), [trait(your_grace)]).
+lifepath_provides(id(bishop, city), trait(holier)).
+lifepath_provides(id(bishop, city), skill(etiquette)).
+lifepath_provides(id(bishop, city), skill(bureaucracy)).
+lifepath_provides(id(bishop, city), skill(ritual)).
+lifepath_provides(id(bishop, city), skill(church_wise)).
+lifepath_provides(id(bishop, city), skill(city_wise)).
+
+lifepath(id(magnate, city), page(bwg, 175), 12, any_except([])).
+lifepath_requires(id(magnate, city), [lifepath(merchant)]).
+lifepath_requires(id(magnate, city), [lifepath(master_of_horses)]).
+lifepath_provides(id(magnate, city), trait(self_satisfied)).
+lifepath_provides(id(magnate, city), trait(greedy)).
+lifepath_provides(id(magnate, city), trait(affinity_for_business)).
+lifepath_provides(id(magnate, city), skill(administation)).
+lifepath_provides(id(magnate, city), skill(merchant_wise)).
+lifepath_provides(id(magnate, city), skill(court_wise)).
+lifepath_provides(id(magnate, city), skill(commodities_wise)).
+lifepath_provides(id(magnate, city), skill(pirates_wise)).
+lifepath_provides(id(magnate, city), skill(bandit_wise)).
+
+lifepath(id(city_wife, city), page(bwg, 176), 6, [religious]).
+lifepath_provides(id(city_wife, city), skill(child_rearing)).
+lifepath_provides(id(city_wife, city), skill(husband_wise)).
+
+
+%%% ----- NOBLE DWELLER SETTING ----- %%%
+
+
+
