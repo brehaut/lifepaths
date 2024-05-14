@@ -43,7 +43,17 @@ test(no_lifepaths_have_trait_intimidation_or_skill_intimidating, [fail]) :-
     lifepath_provides(_, trait(intimidation));
     lifepath_provides(_, skill(intimidating)).
 
-test(all_lifepaths_providing_flags_are_valid, all(F = [])) :-
-    findall(err(Id, flag(F)), (lifepath_requires(Id, [flag(F)]), \+ flag(F)), F).
+test(all_lifepaths_providing_flags_are_valid, all(ProvFails = [[]])) :-
+    findall(provider(Id, flag(F)), (
+        lifepath_provides(Id, flag(F)),
+        \+ flag(F)
+    ), ProvFails).
+
+test(all_lifepaths_requiring_flags_are_valid, all(ReqFails = [[]])) :-
+    findall(requirement(Id, flag(F)), (
+        lifepath_requires(Id, Reqs), 
+        member(flag(F), Reqs),
+        \+ flag(F)
+    ), ReqFails).
 
 :- end_tests(lifepaths). 
