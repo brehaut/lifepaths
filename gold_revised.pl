@@ -1540,3 +1540,103 @@ lifepath_provides(id(servant, court), trait(bored)).
 lifepath_provides(id(servant, court), skill(inconspicuous)).
 lifepath_provides(id(servant, court), skill(etiquette)).
 lifepath_provides(id(servant, court), skill(court_gossip_wise)).
+
+lifepath(id(nurse, court), page(bwg, 180), 6, [outcast, servitude, villager]).
+lifepath_provides(id(nurse, court), flag(female)).
+lifepath_provides(id(nurse, court), trait(maternal)).
+lifepath_provides(id(nurse, court), skill(child_rearing)).
+lifepath_provides(id(nurse, court), skill(etiquette)).
+lifepath_provides(id(nurse, court), skill(court_gossip_wise)).
+lifepath_provides(id(nurse, court), skill(field_dressing)).
+lifepath_provides(id(nurse, court), skill(child_wise)).
+
+lifepath(id(groom, court), page(bwg, 180), 4, [city, villager, soldier]).
+lifepath_provides(id(groom, court), skill(animal_husbandry)).
+lifepath_provides(id(groom, court), skill(riding)).
+lifepath_provides(id(groom, court), skill(mending)).
+lifepath_provides(id(groom, court), skill(border_wise)).
+lifepath_provides(id(groom, court), skill(road_wise)).
+
+lifepath(id(gardener, court), page(bwg, 180), 10, [city, servitude]).
+lifepath_provides(id(gardener, court), trait(earthy_smell)).
+lifepath_provides(id(gardener, court), trait(salt_of_the_earth)).
+lifepath_provides(id(gardener, court), trait(down_to_earth)).
+lifepath_provides(id(gardener, court), trait(affinity_for_plants)).
+lifepath_provides(id(gardener, court), skill(plant_wise)).
+lifepath_provides(id(gardener, court), skill(flower_wise)).
+lifepath_provides(id(gardener, court), skill(tree_wise)).
+lifepath_provides(id(gardener, court), skill(pest_wise)).
+lifepath_provides(id(gardener, court), skill(herbalism)).
+lifepath_provides(id(gardener, court), skill(farming)).
+lifepath_provides(id(gardener, court), skill(almanac)).
+
+lifepath(id(torturer, court), page(bwg, 180), 5, [outcast, servitude, soldier]).
+lifepath_provides(id(torturer, court), trait(unsavory_madman)).
+lifepath_provides(id(torturer, court), skill(interogation)).
+lifepath_provides(id(torturer, court), skill(torture)).
+lifepath_provides(id(torturer, court), skill(anatomy)).
+lifepath_provides(id(torturer, court), skill(torture_device_wise)).
+
+lifepath(id(forester, court), page(bwg, 180), 7, [peasant, soldier, villager, outcast]).
+lifepath_provides(id(forester, court), skill(observation)).
+lifepath_provides(id(forester, court), skill(orienteering)).
+lifepath_provides(id(forester, court), skill(foraging)).
+lifepath_provides(id(forester, court), skill(survival)).
+lifepath_provides(id(forester, court), skill(tracking)).
+lifepath_provides(id(forester, court), skill(trapper)).
+lifepath_provides(id(forester, court), skill(cudgel)).
+lifepath_provides(id(forester, court), skill(staff)).
+lifepath_provides(id(forester, court), skill(bow)).
+lifepath_provides(id(forester, court), skill(poacher_wise)).
+lifepath_provides(id(forester, court), skill(park_wise)).
+
+lifepath(id(student, court), page(bwg, 180), 4, [soldier, city, servitude, noble]).
+lifepath_provides(id(student, court), trait(dangerous)).
+lifepath_provides(id(student, court), trait(geometric)).
+lifepath_provides(id(student, court), skill(write)).
+lifepath_provides(id(student, court), skill(read)).
+lifepath_provides(id(student, court), skill(rule_of_law)).
+lifepath_provides(id(student, court), skill(oratory)).
+lifepath_provides(id(student, court), skill(doctrine)).
+lifepath_provides(id(student, court), skill(etiquette)).
+
+lifepath(id(page, court), page(bwg, 180), 6, [soldier, city, servitude, noble]).
+lifepath_requires(id(name, court), [position(2)]).
+lifepath_provides(id(page, court), skills(riding)).
+lifepath_provides(id(page, court), skills(brawling)).
+lifepath_provides(id(page, court), skills(write)).
+lifepath_provides(id(page, court), skills(read)).
+lifepath_provides(id(page, court), skills(sword)).
+
+lifepath(id(man_at_arms, court), page(bwg, 180), 6, [soldier, city, outcast]).
+lifepath_requires(id(man_at_arms, court), [lifepath(page)]).
+lifepath_requires(id(man_at_arms, court), [lifepath(squire)]).
+lifepath_requires(id(man_at_arms, court), [setting(soldier)]).
+lifepath_provides(id(man_at_arms, court), skill(mounted_combat_training)).
+lifepath_provides(id(man_at_arms, court), skill(shield_training)).
+lifepath_provides(id(man_at_arms, court), skill(armor_training)).
+lifepath_provides(id(man_at_arms, court), skill(brawling)).
+lifepath_provides(id(man_at_arms, court), skill(intimidation)).
+lifepath_provides(id(man_at_arms, court), skill(etiquette)).
+lifepath_provides(id(man_at_arms, court), skill(appropriate_weapons)).
+
+lifepath(id(falconer, court), page(bwg, 180), 5, [peasant, soldier, city]).
+lifepath_provides(id(falconer, court), trait(boaster)).
+lifepath_provides(id(falconer, court), trait(weird)).
+lifepath_provides(id(falconer, court), trait(birdie_talk)).
+lifepath_provides(id(falconer, court), skill(falconry)).
+lifepath_provides(id(falconer, court), skill(animal_husbandry)).
+lifepath_provides(id(falconer, court), skill(hunting)).
+
+lifepath(id(huntsman, court), page(bwg, 180), 5, [peasant, soldier]).
+lifepath_provides(id(huntsman, court), skill(hunting)).
+lifepath_provides(id(huntsman, court), skill(animal_husbandry)).
+lifepath_provides(id(huntsman, court), skill(forest_wise)).
+lifepath_provides(id(huntsman, court), skill(stealthy)).
+lifepath_provides(id(huntsman, court), skill(cooking)).
+lifepath_provides(id(huntsman, court), skill(tracking)).
+lifepath_provides(id(huntsman, court), skill(orienteering)).
+lifepath_provides(id(huntsman, court), skill(crossbow)).
+
+
+
