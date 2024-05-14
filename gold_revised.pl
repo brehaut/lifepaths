@@ -1200,7 +1200,7 @@ lifepath_requires(id(merchant, city), [lifepath(cobbler)]).
 lifepath_requires(id(merchant, city), [lifepath(courtier)]).
 lifepath_requires(id(merchant, city), [lifepath(chamberlain)]).
 
-lifepath(id(sorcerer, city), page(bwg, 175), 6, [villager, outcast, court]).
+lifepath(id(sorcerer, city), page(bwg, 176), 6, [villager, outcast, court]).
 lifepath_requires(id(sorcerer, city), [lifepath(neophyte_sorcerer)]).
 lifepath_requires(id(sorcerer, city), [lifepath(arcane_devotee)]).
 lifepath_requires(id(sorcerer, city), [lifepath(weather_witch)]).
@@ -1208,7 +1208,7 @@ lifepath_provides(id(sorcerer, city), skill(sorcery)).
 lifepath_provides(id(sorcerer, city), skill(enchanting)).
 lifepath_provides(id(sorcerer, city), skill(calligraphy)).
 
-lifepath(id(temple_priest, city), page(bwg, 175), 5, any_except([noble])).
+lifepath(id(temple_priest, city), page(bwg, 176), 5, any_except([noble])).
 lifepath_requires(id(temple_priest, city), [lifepath(religious_acolyte)]).
 lifepath_requires(id(temple_priest, city), [lifepath(temple_acolyte)]).
 lifepath_requires(id(temple_priest, city), [lifepath(militar_order)]).
@@ -1222,7 +1222,7 @@ lifepath_provides(id(temple_priest, city), skill(oratory)).
 lifepath_provides(id(temple_priest, city), skill(suasion)).
 lifepath_provides(id(temple_priest, city), skill(symbology)).
 
-lifepath(id(judge, city), page(bwg, 175), 10, [court, villager]).
+lifepath(id(judge, city), page(bwg, 176), 10, [court, villager]).
 lifepath_requires(id(judge, city), [lifepath(town_official)]).
 lifepath_requires(id(judge, city), [lifepath(tax_collector)]).
 lifepath_requires(id(judge, city), [lifepath(bailiff)]).
@@ -1234,7 +1234,7 @@ lifepath_provides(id(judge, city), skill(amercement)).
 lifepath_provides(id(judge, city), skill(criminal_wise)).
 lifepath_provides(id(judge, city), skill(interogation)).
 
-lifepath(id(municipal_minister, city), page(bwg, 175), 9, [villager, court, outcast]).
+lifepath(id(municipal_minister, city), page(bwg, 176), 9, [villager, court, outcast]).
 lifepath_requires(id(municipal_minister, city), [lifepath(town_official)]).
 lifepath_requires(id(municipal_minister, city), [lifepath(scholar)]).
 lifepath_requires(id(municipal_minister, city), [lifepath(priest)]).
@@ -1247,7 +1247,7 @@ lifepath_requires(id(municipal_minister, city), [lifepath(knight)]).
 lifepath_requires(id(municipal_minister, city), [lifepath(courtier)]).
 lifepath_requires(id(municipal_minister, city), [lifepath(master_of_horses)]).
 
-lifepath(id(artisan, city), page(bwg, 175), 10, [soldier, court]).
+lifepath(id(artisan, city), page(bwg, 176), 10, [soldier, court]).
 lifepath_requires(id(artisan, city), [lifepath(apprentice_artisan)]).
 lifepath_requires(id(artisan, city), [lifepath(engineer)]).
 lifepath_requires(id(artisan, city), [lifepath(master_craftsman)]).
@@ -1257,7 +1257,7 @@ lifepath_provides(id(artisan, city), skill(mason)).
 lifepath_provides(id(artisan, city), skill(engineer)).
 lifepath_provides(id(artisan, city), skill(architect)).
 
-lifepath(id(master_craftsman, city), page(bwg, 175), 10, [villager, court, soldier]).
+lifepath(id(master_craftsman, city), page(bwg, 176), 10, [villager, court, soldier]).
 lifepath_requires(id(master_craftsman, city), [and(
     lifepath(journeyman), 
     or([
@@ -1280,7 +1280,7 @@ lifepath_provides(id(master_craftsman, city), skill(artisan_wise)).
 lifepath_provides(id(master_craftsman, city), skill(materials_wise)).
 lifepath_provides(id(master_craftsman, city), skill(tools_wise)).
 
-lifepath(id(bishop, city), page(bwg, 175), 12, [court, religious]).
+lifepath(id(bishop, city), page(bwg, 176), 12, [court, religious]).
 lifepath_requires(id(bishop, city), [lifepath(archpriest)]).
 lifepath_requires(id(bishop, city), [lifepath(canon)]).
 lifepath_requires(id(bishop, city), [lifepath(steward)]).
@@ -1293,7 +1293,7 @@ lifepath_provides(id(bishop, city), skill(ritual)).
 lifepath_provides(id(bishop, city), skill(church_wise)).
 lifepath_provides(id(bishop, city), skill(city_wise)).
 
-lifepath(id(magnate, city), page(bwg, 175), 12, any_except([])).
+lifepath(id(magnate, city), page(bwg, 176), 12, any_except([])).
 lifepath_requires(id(magnate, city), [lifepath(merchant)]).
 lifepath_requires(id(magnate, city), [lifepath(master_of_horses)]).
 lifepath_provides(id(magnate, city), trait(self_satisfied)).
@@ -1306,22 +1306,22 @@ lifepath_provides(id(magnate, city), skill(commodities_wise)).
 lifepath_provides(id(magnate, city), skill(pirates_wise)).
 lifepath_provides(id(magnate, city), skill(bandit_wise)).
 
-lifepath(id(city_wife, city), page(bwg, 176), 6, [religious]).
+lifepath(id(city_wife, city), page(bwg, 177), 6, [religious]).
 lifepath_provides(id(city_wife, city), skill(child_rearing)).
 lifepath_provides(id(city_wife, city), skill(husband_wise)).
 lifepath_provides(id(city_wife, city), flag(female)).
 
 
-%%% ----- NOBLE DWELLER SETTING ----- %%%
+%%% ----- NOBLE SETTING ----- %%%
 
 
-lifepath(id(born_noble, noble), page(bwg, 176), 8, any_except([])).
+lifepath(id(born_noble, noble), page(bwg, 177), 8, any_except([])).
 lifepath_provides(id(born_noble, noble), trait(mark_of_priviledge)).
 lifepath_provides(id(born_noble, noble), trait(your_lordship)).
 lifepath_provides(id(born_noble, noble), trait(your_eminence)).
 lifepath_provides(id(born_noble, noble), trait(your_grace)).
 
-lifepath(id(bastard, noble), page(bwg, 176), 6, [outcast, soldier, city, religious]).
+lifepath(id(bastard, noble), page(bwg, 177), 6, [outcast, soldier, city, religious]).
 lifepath_requires(id(bastard, noble), [position(2)]).
 lifepath_provides(id(bastard, noble), trait(bastard)).
 lifepath_provides(id(bastard, noble), trait(bitter)).
@@ -1331,7 +1331,7 @@ lifepath_provides(id(bastard, noble), skill(family_secret_wise)).
 lifepath_provides(id(bastard, noble), skill(etiquette)).
 lifepath_provides(id(bastard, noble), skill(extortion)).
 
-lifepath(id(page, noble), page(bwg, 176), 6, [soldier, city, servitude]).
+lifepath(id(page, noble), page(bwg, 177), 6, [soldier, city, servitude]).
 lifepath_requires(id(page, noble), [position(2)]).
 lifepath_provides(id(page, noble), skill(riding)).
 lifepath_provides(id(page, noble), skill(brawling)).
@@ -1341,7 +1341,7 @@ lifepath_provides(id(page, noble), skill(read)).
 lifepath_provides(id(page, noble), skill(sword)).
 lifepath_provides(id(page, noble), skill(etiquette)).
 
-lifepath(id(student, noble), page(bwg, 176), 4, [city, court, religious]).
+lifepath(id(student, noble), page(bwg, 177), 4, [city, court, religious]).
 lifepath_provides(id(student, noble), skill(write)).
 lifepath_provides(id(student, noble), skill(read)).
 lifepath_provides(id(student, noble), skill(rule_of_law)).
@@ -1349,7 +1349,7 @@ lifepath_provides(id(student, noble), skill(oratory)).
 lifepath_provides(id(student, noble), skill(doctrine)).
 lifepath_provides(id(student, noble), skill(etiquette)).
 
-lifepath(id(squire, noble), page(bwg, 176), 6, [soldier, city, servitude, outcast]).
+lifepath(id(squire, noble), page(bwg, 177), 6, [soldier, city, servitude, outcast]).
 lifepath_requires(id(squire, noble), [lifepath(page)]).
 lifepath_requires(id(squire, noble), [setting(soldier)]).
 lifepath_provides(id(squire, noble), skill(sword)).
@@ -1360,7 +1360,7 @@ lifepath_provides(id(squire, noble), skill(lance)).
 lifepath_provides(id(squire, noble), skill(knives)).
 lifepath_provides(id(squire, noble), skill(crossbow)).
 
-lifepath(id(arcane_devotee, noble), page(bwg, 176), 6, [city, court, outcast]).
+lifepath(id(arcane_devotee, noble), page(bwg, 177), 6, [city, court, outcast]).
 lifepath_provides(id(arcane_devotee, noble), trait(base_humility)).
 lifepath_provides(id(arcane_devotee, noble), trait(gifted)).
 lifepath_provides(id(arcane_devotee, noble), skill(calligraphy)).
@@ -1369,7 +1369,7 @@ lifepath_provides(id(arcane_devotee, noble), skill(read)).
 lifepath_provides(id(arcane_devotee, noble), skill(research)).
 lifepath_provides(id(arcane_devotee, noble), skill(symbology)).
 
-lifepath(id(religious_acolyte, noble), page(bwg, 176), 5, [city, religious, court]).
+lifepath(id(religious_acolyte, noble), page(bwg, 177), 5, [city, religious, court]).
 lifepath_provides(id(religious_acolyte, noble), trait(tonsured)).
 lifepath_provides(id(religious_acolyte, noble), trait(faithful)).
 lifepath_provides(id(religious_acolyte, noble), skill(doctrine)).
@@ -1378,7 +1378,7 @@ lifepath_provides(id(religious_acolyte, noble), skill(write)).
 lifepath_provides(id(religious_acolyte, noble), skill(read)).
 lifepath_provides(id(religious_acolyte, noble), skill(etiquette)).
 
-lifepath(id(young_lady, noble), page(bwg, 177), 10, [city, court, religious]).
+lifepath(id(young_lady, noble), page(bwg, 178), 10, [city, court, religious]).
 lifepath_requires(id(young_lady, noble), [position(2)]).
 lifepath_requires(id(young_lady, noble), [position(3), not(lifepath(young_lady))]).
 lifepath_provides(id(young_lady, noble), flag(female)).
@@ -1393,7 +1393,7 @@ lifepath_provides(id(young_lady, noble), skill(field_dressing)).
 lifepath_provides(id(young_lady, noble), skill(apothecary)).
 lifepath_provides(id(young_lady, noble), skill(doctrine)).
 
-lifepath(id(knight, noble), page(bwg, 177), 5, [soldier, city, outcast, religious]).
+lifepath(id(knight, noble), page(bwg, 178), 5, [soldier, city, outcast, religious]).
 lifepath_requires(id(knight, noble), [lifepath(squire)]).
 lifepath_requires(id(knight, noble), [lifepath(cavalryman)]).
 lifepath_provides(id(knight, noble), trait(sworn_homage)).
@@ -1403,7 +1403,7 @@ lifepath_provides(id(knight, noble), skill(intimidation)).
 lifepath_provides(id(knight, noble), skill(hunting)).
 lifepath_provides(id(knight, noble), skill(conspicuous)).
 
-lifepath(id(lady, noble), page(bwg, 177), 5, [city, outcast, religious, court]).
+lifepath(id(lady, noble), page(bwg, 178), 5, [city, outcast, religious, court]).
 lifepath_requires(id(lady, noble), [lifepath(young_lady)]).
 lifepath_requires(id(lady, noble), [lifepath(courtier)]).
 lifepath_requires(id(lady, noble), [lifepath(knight)]).
@@ -1420,7 +1420,7 @@ lifepath_provides(id(lady, noble), skill(estate_wise)).
 lifepath_provides(id(lady, noble), skill(staff_wise)).
 lifepath_provides(id(lady, noble), skill(court_wise)).
 
-lifepath(id(lord, noble), page(bwg, 177), 7, [soldier, court, city]).
+lifepath(id(lord, noble), page(bwg, 178), 7, [soldier, court, city]).
 lifepath_requires(id(lord, noble), [lifepath(knight)]).
 lifepath_requires(id(lord, noble), [trait(your_lordship)]).
 lifepath_provides(id(lord, noble), skill(hunting)).
@@ -1429,13 +1429,13 @@ lifepath_provides(id(lord, noble), skill(sing)).
 lifepath_provides(id(lord, noble), skill(falconry)).
 lifepath_provides(id(lord, noble), skill(estate_management)).
 
-lifepath(id(dame, noble), page(bwg, 177), 7, [city, court, outcast, religious]).
+lifepath(id(dame, noble), page(bwg, 178), 7, [city, court, outcast, religious]).
 lifepath_requires(id(dame, noble), [lifepath(lady)]).
 lifepath_requires(id(dame, noble), [lifepath(city_wife)]).
 lifepath_provides(id(dame, noble), skill(estate_management)).
 lifepath_provides(id(dame, noble), skill(noble_wise)).
 
-lifepath(id(baron, noble), page(bwg, 177), 8, [court, soldier]).
+lifepath(id(baron, noble), page(bwg, 178), 8, [court, soldier]).
 lifepath_requires(id(baron, noble), [and([lifepath(knight), trait(your_lordship)])]).
 lifepath_requires(id(baron, noble), [lifepath(magnate)]).
 lifepath_requires(id(baron, noble), [lifepath(master_of_horses)]).
@@ -1449,7 +1449,7 @@ lifepath_provides(id(baron, noble), trait(pompous)).
 lifepath_provides(id(baron, noble), trait(sharp_dresser)).
 lifepath_provides(id(baron, noble), trait(callous)).
 
-lifepath(id(viscount, noble), page(bwg, 177), 9, [court, soldier]).
+lifepath(id(viscount, noble), page(bwg, 178), 9, [court, soldier]).
 lifepath_requires(id(viscount, noble), [and([lifepath(knight), trait(your_eminence)])]).
 lifepath_requires(id(viscount, noble), [lifepath(magnate)]).
 lifepath_requires(id(viscount, noble), [lifepath(baron)]).
@@ -1460,3 +1460,43 @@ lifepath_provides(id(viscount, noble), trait(regal_bearing)).
 lifepath_provides(id(viscount, noble), trait(pompous)).
 lifepath_provides(id(viscount, noble), trait(sharp_dresser)).
 lifepath_provides(id(viscount, noble), trait(callous)).
+
+lifepath(id(count, noble), page(bwg, 179), 10, [court, soldier]).
+lifepath_requires(id(count, noble), [and([lifepath(knight), trait(your_eminence)])]).
+lifepath_requires(id(count, noble), [lifepath(magnate)]).
+lifepath_requires(id(count, noble), [lifepath(constable)]).
+lifepath_requires(id(count, noble), [lifepath(justiciar)]).
+lifepath_provides(id(count, noble), trait(noblesse_oblige)).
+lifepath_provides(id(count, noble), trait(regal_bearing)).
+lifepath_provides(id(count, noble), trait(pompous)).
+lifepath_provides(id(count, noble), trait(sharp_dresser)).
+lifepath_provides(id(count, noble), trait(callous)).
+
+lifepath(id(duke, noble), page(bwg, 179), 10, [court, soldier]).
+lifepath_requires(id(duke, noble), [and([lifepath(knight), trait(your_grace)])]).
+lifepath_provides(id(duke, noble), trait(noblesse_oblige)).
+lifepath_provides(id(duke, noble), trait(regal_bearing)).
+lifepath_provides(id(duke, noble), trait(pompous)).
+lifepath_provides(id(duke, noble), trait(sharp_dresser)).
+lifepath_provides(id(duke, noble), trait(callous)).
+
+lifepath(id(noble_prince, noble), page(bwg, 179), 10, [court, soldier]).
+lifepath_requires(id(noble_prince, noble), [and([
+    or(lifepath(duke), lifepath(knight)),
+    trait(your_grace)
+])]).
+lifepath_provides(id(noble_prince, noble), trait(noblesse_oblige)).
+lifepath_provides(id(noble_prince, noble), trait(regal_bearing)).
+lifepath_provides(id(noble_prince, noble), trait(pompous)).
+lifepath_provides(id(noble_prince, noble), trait(sharp_dresser)).
+lifepath_provides(id(noble_prince, noble), trait(callous)).
+
+lifepath(id(prince_of_the_blood, noble), page(bwg, 179), 20, [court, soldier, religious]).
+lifepath_requires(id(prince_of_the_blood, noble), [and([flag(gm_approval), trait(your_grace)])]).
+lifepath_provides(id(prince_of_the_blood, noble), trait(born_to_be_king)).
+lifepath_provides(id(prince_of_the_blood, noble), trait(noblesse_oblige)).
+lifepath_provides(id(prince_of_the_blood, noble), trait(regal_bearing)).
+lifepath_provides(id(prince_of_the_blood, noble), trait(pompous)).
+lifepath_provides(id(prince_of_the_blood, noble), trait(sharp_dresser)).
+lifepath_provides(id(prince_of_the_blood, noble), trait(callous)).
+
