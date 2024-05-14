@@ -4,7 +4,8 @@
     lifepath/4,
     lifepath_requires/2,
     lifepath_provides/2,
-    book/2
+    book/2,
+    flag/1
     ]
 ).
 
@@ -908,3 +909,105 @@ lifepath_provides(id(alewife, city), skill(drinking)).
 lifepath_provides(id(alewife, city), skill(administration)).
 lifepath_provides(id(alewife, city), skill(drunk_husband_wise)).
 
+lifepath(id(conner, city), page(bwg, 173), 6, [court, peasant, villager]).
+lifepath_provides(id(conner, city), trait(red_cheeks)).
+lifepath_provides(id(conner, city), trait(drunk)).
+lifepath_provides(id(conner, city), skill(brewer)).
+lifepath_provides(id(conner, city), skill(mending)).
+lifepath_provides(id(conner, city), skill(drinking)).
+lifepath_provides(id(conner, city), skill(cooper)).
+lifepath_provides(id(conner, city), skill(beer_wise)).
+
+lifepath(id(clerk, city), page(bwg, 173), 4, [villager, outcast, soldier]).
+lifepath_provides(id(clerk, city), skill(bureaucracy)).
+lifepath_provides(id(clerk, city), skill(write)).
+lifepath_provides(id(clerk, city), skill(read)).
+lifepath_provides(id(clerk, city), skill(accounting)).
+lifepath_provides(id(clerk, city), skill(bribe_wise)).
+lifepath_provides(id(clerk, city), skill(paperwork_wise)).
+
+lifepath(id(scribe, city), page(bwg, 173), 7, [villager, peasant]).
+lifepath_requires(id(scribe, city), [lifepath(student)]).
+lifepath_requires(id(scribe, city), [lifepath(clerk)]).
+lifepath_requires(id(scribe, city), [flag(acolyte)]).
+lifepath_provides(id(scribe, city), trait(near_sighted)).
+lifepath_provides(id(scribe, city), trait(cramped_hands)).
+lifepath_provides(id(scribe, city), skill(write)).
+lifepath_provides(id(scribe, city), skill(illuminations)).
+lifepath_provides(id(scribe, city), skill(foreign_languages)).
+lifepath_provides(id(scribe, city), skill(handwriting_wise)).
+
+lifepath(id(accountant, city), page(bwg, 173), 10, [villager, peasant]).
+lifepath_requires(id(accountant, city), [lifepath(clerk)]).
+lifepath_requires(id(accountant, city), [lifepath(young_lady)]).
+lifepath_requires(id(accountant, city), [lifepath(student)]).
+lifepath_provides(id(accountant, city), trait(bored)).
+lifepath_provides(id(accountant, city), skill(accounting)).
+lifepath_provides(id(accountant, city), skill(bureaucracy)).
+lifepath_provides(id(accountant, city), skill(extortion)).
+lifepath_provides(id(accountant, city), skill(ledger_wise)).
+lifepath_provides(id(accountant, city), skill(graft_wise)).
+
+lifepath(id(scholar, city), page(bwg, 173), 10, [villager, outcast, court]).
+lifepath_requires(id(scholar, city), [lifepath(scribe)]).
+lifepath_requires(id(scholar, city), [lifepath(thinker)]).
+lifepath_requires(id(scholar, city), [lifepath(archivist)]).
+lifepath_requires(id(scholar, city), [lifepath(interpreter)]).
+lifepath_requires(id(scholar, city), [lifepath(custodian)]).
+lifepath_requires(id(scholar, city), [lifepath(bishop)]).
+lifepath_requires(id(scholar, city), [skill(sorcery)]).
+lifepath_provides(id(scholar, city), trait(know_it_all)).
+lifepath_provides(id(scholar, city), trait(bookworm)).
+lifepath_provides(id(scholar, city), skill(read)).
+lifepath_provides(id(scholar, city), skill(research)).
+lifepath_provides(id(scholar, city), skill(history)).
+lifepath_provides(id(scholar, city), skill(philosophy)).
+lifepath_provides(id(scholar, city), skill(symbology)).
+lifepath_provides(id(scholar, city), skill(instruction)).
+lifepath_provides(id(scholar, city), skill(illuminations)).
+lifepath_provides(id(scholar, city), skill(foreign_languages)).
+lifepath_provides(id(scholar, city), skill(ancient_languages)).
+
+lifepath(id(moneylender, city), page(bwg, 173), 8, [villager, peasant, outcast]).
+lifepath_provides(id(moneylender, city), trait(penny_wise)).
+lifepath_provides(id(moneylender, city), skill(currency_wise)).
+lifepath_provides(id(moneylender, city), skill(haggling)).
+lifepath_provides(id(moneylender, city), skill(accounting)).
+
+lifepath(id(tax_collector, city), page(bwg, 173), 5, [villager, peasant, outcast]).
+lifepath_requires(id(tax_collector, city), [not(position(2))]).
+lifepath_provides(id(tax_collector, city), trait(hard_hearted)).
+lifepath_provides(id(tax_collector, city), skill(intimidation)).
+lifepath_provides(id(tax_collector, city), skill(accounting)).
+lifepath_provides(id(tax_collector, city), skill(haggling)).
+lifepath_provides(id(tax_collector, city), skill(interrogation)).
+
+lifepath(id(taskmaster, city), page(bwg, 173), 6, [villager, outcast, soldier]).
+lifepath_requires(id(taskmaster, city), [not(position(2))]).
+lifepath_provides(id(taskmaster, city), trait(intimidating)).
+lifepath_provides(id(taskmaster, city), trait(dreadful)).
+lifepath_provides(id(taskmaster, city), skill(intimidation)).
+lifepath_provides(id(taskmaster, city), skill(brawling)).
+lifepath_provides(id(taskmaster, city), skill(sing)).
+lifepath_provides(id(taskmaster, city), skill(conspicuous)).
+lifepath_provides(id(taskmaster, city), skill(laborer_wise)).
+
+lifepath(id(mercenary_captain, city), page(bwg, 173), 5, [soldier, sea, outcast]).
+lifepath_requires(id(mercenary_captain, city), [lifepath(sailor)]).
+lifepath_requires(id(mercenary_captain, city), [lifepath(pirate)]).
+lifepath_requires(id(mercenary_captain, city), [lifepath(knight)]).
+lifepath_provides(id(mercenary_captain, city), trait(predatory)).
+lifepath_provides(id(mercenary_captain, city), skill(pilot)).
+lifepath_provides(id(mercenary_captain, city), skill(fat_merchant_wise)).
+lifepath_provides(id(mercenary_captain, city), skill(sword)).
+lifepath_provides(id(mercenary_captain, city), skill(climbing)).
+lifepath_provides(id(mercenary_captain, city), skill(intimidation)).
+
+lifepath(id(city_guard, city), page(bwg, 173), 5, [soldier, outcast]).
+lifepath_provides(id(city_guard, city), flag(guard)).
+lifepath_provides(id(city_guard, city), trait(drunk)).
+lifepath_provides(id(city_guard, city), skill(brawling)).
+lifepath_provides(id(city_guard, city), skill(intimidation)).
+lifepath_provides(id(city_guard, city), skill(drinking)).
+lifepath_provides(id(city_guard, city), skill(appropriate_weapons)).
+lifepath_provides(id(city_guard, city), skill(armor)).

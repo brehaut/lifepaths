@@ -39,4 +39,11 @@ test(all_lifepath_requirements_have_valid_lifepaths, all(Lp = [])) :-
     member(Lp, LpNames),
     \+ lifepath(Lp).
 
+test(no_lifepaths_have_trait_intimidation_or_skill_intimidating, [fail]) :-
+    lifepath_provides(_, trait(intimidation));
+    lifepath_provides(_, skill(intimidating)).
+
+test(all_lifepaths_providing_flags_are_valid) :-
+    findall(err(Id, Flag), (lifepath_provides(Id, flag(Flag)), \+ flag(Flag)), []).
+
 :- end_tests(lifepaths). 
