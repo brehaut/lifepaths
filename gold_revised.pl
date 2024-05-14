@@ -1500,3 +1500,43 @@ lifepath_provides(id(prince_of_the_blood, noble), trait(pompous)).
 lifepath_provides(id(prince_of_the_blood, noble), trait(sharp_dresser)).
 lifepath_provides(id(prince_of_the_blood, noble), trait(callous)).
 
+
+%%% ----- NOBLE COURT SUBSETTING ----- %%%
+
+
+lifepath(id(minstrel, court), page(bwg, 179), 4, [city, outcast, villager]).
+lifepath_provides(id(minstrel, court), trait(recondite)).
+lifepath_provides(id(minstrel, court), skill(poetry)).
+lifepath_provides(id(minstrel, court), skill(sing)).
+lifepath_provides(id(minstrel, court), skill(musical_instrument)).
+
+lifepath(id(court_jester, court), page(bwg, 179), 5, [outcast, servitude]).
+lifepath_provides(id(court_jester, court), trait(scapegoat)).
+lifepath_provides(id(court_jester, court), trait(aura_of_innocence)).
+lifepath_provides(id(court_jester, court), skills(sing)).
+lifepath_provides(id(court_jester, court), skills(sleight_of_hand)).
+lifepath_provides(id(court_jester, court), skills(climbing)).
+lifepath_provides(id(court_jester, court), skills(conspicuous)).
+lifepath_provides(id(court_jester, court), skills(throwing)).
+lifepath_provides(id(court_jester, court), skills(ugly_truth)).
+
+lifepath(id(court_artist, court), page(bwg, 179), 6, [city, outcast]).
+lifepath_requires(id(court_artist, court), [lifepath(court_jester)]).
+lifepath_requires(id(court_artist, court), [lifepath(painter)]).
+lifepath_requires(id(court_artist, court), [lifepath(thinker)]).
+lifepath_requires(id(court_artist, court), [lifepath(scholar)]).
+lifepath_requires(id(court_artist, court), [lifepath(sculptor)]).
+lifepath_provides(id(court_artist, court), trait(romantic)).
+lifepath_provides(id(court_artist, court), skill(sculpture)).
+lifepath_provides(id(court_artist, court), skill(painting)).
+lifepath_provides(id(court_artist, court), skill(engraving)).
+lifepath_provides(id(court_artist, court), skill(seduction)).
+lifepath_provides(id(court_artist, court), skill(genius_wise)).
+
+lifepath(id(servant, court), page(bwg, 179), 6, [outcast, servitude]).
+lifepath_provides(id(servant, court), trait(veneer_of_obedience)).
+lifepath_provides(id(servant, court), trait(lifting_heavy_things)).
+lifepath_provides(id(servant, court), trait(bored)).
+lifepath_provides(id(servant, court), skill(inconspicuous)).
+lifepath_provides(id(servant, court), skill(etiquette)).
+lifepath_provides(id(servant, court), skill(court_gossip_wise)).
