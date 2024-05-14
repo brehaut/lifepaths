@@ -826,3 +826,85 @@ lifepath_provides(id(sculptor, city), skill(blacksmith)).
 lifepath_provides(id(sculptor, city), skill(carpentry)).
 lifepath_provides(id(sculptor, city), skill(stone_wise)).
 
+lifepath(id(painter, city), page(bwg, 172), 5, [outcast, peasant, court]).
+lifepath_provides(id(painter, city), trait(odd)).
+lifepath_provides(id(painter, city), trait(perspective)).
+lifepath_provides(id(painter, city), trait(greater_muse)).
+lifepath_provides(id(painter, city), skill(painting)).
+lifepath_provides(id(painter, city), skill(illuminations)).
+lifepath_provides(id(painter, city), skill(anatomy)).
+lifepath_provides(id(painter, city), skill(paint_wise)).
+
+lifepath(id(composer, city), page(bwg, 172), 4, [outcast, peasant, court]).
+lifepath_provides(id(composer, city), trait(esoteric)).
+lifepath_provides(id(composer, city), trait(remote)).
+lifepath_provides(id(composer, city), trait(deaf)).
+lifepath_provides(id(composer, city), skill(music_composition)).
+lifepath_provides(id(composer, city), skill(poetry)).
+lifepath_provides(id(composer, city), skill(sing)).
+lifepath_provides(id(composer, city), skill(musical_instrument)).
+
+lifepath(id(dramaturge, city), page(bwg, 172), 4, [outcast, peasant, court]).
+lifepath_provides(id(dramaturge, city), trait(other_life)).
+lifepath_provides(id(dramaturge, city), skill(playwright)).
+lifepath_provides(id(dramaturge, city), skill(composition)).
+lifepath_provides(id(dramaturge, city), skill(write)).
+lifepath_provides(id(dramaturge, city), skill(drama_wise)).
+
+lifepath(id(performer, city), page(bwg, 172), 3, [villager, outcast, soldier]).
+lifepath_provides(id(performer, city), trait(colorful)).
+lifepath_provides(id(performer, city), trait(acting)).
+lifepath_provides(id(performer, city), trait(persuasion)).
+lifepath_provides(id(performer, city), trait(sing)).
+lifepath_provides(id(performer, city), trait(falsehood)).
+lifepath_provides(id(performer, city), trait(conspicuous)).
+lifepath_provides(id(performer, city), trait(sleight_of_hand)).
+lifepath_provides(id(performer, city), trait(musical_instrument)).
+
+lifepath(id(tinker, city), page(bwg, 172), 7, [villager, peasant, outcast]).
+lifepath_provides(id(tinker, city), skill(mending)).
+lifepath_provides(id(tinker, city), skill(scavenging)).
+lifepath_provides(id(tinker, city), skill(junk_wise)).
+
+lifepath(id(coalman, city), page(bwg, 172), 4, [servitude, peasant, outcast, soldier]).
+lifepath_provides(id(coalman, city), trait(hacking_cough)).
+lifepath_provides(id(coalman, city), skill(firebuilding)).
+lifepath_provides(id(coalman, city), skill(streetwise)).
+lifepath_provides(id(coalman, city), skill(charcoal_wise)).
+lifepath_provides(id(coalman, city), skill(haggling)).
+
+lifepath(id(seamstress, city), page(bwg, 172), 5, [villager, peasant]).
+lifepath_provides(id(seamstress, city), trait(fretful)).
+lifepath_provides(id(seamstress, city), trait(sharp_dresser)).
+lifepath_provides(id(seamstress, city), skill(sewing)).
+lifepath_provides(id(seamstress, city), skill(embroidery)).
+lifepath_provides(id(seamstress, city), skill(clothing_wise)).
+lifepath_provides(id(seamstress, city), skill(fashion_wise)).
+
+lifepath(id(barkeep, city), page(bwg, 172), 5, [villager, peasant]).
+lifepath_provides(id(barkeep, city), trait(good_listener)).
+lifepath_provides(id(barkeep, city), skill(drink_wise)).
+lifepath_provides(id(barkeep, city), skill(persuasion)).
+
+lifepath(id(shopkeeper, city), page(bwg, 172), 6, [villager, peasant]).
+lifepath_provides(id(shopkeeper, city), skill(merchant_wise)).
+lifepath_provides(id(shopkeeper, city), skill(haggling)).
+lifepath_provides(id(shopkeeper, city), skill(accounting)).
+lifepath_provides(id(shopkeeper, city), skill(observation)).
+
+lifepath(id(baker, city), page(bwg, 172), 6, [villager, peasant]).
+lifepath_provides(id(baker, city), trait(floury)).
+lifepath_provides(id(baker, city), skill(baking)).
+lifepath_provides(id(baker, city), skill(cooking)).
+lifepath_provides(id(baker, city), skill(daily_bread_wise)).
+lifepath_provides(id(baker, city), skill(sweet_tooth_wise)).
+
+lifepath(id(alewife, city), page(bwg, 172), 6, [court, peasant, villager]).
+lifepath_requires(id(alewife, city), [flag(female)]).
+lifepath_provides(id(alewife, city), trait(domineering_presence)).
+lifepath_provides(id(alewife, city), skill(brewer)).
+lifepath_provides(id(alewife, city), skill(cooking)).
+lifepath_provides(id(alewife, city), skill(drinking)).
+lifepath_provides(id(alewife, city), skill(administration)).
+lifepath_provides(id(alewife, city), skill(drunk_husband_wise)).
+
