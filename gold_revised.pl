@@ -49,6 +49,7 @@ setting(outcast, human).
 flag(female).
 flag(acolyte).
 flag(guard).
+flag(sergant).
 
 % lifepath(id(LifepathName, SettingName), PageNumber, Years, Leads)
 % lifepath defines a basic lifepath: its name, its setting (which transitively defines a stock), 
@@ -395,6 +396,8 @@ lifepath_provides(id(village_sergeant, villager), skill(shield_training)).
 lifepath_provides(id(village_sergeant, villager), skill(armor_training)).
 lifepath_provides(id(village_sergeant, villager), skill(bribe_wise)).
 lifepath_provides(id(village_sergeant, villager), skill(wealthy_wise)).
+lifepath_provides(id(village_sergeant, villager), flag(guard)).
+lifepath_provides(id(village_sergeant, villager), flag(sergant)).
 
 lifepath(id(corrupt_sergeant, villager), page(bwg, 167), 5, [soldier, servitude, court]).
 lifepath_requires(id(corrupt_sergeant, villager), [lifepath(village_tough)]).
@@ -410,6 +413,8 @@ lifepath_provides(id(corrupt_sergeant, villager), skill(armor_training)).
 lifepath_provides(id(corrupt_sergeant, villager), skill(bribe_wise)).
 lifepath_provides(id(corrupt_sergeant, villager), skill(wealthy_wise)).
 lifepath_provides(id(corrupt_sergeant, villager), skill(criminal_wise)).
+lifepath_provides(id(corrupt_sergeant, villager), flag(guard)).
+lifepath_provides(id(corrupt_sergeant, villager), flag(sergant)).
 
 lifepath(id(tailor, villager), page(bwg, 167), 5, [city, peasant]).
 lifepath_provides(id(tailor, villager), trait(frippery)).
@@ -1011,3 +1016,99 @@ lifepath_provides(id(city_guard, city), skill(intimidation)).
 lifepath_provides(id(city_guard, city), skill(drinking)).
 lifepath_provides(id(city_guard, city), skill(appropriate_weapons)).
 lifepath_provides(id(city_guard, city), skill(armor)).
+
+lifepath(id(sergant_at_arms, city), page(bwg, 174), 6, [soldier, outcast]).
+lifepath_requires(id(sergant_at_arms, city), [flag(guard)]).
+lifepath_requires(id(sergant_at_arms, city), [flag(sergant)]).
+lifepath_requires(id(sergant_at_arms, city), [lifepath(marine)]).
+lifepath_requires(id(sergant_at_arms, city), [lifepath(first_mate)]).
+lifepath_requires(id(sergant_at_arms, city), [lifepath(foot_soldier)]).
+lifepath_requires(id(sergant_at_arms, city), [lifepath(freebooter)]).
+lifepath_requires(id(sergant_at_arms, city), [lifepath(squire)]).
+lifepath_requires(id(sergant_at_arms, city), [lifepath(man_at_arms)]).
+lifepath_requires(id(sergant_at_arms, city), [lifepath(cavalryman)]).
+lifepath_provides(id(sergant_at_arms, city), trait(overworked)).
+lifepath_provides(id(sergant_at_arms, city), skill(intimidation)).
+lifepath_provides(id(sergant_at_arms, city), skill(appropriate_weapons)).
+lifepath_provides(id(sergant_at_arms, city), skill(armor)).
+lifepath_provides(id(sergant_at_arms, city), skill(field_dressing)).
+
+lifepath(id(guard_captain, city), page(bwg, 174), 6, [soldier, outcast, court]).
+lifepath_requires(id(guard_captain, city), [lifepath(knight)]).
+lifepath_requires(id(guard_captain, city), [lifepath(captain)]).
+lifepath_requires(id(guard_captain, city), [flag(sergant)]).
+lifepath_provides(id(guard_captain, city), trait(exasperated)).
+lifepath_provides(id(guard_captain, city), skill(etiquette)).
+lifepath_provides(id(guard_captain, city), skill(riding)).
+lifepath_provides(id(guard_captain, city), skill(intimidation)).
+lifepath_provides(id(guard_captain, city), skill(command)).
+lifepath_provides(id(guard_captain, city), skill(appropriate_weapons)).
+
+lifepath(id(apprentice, city), page(bwg, 174), 7, [villager, peasant, soldier, sea]).
+lifepath_provides(id(apprentice, city), trait(broken_in)).
+lifepath_provides(id(apprentice, city), trait(back_breaking_labor)).
+lifepath_provides(id(apprentice, city), skill(mending)).
+lifepath_provides(id(apprentice, city), skill(write)).
+lifepath_provides(id(apprentice, city), skill(read)).
+lifepath_provides(id(apprentice, city), skill(hauling)).
+lifepath_provides(id(apprentice, city), skill(driving)).
+lifepath_provides(id(apprentice, city), skill(ditch_digging)).
+
+lifepath(id(apprentice_artisan, city), page(bwg, 174), 8, [villager, soldier]).
+lifepath_provides(id(apprentice_artisan, city), skill(artisan_wise)).
+lifepath_provides(id(apprentice_artisan, city), skill(mason)).
+lifepath_provides(id(apprentice_artisan, city), skill(blacksmith)). 
+lifepath_provides(id(apprentice_artisan, city), skill(coppersmith)). 
+lifepath_provides(id(apprentice_artisan, city), skill(locksmith)). 
+lifepath_provides(id(apprentice_artisan, city), skill(weaponsmith)). 
+lifepath_provides(id(apprentice_artisan, city), skill(whitesmith)). 
+lifepath_provides(id(apprentice_artisan, city), skill(carpentry)). 
+lifepath_provides(id(apprentice_artisan, city), skill(write)). 
+lifepath_provides(id(apprentice_artisan, city), skill(read)). 
+lifepath_provides(id(apprentice_artisan, city), skill(jargon)). 
+
+lifepath(id(journeyman, city), page(bwg, 174), 6, [villager, peasant, soldier, sea]).
+lifepath_requires(id(journeyman, city), [lifepath(apprentice)]).
+lifepath_provides(id(journeyman, city), trait(made_man)).
+lifepath_provides(id(journeyman, city), trait(geometric)).
+lifepath_provides(id(journeyman, city), skill(haggling)).
+lifepath_provides(id(journeyman, city), skill(appraisal)).
+lifepath_provides(id(journeyman, city), skill(blacksmith)).
+lifepath_provides(id(journeyman, city), skill(carpentry)).
+lifepath_provides(id(journeyman, city), skill(tanner)).
+lifepath_provides(id(journeyman, city), skill(potter)).
+lifepath_provides(id(journeyman, city), skill(cooper)).
+
+lifepath(id(engraver, city), page(bwg, 174), 7, [soldier, court]).
+lifepath_requires(id(engraver, city), [lifepath(journeyman)]).
+lifepath_provides(id(engraver, city), trait(gentle_but_firm)).
+lifepath_provides(id(engraver, city), skill(engraving)).
+lifepath_provides(id(engraver, city), skill(etching)).
+lifepath_provides(id(engraver, city), skill(jargon)).
+
+lifepath(id(saddler, city), page(bwg, 174), 8, [villager, soldier, court]).
+lifepath_requires(id(saddler, city), [lifepath(journeyman)]).
+lifepath_provides(id(saddler, city), skill(saddlery)).
+lifepath_provides(id(saddler, city), skill(tanner)).
+lifepath_provides(id(saddler, city), skill(sewing)).
+lifepath_provides(id(saddler, city), skill(embroidery)).
+lifepath_provides(id(saddler, city), skill(mending)).
+lifepath_provides(id(saddler, city), skill(mount_wise)).
+
+lifepath(id(armorer, city), page(bwg, 174), 10, [soldier, court, outcast]).
+lifepath_requires(id(armorer, city), [lifepath(journeyman)]).
+lifepath_provides(id(armorer, city), trait(diligent)).
+lifepath_provides(id(armorer, city), skill(swordsman_wise)).
+lifepath_provides(id(armorer, city), skill(blacksmith)).
+lifepath_provides(id(armorer, city), skill(tanner)).
+lifepath_provides(id(armorer, city), skill(armorer)).
+lifepath_provides(id(armorer, city), skill(weaponsmith)).
+
+lifepath(id(plumber, city), page(bwg, 174), 7, [court, outcast]).
+lifepath_requires(id(plumber, city), [lifepath(journeyman)]).
+lifepath_provides(id(plumber, city), trait(touch_of_madness)).
+lifepath_provides(id(plumber, city), skills(plumbing)).
+lifepath_provides(id(plumber, city), skills(engineer)).
+lifepath_provides(id(plumber, city), skills(coppersmith)).
+lifepath_provides(id(plumber, city), skills(waterworks)).
+
