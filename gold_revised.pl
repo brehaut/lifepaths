@@ -1848,3 +1848,137 @@ lifepath_provides(id(master_of_horses, court), trait(affinity_for_horses)).
 lifepath_provides(id(master_of_horses, court), skill(horse_husbandry)).
 lifepath_provides(id(master_of_horses, court), skill(appraisal)).
 lifepath_provides(id(master_of_horses, court), skill(horse_wise)).
+
+lifepath(id(master_of_hounds, court), page(bwg, 183), 6, [city, soldier]).
+lifepath_requires(id(master_of_hounds, court), [lifepath(captain)]).
+lifepath_requires(id(master_of_hounds, court), [lifepath(baron)]).
+lifepath_requires(id(master_of_hounds, court), [lifepath(saddler)]).
+lifepath_requires(id(master_of_hounds, court), [lifepath(merchant)]).
+lifepath_requires(id(master_of_hounds, court), [lifepath(magnate)]).
+lifepath_provides(id(master_of_hounds, court), trait(dog_lover)).
+lifepath_provides(id(master_of_hounds, court), trait(pigpen)).
+lifepath_provides(id(master_of_hounds, court), trait(emotional)).
+lifepath_provides(id(master_of_hounds, court), trait(iron_stomach)).
+lifepath_provides(id(master_of_hounds, court), skill(dog_husbandry)).
+lifepath_provides(id(master_of_hounds, court), skill(dog_wise)).
+lifepath_provides(id(master_of_hounds, court), skill(hunting)).
+lifepath_provides(id(master_of_hounds, court), skill(instruction)).
+lifepath_provides(id(master_of_hounds, court), skill(mimicry)).
+
+lifepath(id(hostage, court), page(bwg, 183), 6, [city, noble, soldier, religious]).
+lifepath_requires(id(hostage, court), [setting(noble)]).
+lifepath_provides(id(hostage, court), trait(homesick)).
+lifepath_provides(id(hostage, court), trait(bored)).
+lifepath_provides(id(hostage, court), trait(darling_of_the_court)).
+lifepath_provides(id(hostage, court), skill(etiquette)).
+lifepath_provides(id(hostage, court), skill(court_wise)).
+lifepath_provides(id(hostage, court), skill(foreign_languages)).
+lifepath_provides(id(hostage, court), skill(foreign_history)).
+
+lifepath(id(bailiff, court), page(bwg, 183), 4, [city, soldier, outcast]).
+lifepath_requires(id(bailiff, court), [lifepath(knight)]).
+lifepath_requires(id(bailiff, court), [trait(your_lordship)]).
+lifepath_provides(id(bailiff, court), trait(nose_for_trouble)).
+lifepath_provides(id(bailiff, court), skill(intimidation)).
+lifepath_provides(id(bailiff, court), skill(interrogation)).
+lifepath_provides(id(bailiff, court), skill(rule_of_law)).
+lifepath_provides(id(bailiff, court), skill(outlaw_wise)).
+
+lifepath(id(justiciar, court), page(bwg, 183), 5, [city, soldier, religious, outcast]).
+lifepath_requires(id(justiciar, court), [lifepath(judge)]).
+lifepath_requires(id(justiciar, court), [lifepath(captain)]).
+lifepath_requires(id(justiciar, court), [lifepath(bailiff)]).
+lifepath_requires(id(justiciar, court), [lifepath(lord)]).
+lifepath_provides(id(justiciar, court), trait(stern_demeanor)).
+lifepath_provides(id(justiciar, court), trait(amenable_to_other_options)).
+lifepath_provides(id(justiciar, court), skill(rule_of_law)).
+lifepath_provides(id(justiciar, court), skill(amercement)).
+lifepath_provides(id(justiciar, court), skill(interrogation)).
+lifepath_provides(id(justiciar, court), skill(criminal_wise)).
+lifepath_provides(id(justiciar, court), skill(circuit_wise)).
+
+lifepath(id(coroner, court), page(bwg, 183), 6, [city, soldier]).
+lifepath_requires(id(coroner, court), [lifepath(steward)]).
+lifepath_requires(id(coroner, court), [lifepath(town_official)]).
+lifepath_requires(id(coroner, court), [lifepath(municipal_minister)]).
+lifepath_requires(id(coroner, court), [lifepath(judge)]).
+lifepath_requires(id(coroner, court), [lifepath(court_lawyer)]).
+lifepath_requires(id(coroner, court), [lifepath(court_doctor)]).
+lifepath_requires(id(coroner, court), [lifepath(magnate)]).
+lifepath_requires(id(coroner, court), [lifepath(lord)]).
+lifepath_provides(id(coroner, court), trait(hard_hearted)).
+lifepath_provides(id(coroner, court), trait(seen_it_all)).
+lifepath_provides(id(coroner, court), skill(rule_of_law)).
+lifepath_provides(id(coroner, court), skill(anatomy)).
+lifepath_provides(id(coroner, court), skill(writ_wise)).
+lifepath_provides(id(coroner, court), skill(obseravtion)).
+
+lifepath(id(constable, court), page(bwg, 183), 6, [city, soldier, outcast]).
+lifepath_requires(id(constable, court), [lifepath(captain)]).
+lifepath_requires(id(constable, court), [lifepath(baron)]).
+lifepath_requires(id(constable, court), [lifepath(viscount)]).
+lifepath_requires(id(constable, court), [lifepath(count)]).
+lifepath_requires(id(constable, court), [lifepath(duke)]).
+lifepath_requires(id(constable, court), [lifepath(prince)]).
+lifepath_provides(id(constable, court), trait(weight_of_the_world)).
+lifepath_provides(id(constable, court), skill(command)).
+lifepath_provides(id(constable, court), skill(heraldry)).
+lifepath_provides(id(constable, court), skill(logistics)).
+lifepath_provides(id(constable, court), skill(kingdom_wise)).
+lifepath_provides(id(constable, court), skill(obligation_wise)).
+lifepath_provides(id(constable, court), skill(soldier_wise)).
+lifepath_provides(id(constable, court), skill(cavalry_wise)).
+
+lifepath(id(treasurer, court), page(bwg, 183), 7, [city, soldier, religious]).
+lifepath_requires(id(treasurer, court), [lifepath(steward)]).
+lifepath_requires(id(treasurer, court), [lifepath(town_official)]).
+lifepath_requires(id(treasurer, court), [lifepath(municipal_minister)]).
+lifepath_requires(id(treasurer, court), [lifepath(judge)]).
+lifepath_requires(id(treasurer, court), [lifepath(court_lawyer)]).
+lifepath_requires(id(treasurer, court), [lifepath(court_doctor)]).
+lifepath_requires(id(treasurer, court), [lifepath(magnate)]).
+lifepath_requires(id(treasurer, court), [lifepath(baron)]).
+lifepath_requires(id(treasurer, court), [lifepath(bishop)]).
+lifepath_requires(id(treasurer, court), [lifepath(viscount)]).
+lifepath_requires(id(treasurer, court), [lifepath(count)]).
+lifepath_requires(id(treasurer, court), [lifepath(duke)]).
+lifepath_provides(id(treasurer, court), trait(pecunious)).
+lifepath_provides(id(treasurer, court), trait(lavish_taste)).
+lifepath_provides(id(treasurer, court), skill(accounting)).
+lifepath_provides(id(treasurer, court), skill(estate_management)).
+lifepath_provides(id(treasurer, court), skill(tax_wise)).
+lifepath_provides(id(treasurer, court), skill(debt_wise)).
+
+lifepath(id(chamberlain, court), page(bwg, 184), 7, [city, soldier, religious]).
+lifepath_requires(id(chamberlain, court), [lifepath(scholar)]).
+lifepath_requires(id(chamberlain, court), [lifepath(steward)]).
+lifepath_requires(id(chamberlain, court), [lifepath(town_official)]).
+lifepath_requires(id(chamberlain, court), [lifepath(municipal_minister)]).
+lifepath_requires(id(chamberlain, court), [lifepath(judge)]).
+lifepath_requires(id(chamberlain, court), [lifepath(court_lawyer)]).
+lifepath_requires(id(chamberlain, court), [lifepath(court_doctor)]).
+lifepath_requires(id(chamberlain, court), [lifepath(magnate)]).
+lifepath_requires(id(chamberlain, court), [lifepath(baron)]).
+lifepath_requires(id(chamberlain, court), [lifepath(bishop)]).
+lifepath_requires(id(chamberlain, court), [lifepath(viscount)]).
+lifepath_requires(id(chamberlain, court), [lifepath(count)]).
+lifepath_requires(id(chamberlain, court), [lifepath(duke)]).
+
+lifepath(id(advisor_to_the_court, court), page(bwg, 184), 3, any_except([])).
+lifepath_requires(id(advisor_to_the_court, court), [lifepath(thinker)]).
+lifepath_requires(id(advisor_to_the_court, court), [lifepath(captain)]).
+lifepath_requires(id(advisor_to_the_court, court), [lifepath(sea_captain)]).
+lifepath_requires(id(advisor_to_the_court, court), [lifepath(magnate)]).
+lifepath_requires(id(advisor_to_the_court, court), [lifepath(master_craftsman)]).
+lifepath_requires(id(advisor_to_the_court, court), [lifepath(artisan)]).
+lifepath_requires(id(advisor_to_the_court, court), [lifepath(bishop)]).
+lifepath_requires(id(advisor_to_the_court, court), [lifepath(rogue_wizard)]).
+lifepath_requires(id(advisor_to_the_court, court), [lifepath(mad_summoner)]).
+lifepath_requires(id(advisor_to_the_court, court), [lifepath(heretic_priest)]).
+lifepath_requires(id(advisor_to_the_court, court), [lifepath(dame)]).
+lifepath_requires(id(advisor_to_the_court, court), [lifepath(baron)]).
+lifepath_requires(id(advisor_to_the_court, court), [lifepath(viscount)]).
+lifepath_requires(id(advisor_to_the_court, court), [lifepath(count)]).
+lifepath_requires(id(advisor_to_the_court, court), [lifepath(duke)]).
+lifepath_requires(id(advisor_to_the_court, court), [lifepath(prince)]).
+
