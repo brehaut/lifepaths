@@ -642,6 +642,7 @@ lifepath_provides(id(village_wife, villager), skill(cooking)).
 
 %%% ----- CITY DWELLER SETTING ----- %%%
 
+
 lifepath(id(city_born, city), page(bwg, 170), 12, [servitude, court, noble, outcast]).
 
 lifepath(id(runner, city), page(bwg, 170), 3, [villager, soldier]).
@@ -1809,9 +1810,9 @@ lifepath_provides(id(atilliator, court), skill(carpentry)).
 lifepath_provides(id(atilliator, court), skill(carving)).
 
 lifepath(id(court_priest, court), page(bwg, 182), 6, [outcast, city, religious]).
-lifepath_requires(id(court_priest, setting), [lifepath(chaplain)]).
-lifepath_requires(id(court_priest, setting), [flag(priest)]).
-lifepath_requires(id(court_priest, setting), [lifepath(religious_acolyte)]).
+lifepath_requires(id(court_priest, court), [lifepath(chaplain)]).
+lifepath_requires(id(court_priest, court), [flag(priest)]).
+lifepath_requires(id(court_priest, court), [lifepath(religious_acolyte)]).
 lifepath_provides(id(court_priest, court), flag(priest)).
 lifepath_provides(id(court_priest, court), trait(royal_favorite)).
 lifepath_provides(id(court_priest, court), trait(faithful)).
@@ -1982,3 +1983,60 @@ lifepath_requires(id(advisor_to_the_court, court), [lifepath(count)]).
 lifepath_requires(id(advisor_to_the_court, court), [lifepath(duke)]).
 lifepath_requires(id(advisor_to_the_court, court), [lifepath(prince)]).
 
+
+%%% ----- RELIGIOUS SUBSETTING ----- %%%
+
+lifepath(id(castrati, religious), page(bwg, 184), 7, [outcast, court]).
+lifepath_requires(id(castrati, religious), [not(flag(female))]).
+lifepath_provides(id(castrati, religious), trait(eunuch)).
+lifepath_provides(id(castrati, religious), trait(perfect_pitch)).
+lifepath_provides(id(castrati, religious), trait(patient)).
+lifepath_provides(id(castrati, religious), trait(scheming)).
+lifepath_provides(id(castrati, religious), skills(sing)).
+lifepath_provides(id(castrati, religious), skills(persuasion)).
+lifepath_provides(id(castrati, religious), skills(falsehood)).
+lifepath_provides(id(castrati, religious), skills(etiquette)).
+lifepath_provides(id(castrati, religious), skills(administation)).
+
+lifepath(id(pardoner, religious), page(bwg, 184), 5, [peasant, city, villager, outcast]).
+lifepath_provides(id(pardoner, religious), trait(pardoner)).
+lifepath_provides(id(pardoner, religious), trait(corrupt)).
+lifepath_provides(id(pardoner, religious), skill(persuasion)).
+lifepath_provides(id(pardoner, religious), skill(falsehood)).
+lifepath_provides(id(pardoner, religious), skill(intimidation)).
+lifepath_provides(id(pardoner, religious), skill(doctrine)).
+
+lifepath(id(zealous_convert, religious), page(bwg, 184), 4, [outcast, peasant, servitude, court]).
+lifepath_provides(id(zealous_convert, religious), trait(infallible_religious_logic)).
+lifepath_provides(id(zealous_convert, religious), trait(righteous)).
+lifepath_provides(id(zealous_convert, religious), trait(demagogue)).
+lifepath_provides(id(zealous_convert, religious), skill(religious_diatribe)).
+lifepath_provides(id(zealous_convert, religious), skill(doctrine)).
+lifepath_provides(id(zealous_convert, religious), skill(rhetoric)).
+
+lifepath(id(military_order, religious), page(bwg, 184), 3, any_except([peasant])).
+lifepath_requires(id(military_order, religious), [lifepath(squire)]).
+lifepath_requires(id(military_order, religious), [lifepath(knight)]).
+lifepath_requires(id(military_order, religious), [setting(soldier)]).
+lifepath_provides(id(military_order, religious), trait(disciplined)).
+lifepath_provides(id(military_order, religious), trait(fanatical_devision)).
+lifepath_provides(id(military_order, religious), trait(sword_to_the_order)).
+lifepath_provides(id(military_order, religious), skill(doctrine)).
+lifepath_provides(id(military_order, religious), skill(riding)).
+lifepath_provides(id(military_order, religious), skill(armor_training)).
+lifepath_provides(id(military_order, religious), skill(appropriate_weapons)).
+
+lifepath(id(grave_digger, religious), page(bwg, 184), 4, [outcast, servitude, city, villager]).
+lifepath_provides(id(grave_digger, religious), trait(superstitious)).
+lifepath_provides(id(grave_digger, religious), trait(burial_rites)).
+lifepath_provides(id(grave_digger, religious), skill(ditch_digging)).
+lifepath_provides(id(grave_digger, religious), skill(grave_wise)).
+lifepath_provides(id(grave_digger, religious), skill(cemetery_wise)).
+
+lifepath(id(porter, religious), page(bwg, 184), 3, [outcast, villager, peasant]).
+lifepath_provides(id(porter, religious), trait(keys_to_the_church)).
+lifepath_provides(id(porter, religious), trait(familiar_face)).
+lifepath_provides(id(porter, religious), skill(temple_wise)).
+lifepath_provides(id(porter, religious), skill(priest_wise)).
+lifepath_provides(id(porter, religious), skill(worshipper_wise)).
+lifepath_provides(id(porter, religious), skill(church_treasure_wise)).
