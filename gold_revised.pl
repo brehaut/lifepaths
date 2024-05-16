@@ -1986,6 +1986,7 @@ lifepath_requires(id(advisor_to_the_court, court), [lifepath(prince)]).
 
 %%% ----- RELIGIOUS SUBSETTING ----- %%%
 
+
 lifepath(id(castrati, religious), page(bwg, 184), 7, [outcast, court]).
 lifepath_requires(id(castrati, religious), [constraint(not(flag(female)))]).
 lifepath_provides(id(castrati, religious), trait(eunuch)).
@@ -2277,3 +2278,87 @@ lifepath_provides(id(bishop, religious), skill(ritual)).
 lifepath_provides(id(bishop, religious), skill(symbology)).
 lifepath_provides(id(bishop, religious), skill(history)).
 lifepath_provides(id(bishop, religious), skill(obscure_history)).
+
+
+%%% ----- PROFESSIONAL SOLDIER SUBSETTING ----- %%%
+
+
+lifepath(id(runner, soldier), page(bwg, 187), 3, [villager, peasant, servitude, outcast]).
+lifepath_provides(id(runner, soldier), trait(skinny)).
+lifepath_provides(id(runner, soldier), trait(fleet_of_foot)).
+lifepath_provides(id(runner, soldier), trait(sprinter)).
+lifepath_provides(id(runner, soldier), skill(inconspicuous)).
+lifepath_provides(id(runner, soldier), skill(stealthy)).
+lifepath_provides(id(runner, soldier), skill(sing)).
+
+lifepath(id(apprentice, soldier), page(bwg, 187), 4, [city, peasant, villager]).
+lifepath_provides(id(apprentice, soldier), trait(exhausted)).
+lifepath_provides(id(apprentice, soldier), trait(back_breaking_labor)).
+lifepath_provides(id(apprentice, soldier), skill(mending)).
+lifepath_provides(id(apprentice, soldier), skill(write)).
+lifepath_provides(id(apprentice, soldier), skill(read)).
+lifepath_provides(id(apprentice, soldier), skill(hauling)).
+lifepath_provides(id(apprentice, soldier), skill(driving)).
+lifepath_provides(id(apprentice, soldier), skill(ditch_digging)).
+
+lifepath(id(musician, soldier), page(bwg, 187), 3, [villager, peasant, servitude]).
+lifepath_provides(id(musician, soldier), skill(musical_instrument)).
+lifepath_provides(id(musician, soldier), skill(conspicuous)).
+lifepath_provides(id(musician, soldier), skill(riding)).
+
+lifepath(id(foot_soldier, soldier), page(bwg, 187), 3, [outcast, villager, servitude]).
+lifepath_provides(id(foot_soldier, soldier), skill(soldiering)).
+lifepath_provides(id(foot_soldier, soldier), skill(appropriate_weapons)).
+lifepath_provides(id(foot_soldier, soldier), skill(shield_training)).
+lifepath_provides(id(foot_soldier, soldier), skill(brawling)).
+lifepath_provides(id(foot_soldier, soldier), skill(foraging)).
+lifepath_provides(id(foot_soldier, soldier), skill(firebuilding)).
+
+lifepath(id(archer, soldier), page(bwg, 187), 3, [outcast, villager, servitude]).
+lifepath_provides(id(archer, soldier), skill(bow)).
+lifepath_provides(id(archer, soldier), skill(fletcher)).
+lifepath_provides(id(archer, soldier), skill(brawling)).
+lifepath_provides(id(archer, soldier), skill(foraging)).
+lifepath_provides(id(archer, soldier), skill(firebuilding)).
+
+lifepath(id(crossbowman, soldier), page(bwg, 187), 4, [outcast, villager, servitude]).
+lifepath_provides(id(crossbowman, soldier), skill(crossbow)).
+lifepath_provides(id(crossbowman, soldier), skill(soldiering)).
+lifepath_provides(id(crossbowman, soldier), skill(fletcher)).
+lifepath_provides(id(crossbowman, soldier), skill(brawling)).
+lifepath_provides(id(crossbowman, soldier), skill(foraging)).
+
+lifepath(id(sailor, soldier), page(bwg, 187), 5, [sea, outcast, vilalger, servitude]).
+lifepath_provides(id(sailor, soldier), trait(iron_stomach)).
+lifepath_provides(id(sailor, soldier), trait(sea_legs)).
+lifepath_provides(id(sailor, soldier), trait(affinity_for_rope)).
+lifepath_provides(id(sailor, soldier), skill(seamanship)).
+lifepath_provides(id(sailor, soldier), skill(rigging)).
+lifepath_provides(id(sailor, soldier), skill(knots)).
+lifepath_provides(id(sailor, soldier), skill(mending)).
+lifepath_provides(id(sailor, soldier), skill(navigation)).
+lifepath_provides(id(sailor, soldier), skill(knives)).
+lifepath_provides(id(sailor, soldier), skill(sword)).
+
+lifepath(id(herald, soldier), page(bwg, 187), 3, [villager, servitude, court]).
+lifepath_provides(id(herald, soldier), skill(oratory)).
+lifepath_provides(id(herald, soldier), skill(conspicuous)).
+lifepath_provides(id(herald, soldier), skill(riding)).
+lifepath_provides(id(herald, soldier), skill(heraldry)).
+lifepath_provides(id(herald, soldier), skill(bannerman_wise)).
+
+lifepath(id(bannerman, soldier), page(bwg, 187), 3, [villager, servitude, court]).
+lifepath_provides(id(bannerman, soldier), trait(honored)).
+lifepath_provides(id(bannerman, soldier), trait(brutal)).
+lifepath_provides(id(bannerman, soldier), trait(aggressive)).
+lifepath_provides(id(bannerman, soldier), skill(conspicuous)).
+lifepath_provides(id(bannerman, soldier), skill(riding)).
+lifepath_provides(id(bannerman, soldier), skill(appropriate_weapons)).
+lifepath_provides(id(bannerman, soldier), skill(armor_training)).
+
+lifepath(id(scout, soldier), page(bwg, 187), 3, [peasant, servitude, outcast]).
+lifepath_provides(id(scout, soldier), trait(stealthy)).
+lifepath_provides(id(scout, soldier), trait(foraging)).
+lifepath_provides(id(scout, soldier), trait(orienteering)).
+lifepath_provides(id(scout, soldier), trait(appropriate_weapons)).
+lifepath_provides(id(scout, soldier), trait(observation)).
