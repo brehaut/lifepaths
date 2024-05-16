@@ -1309,7 +1309,7 @@ lifepath_requires(id(magnate, city), [lifepath(master_of_horses)]).
 lifepath_provides(id(magnate, city), trait(self_satisfied)).
 lifepath_provides(id(magnate, city), trait(greedy)).
 lifepath_provides(id(magnate, city), trait(affinity_for_business)).
-lifepath_provides(id(magnate, city), skill(administation)).
+lifepath_provides(id(magnate, city), skill(administration)).
 lifepath_provides(id(magnate, city), skill(merchant_wise)).
 lifepath_provides(id(magnate, city), skill(court_wise)).
 lifepath_provides(id(magnate, city), skill(commodities_wise)).
@@ -1725,7 +1725,7 @@ lifepath_provides(id(governess, court), trait(dismissive)).
 lifepath_provides(id(governess, court), trait(you_should_know_better_than_that)).
 lifepath_provides(id(governess, court), trait(bitter)).
 lifepath_provides(id(governess, court), skill(family_wise)).
-lifepath_provides(id(governess, court), skill(administation)).
+lifepath_provides(id(governess, court), skill(administration)).
 lifepath_provides(id(governess, court), skill(intimidation)).
 lifepath_provides(id(governess, court), skill(etiquette)).
 lifepath_provides(id(governess, court), skill(persuasion)).
@@ -1996,7 +1996,7 @@ lifepath_provides(id(castrati, religious), skills(sing)).
 lifepath_provides(id(castrati, religious), skills(persuasion)).
 lifepath_provides(id(castrati, religious), skills(falsehood)).
 lifepath_provides(id(castrati, religious), skills(etiquette)).
-lifepath_provides(id(castrati, religious), skills(administation)).
+lifepath_provides(id(castrati, religious), skills(administration)).
 
 lifepath(id(pardoner, religious), page(bwg, 184), 5, [peasant, city, villager, outcast]).
 lifepath_provides(id(pardoner, religious), trait(pardoner)).
@@ -2156,3 +2156,124 @@ lifepath_provides(id(priest, religious), skill(religious_history)).
 lifepath_provides(id(priest, religious), skill(sacrament_wise)).
 lifepath_provides(id(priest, religious), skill(bishop_wise)).
 
+lifepath(id(exorcist, religious), page(bwg, 186), 6, [outcast, city, court]).
+lifepath_requires(id(exorcist, religious), [lifepath(temple_priest)]).
+lifepath_requires(id(exorcist, religious), [lifepath(itinerant_priest)]).
+lifepath_requires(id(exorcist, religious), [lifepath(priest)]).
+lifepath_requires(id(exorcist, religious), [lifepath(court_priest)]).
+lifepath_requires(id(exorcist, religious), [lifepath(archivist)]).
+lifepath_provides(id(exorcist, religious), trait(skeptical)).
+lifepath_provides(id(exorcist, religious), trait(haunted)).
+lifepath_provides(id(exorcist, religious), trait(possessed)).
+lifepath_provides(id(exorcist, religious), trait(exorcist)).
+lifepath_provides(id(exorcist, religious), trait(lost_faith)).
+lifepath_provides(id(exorcist, religious), trait(faithful)).
+
+lifepath(id(inquisitor, religious), page(bwg, 186), 6, [outcast, soldier, city, court]).
+lifepath_requires(id(inquisitor, religious), [lifepath(temple_priest)]).
+lifepath_requires(id(inquisitor, religious), [lifepath(itinerant_priest)]).
+lifepath_requires(id(inquisitor, religious), [lifepath(priest)]).
+lifepath_requires(id(inquisitor, religious), [lifepath(court_priest)]).
+lifepath_requires(id(inquisitor, religious), [lifepath(judge)]).
+lifepath_requires(id(inquisitor, religious), [lifepath(justicar)]).
+lifepath_provides(id(inquisitor, religious), trait(learned)).
+lifepath_provides(id(inquisitor, religious), trait(insightful)).
+lifepath_provides(id(inquisitor, religious), trait(bookworm)).
+lifepath_provides(id(inquisitor, religious), trait(academic)).
+lifepath_provides(id(inquisitor, religious), skill(doctrine)).
+lifepath_provides(id(inquisitor, religious), skill(interrogation)).
+lifepath_provides(id(inquisitor, religious), skill(torture)).
+lifepath_provides(id(inquisitor, religious), skill(heresy_wise)).
+
+lifepath(id(theologian, religious), page(bwg, 186), 10, [city, villager, court]).
+lifepath_requires(id(theologian, religious), [lifepath(scribe)]).
+lifepath_requires(id(theologian, religious), [lifepath(archivist)]).
+lifepath_requires(id(theologian, religious), [lifepath(court_lawyer)]).
+lifepath_requires(id(theologian, religious), [lifepath(advocate)]).
+lifepath_requires(id(theologian, religious), [lifepath(custodian)]).
+lifepath_requires(id(theologian, religious), [lifepath(interpreter)]).
+lifepath_requires(id(theologian, religious), [lifepath(priest)]).
+lifepath_requires(id(theologian, religious), [lifepath(bishop)]).
+lifepath_provides(id(theologian, religious), trait(learned)).
+lifepath_provides(id(theologian, religious), trait(insightful)).
+lifepath_provides(id(theologian, religious), trait(bookworm)).
+lifepath_provides(id(theologian, religious), trait(academic)).
+lifepath_provides(id(theologian, religious), skill(doctrine)).
+lifepath_provides(id(theologian, religious), skill(rhetoric)).
+lifepath_provides(id(theologian, religious), skill(philosophy)).
+lifepath_provides(id(theologian, religious), skill(history)).
+lifepath_provides(id(theologian, religious), skill(religious_history)).
+lifepath_provides(id(theologian, religious), skill(church_law)).
+lifepath_provides(id(theologian, religious), skill(obscure_history)).
+lifepath_provides(id(theologian, religious), skill(read)).
+lifepath_provides(id(theologian, religious), skill(write)).
+
+lifepath(id(archpriest, religious), page(bwg, 186), 5, [city, outcast, court]).
+lifepath_requires(id(archpriest, religious), [lifepath(temple_priest)]).
+lifepath_requires(id(archpriest, religious), [lifepath(itinerant_priest)]).
+lifepath_requires(id(archpriest, religious), [lifepath(priest)]).
+lifepath_requires(id(archpriest, religious), [lifepath(court_priest)]).
+lifepath_requires(id(archpriest, religious), [lifepath(chaplain)]).
+lifepath_provides(id(archpriest, religious), trait(imperious_demeanor)).
+lifepath_provides(id(archpriest, religious), skill(oratory)).
+lifepath_provides(id(archpriest, religious), skill(suasion)).
+lifepath_provides(id(archpriest, religious), skill(write)).
+lifepath_provides(id(archpriest, religious), skill(read)).
+lifepath_provides(id(archpriest, religious), skill(doctrine)).
+lifepath_provides(id(archpriest, religious), skill(history)).
+lifepath_provides(id(archpriest, religious), skill(religious_history)).
+lifepath_provides(id(archpriest, religious), skill(ritual)).
+lifepath_provides(id(archpriest, religious), skill(church_wise)).
+lifepath_provides(id(archpriest, religious), skill(parish_wise)).
+lifepath_provides(id(archpriest, religious), skill(tithe_wise)).
+
+lifepath(id(canon, religious), page(bwg, 186), 10, [city, outcast, court]).
+lifepath_requires(id(canon, religious), [lifepath(archpriest)]).
+lifepath_requires(id(canon, religious), [lifepath(theologian)]).
+lifepath_requires(id(canon, religious), [lifepath(abbot)]).
+lifepath_provides(id(canon, religious), trait(authoritative)).
+lifepath_provides(id(canon, religious), skill(rule_of_law)).
+lifepath_provides(id(canon, religious), skill(church_law)).
+lifepath_provides(id(canon, religious), skill(administration)).
+lifepath_provides(id(canon, religious), skill(doctrine)).
+lifepath_provides(id(canon, religious), skill(church_wise)).
+
+lifepath(id(abbot, religious), page(bwg, 186), 10, [city, outcast, court]).
+lifepath_requires(id(abbot, religious), [lifepath(itinerant_monk)]).
+lifepath_requires(id(abbot, religious), [lifepath(cloistered_monk)]).
+lifepath_requires(id(abbot, religious), [lifepath(theologian)]).
+lifepath_requires(id(abbot, religious), [lifepath(vintner)]).
+lifepath_provides(id(abbot, religious), skill(administration)).
+lifepath_provides(id(abbot, religious), skill(accounting)).
+lifepath_provides(id(abbot, religious), skill(vintner)).
+lifepath_provides(id(abbot, religious), skill(wine_tasting)).
+lifepath_provides(id(abbot, religious), skill(royal_secret_wise)).
+lifepath_provides(id(abbot, religious), skill(abbey_wise)).
+
+lifepath(id(abbess, religious), page(bwg, 186), 10, [city, outcast, court]).
+lifepath_requires(id(abbess, religious), [lifepath(itinerant_monk)]).
+lifepath_requires(id(abbess, religious), [lifepath(cloistered_nun)]).
+lifepath_requires(id(abbess, religious), [lifepath(theologian)]).
+lifepath_requires(id(abbess, religious), [lifepath(vintner)]).
+lifepath_provides(id(abbess, religious), skill(administration)).
+lifepath_provides(id(abbess, religious), skill(accounting)).
+lifepath_provides(id(abbess, religious), skill(vintner)).
+lifepath_provides(id(abbess, religious), skill(wine_tasting)).
+lifepath_provides(id(abbess, religious), skill(royal_secret_wise)).
+lifepath_provides(id(abbess, religious), skill(abbey_wise)).
+
+lifepath(id(bishop, religious), page(bwg, 186), 8, [city, outcast, court]).
+lifepath_requires(id(bishop, religious), [lifepath(archpriest)]).
+lifepath_requires(id(bishop, religious), [lifepath(baron)]).
+lifepath_requires(id(bishop, religious), [lifepath(viscount)]).
+lifepath_requires(id(bishop, religious), [lifepath(count)]).
+lifepath_requires(id(bishop, religious), [lifepath(duke)]).
+lifepath_requires(id(bishop, religious), [lifepath(prince)]).
+lifepath_requires(id(bishop, religious), [trait(your_grace)]).
+lifepath_provides(id(bishop, religious), trait(domineering_presence)).
+lifepath_provides(id(bishop, religious), skill(religious_history)).
+lifepath_provides(id(bishop, religious), skill(intimidation)).
+lifepath_provides(id(bishop, religious), skill(ritual)).
+lifepath_provides(id(bishop, religious), skill(symbology)).
+lifepath_provides(id(bishop, religious), skill(history)).
+lifepath_provides(id(bishop, religious), skill(obscure_history)).
