@@ -56,4 +56,8 @@ test(all_lifepaths_requiring_flags_are_valid, all(ReqFails = [[]])) :-
         \+ flag(F)
     ), ReqFails).
 
+test(check_that_pages_didnt_get_transcribed_as_years, all(Fails = [[]])) :-
+    findall(Id, (lifepath(Id, _, Years, _), Years > 100), Fails).
+    
+
 :- end_tests(lifepaths). 

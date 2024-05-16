@@ -1987,7 +1987,7 @@ lifepath_requires(id(advisor_to_the_court, court), [lifepath(prince)]).
 %%% ----- RELIGIOUS SUBSETTING ----- %%%
 
 lifepath(id(castrati, religious), page(bwg, 184), 7, [outcast, court]).
-lifepath_requires(id(castrati, religious), [not(flag(female))]).
+lifepath_requires(id(castrati, religious), [constraint(not(flag(female)))]).
 lifepath_provides(id(castrati, religious), trait(eunuch)).
 lifepath_provides(id(castrati, religious), trait(perfect_pitch)).
 lifepath_provides(id(castrati, religious), trait(patient)).
@@ -2040,3 +2040,119 @@ lifepath_provides(id(porter, religious), skill(temple_wise)).
 lifepath_provides(id(porter, religious), skill(priest_wise)).
 lifepath_provides(id(porter, religious), skill(worshipper_wise)).
 lifepath_provides(id(porter, religious), skill(church_treasure_wise)).
+
+lifepath(id(notary, religious), page(bwg, 185), 4, [city, outcast, court]).
+lifepath_requires(id(notary, religious), [lifepath(clerk)]).
+lifepath_requires(id(notary, religious), [lifepath(young_lady)]).
+lifepath_requires(id(notary, religious), [lifepath(student)]).
+lifepath_provides(id(notary, religious), skill(rule_of_law)).
+lifepath_provides(id(notary, religious), skill(bureaucracy)).
+lifepath_provides(id(notary, religious), skill(church_law)).
+lifepath_provides(id(notary, religious), skill(bribe_wise)).
+
+lifepath(id(custodian, religious), page(bwg, 185), 5, [city, outcast]).
+lifepath_requires(id(custodian, religious), [lifepath(student)]).
+lifepath_requires(id(custodian, religious), [lifepath(young_lady)]).
+lifepath_requires(id(custodian, religious), [lifepath(cloistered_monk)]).
+lifepath_requires(id(custodian, religious), [lifepath(cloistered_nun)]).
+lifepath_requires(id(custodian, religious), [lifepath(temple_acolyte)]).
+lifepath_requires(id(custodian, religious), [lifepath(inquisitor)]).
+lifepath_requires(id(custodian, religious), [lifepath(exorcist)]).
+lifepath_requires(id(custodian, religious), [lifepath(theologian)]).
+lifepath_provides(id(custodian, religious), trait(strange)).
+lifepath_provides(id(custodian, religious), trait(erudite)).
+lifepath_provides(id(custodian, religious), trait(obsessed)).
+lifepath_provides(id(custodian, religious), trait(arcane)).
+lifepath_provides(id(custodian, religious), skill(relic_wise)).
+lifepath_provides(id(custodian, religious), skill(observation)).
+lifepath_provides(id(custodian, religious), skill(obscure_history)).
+lifepath_provides(id(custodian, religious), skill(religious_history)).
+lifepath_provides(id(custodian, religious), skill(folklore)).
+lifepath_provides(id(custodian, religious), skill(saint_wise)).
+
+lifepath(id(interpreter, religious), page(bwg, 185), 5, [city, court, villager]).
+lifepath_requires(id(interpreter, religious), [lifepath(student)]).
+lifepath_requires(id(interpreter, religious), [lifepath(young_lady)]).
+lifepath_requires(id(interpreter, religious), [lifepath(temple_acolyte)]).
+lifepath_requires(id(interpreter, religious), [lifepath(exorcist)]).
+lifepath_requires(id(interpreter, religious), [lifepath(theologian)]).
+lifepath_provides(id(interpreter, religious), trait(ink_stained_hands)).
+lifepath_provides(id(interpreter, religious), trait(condescending)).
+lifepath_provides(id(interpreter, religious), skill(read)).
+lifepath_provides(id(interpreter, religious), skill(ancient_languages)).
+lifepath_provides(id(interpreter, religious), skill(instruction)).
+lifepath_provides(id(interpreter, religious), skill(write)).
+lifepath_provides(id(interpreter, religious), skill(doctrine)).
+lifepath_provides(id(interpreter, religious), skill(foreign_languages)).
+
+lifepath(id(archivist, religious), page(bwg, 185), 7, [city, villager, court]).
+lifepath_requires(id(archivist, religious), [lifepath(student)]).
+lifepath_requires(id(archivist, religious), [lifepath(cloistered_nun)]).
+lifepath_requires(id(archivist, religious), [lifepath(cloistered_monk)]).
+lifepath_requires(id(archivist, religious), [lifepath(exorcist)]).
+lifepath_requires(id(archivist, religious), [lifepath(theologian)]).
+lifepath_provides(id(archivist, religious), trait(myopic)).
+lifepath_provides(id(archivist, religious), trait(affinity_for_books_and_scrolls)).
+lifepath_provides(id(archivist, religious), skill(research)).
+lifepath_provides(id(archivist, religious), skill(library_wise)).
+lifepath_provides(id(archivist, religious), skill(ancient_history)).
+lifepath_provides(id(archivist, religious), skill(symbology)).
+
+lifepath(id(itinerant_monk, religious), page(bwg, 185), 6, [peasant, villager, outcast]).
+lifepath_provides(id(itinerant_monk, religious), trait(tonsured)).
+lifepath_provides(id(itinerant_monk, religious), skill(doctrine)).
+lifepath_provides(id(itinerant_monk, religious), skill(suasion)).
+lifepath_provides(id(itinerant_monk, religious), skill(meditation)).
+lifepath_provides(id(itinerant_monk, religious), skill(beggardry)).
+lifepath_provides(id(itinerant_monk, religious), skill(alms_wise)).
+lifepath_provides(id(itinerant_monk, religious), skill(streetwise)).
+lifepath_provides(id(itinerant_monk, religious), skill(road_wise)).
+
+lifepath(id(cloistered_nun, religious), page(bwg, 185), 10, [peasant, outcast, court]).
+lifepath_requires(id(cloistered_monk, religious), [not(lifepath(cloistered_monk))]).
+lifepath_provides(id(cloistered_nun, religious), flag(female)).
+lifepath_provides(id(cloistered_nun, religious), trait(tonsured)).
+lifepath_provides(id(cloistered_nun, religious), trait(restless)).
+lifepath_provides(id(cloistered_nun, religious), trait(bored)).
+lifepath_provides(id(cloistered_nun, religious), skill(research)).
+lifepath_provides(id(cloistered_nun, religious), skill(history)).
+lifepath_provides(id(cloistered_nun, religious), skill(meditation)).
+lifepath_provides(id(cloistered_nun, religious), skill(monastic_ritual)).
+lifepath_provides(id(cloistered_nun, religious), skill(vintner)).
+lifepath_provides(id(cloistered_nun, religious), skill(symbology)).
+
+lifepath(id(cloistered_monk, religious), page(bwg, 185), 10, [peasant, outcast, court]).
+lifepath_requires(id(cloistered_monk, religious), [not(flag(female))]).
+lifepath_provides(id(cloistered_monk, religious), trait(tonsured)).
+lifepath_provides(id(cloistered_monk, religious), trait(restless)).
+lifepath_provides(id(cloistered_monk, religious), trait(bored)).
+lifepath_provides(id(cloistered_monk, religious), skill(research)).
+lifepath_provides(id(cloistered_monk, religious), skill(history)).
+lifepath_provides(id(cloistered_monk, religious), skill(meditation)).
+lifepath_provides(id(cloistered_monk, religious), skill(monastic_ritual)).
+lifepath_provides(id(cloistered_monk, religious), skill(vintner)).
+lifepath_provides(id(cloistered_monk, religious), skill(symbology)).
+
+lifepath(id(temple_acolyte, religious), page(bwg, 185), 6, [city, outcast, soldier]).
+lifepath_provides(id(temple_acolyte, religious), flag(acolyte)).
+lifepath_provides(id(temple_acolyte, religious), trait(tonsured)).
+lifepath_provides(id(temple_acolyte, religious), trait(obedient)).
+lifepath_provides(id(temple_acolyte, religious), trait(faithful)).
+lifepath_provides(id(temple_acolyte, religious), skill(write)).
+lifepath_provides(id(temple_acolyte, religious), skill(read)).
+lifepath_provides(id(temple_acolyte, religious), skill(doctrine)).
+lifepath_provides(id(temple_acolyte, religious), skill(temple_wise)).
+
+lifepath(id(priest, religious), page(bwg, 185), 5, [villager, outcast, soldier, court]).
+lifepath_requires(id(priest, religious), [lifepath(temple_acolyte)]).
+lifepath_requires(id(priest, religious), [lifepath(religious_acolyte)]).
+lifepath_provides(id(priest, religious), flag(priest)).
+lifepath_provides(id(priest, religious), trait(vested)).
+lifepath_provides(id(priest, religious), skill(oratory)).
+lifepath_provides(id(priest, religious), skill(suasion)).
+lifepath_provides(id(priest, religious), skill(ritual)).
+lifepath_provides(id(priest, religious), skill(symbology)).
+lifepath_provides(id(priest, religious), skill(religious_history)).
+lifepath_provides(id(priest, religious), skill(sacrament_wise)).
+lifepath_provides(id(priest, religious), skill(bishop_wise)).
+

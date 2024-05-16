@@ -10,6 +10,7 @@ Lots of things to do.
  * Unify constraint and requirement satisfying. These systems have slightly 
    different APIs but it would be useful to support all those rules with
    one piece of code, and reuse rules more freely.
+    * constrains need a better name: 'all_lifepaths'? 
  * Investigate generating the bulk of the knowledge base from (for example)
    the charred (or charred black) dataset. Either loading the JSON directly, 
    or by processing it and writing out prolog. 
