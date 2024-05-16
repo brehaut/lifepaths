@@ -17,6 +17,10 @@ Lots of things to do.
     * The requirements and some property definitions would still need to be 
       entered by hand.
 
+Data:
+  * Annotate horsey lifepaths with flag(horse)
+  * Some way of defining 'requires two lifepath': Captain, soldier requires 2x freebooter lifepaths
+
 # Character Path optimizations
 
 The current `character_path` predicate is bruteforce and doesn’t take 
