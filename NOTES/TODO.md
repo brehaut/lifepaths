@@ -20,6 +20,7 @@ Lots of things to do.
 Data:
   * Annotate horsey lifepaths with flag(horse)
   * Some way of defining 'requires two lifepath': Captain, soldier requires 2x freebooter lifepaths
+  * Some way of defining 'requires two lifepaths from setting': First Mate
 
 # Character Path optimizations
 

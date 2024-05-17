@@ -2738,3 +2738,42 @@ lifepath_provides(id(engineer, sea), skill(artillerist)).
 lifepath_provides(id(engineer, sea), skill(carpentry)).
 lifepath_provides(id(engineer, sea), skill(mending)).
 
+lifepath(id(officers_mate, sea), page(bwg, 192), 4, [servitude, outcast, soldier, city]).
+lifepath_requires(id(officers_mate, sea), [lifepath(born_noble), position(2)]).
+lifepath_requires(id(officers_mate, sea), [lifepath(son_of_a_gun), position(2)]).
+lifepath_requires(id(officers_mate, sea), [lifepath(page), position(3)]).
+lifepath_provides(id(officers_mate, sea), trait(curses_like_a_sailer)).
+lifepath_provides(id(officers_mate, sea), skill(etiquette)).
+lifepath_provides(id(officers_mate, sea), skill(captain_wise)).
+lifepath_provides(id(officers_mate, sea), skill(seamanship)).
+
+lifepath(id(steward, sea), page(bwg, 192), 6, [soldier, city, servitude, outcast]).
+lifepath_requires(id(steward, sea), [lifepath(purser)]).
+lifepath_requires(id(steward, sea), [lifepath(merchant)]).
+lifepath_requires(id(steward, sea), [lifepath(steward)]).
+lifepath_requires(id(steward, sea), [lifepath(accountant)]).
+lifepath_provides(id(steward, sea), skill(accounting)).
+lifepath_provides(id(steward, sea), skill(ship_management)).
+lifepath_provides(id(steward, sea), skill(haggling)).
+lifepath_provides(id(steward, sea), skill(merchant_wise)).
+lifepath_provides(id(steward, sea), skill(appraisal)).
+
+lifepath(id(first_mate, sea), page(bwg, 192), 6, [soldier, city, servitude, outcast]).
+lifepath_requires(id(first_mate, sea), [lifepath(knight)]).
+lifepath_requires(id(first_mate, sea), [setting(sea)]). %% TODO: 2x seafaring setting rule
+lifepath_provides(id(first_mate, sea), skill(intimidation)).
+lifepath_provides(id(first_mate, sea), skill(command)).
+lifepath_provides(id(first_mate, sea), skill(conspicuous)).
+lifepath_provides(id(first_mate, sea), skill(seaman_wise)).
+lifepath_provides(id(first_mate, sea), skill(sword)).
+
+lifepath(id(ships_captain, sea), page(bwg, 192), 7, any_except([noble])).
+lifepath_requires(id(ships_captain, sea), [lifepath(first_mate)]).
+lifepath_requires(id(ships_captain, sea), [lifepath(knight)]).
+lifepath_requires(id(ships_captain, sea), [lifepath(military_order)]).
+lifepath_requires(id(ships_captain, sea), [lifepath(mercenary_captain)]). %% TODO: 2x mercenary_captain rule
+lifepath_provides(id(ships_captain, sea), trait(stern_demeanor)).
+lifepath_provides(id(ships_captain, sea), skill(command)).
+lifepath_provides(id(ships_captain, sea), skill(oratory)).
+lifepath_provides(id(ships_captain, sea), skill(ship_wise)).
+lifepath_provides(id(ships_captain, sea), skill(sea_wise)).
