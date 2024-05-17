@@ -2634,3 +2634,107 @@ lifepath_provides(id(sailmaker, sea), skill(sewing)).
 lifepath_provides(id(sailmaker, sea), skill(weaving)).
 lifepath_provides(id(sailmaker, sea), skill(mending)).
 lifepath_provides(id(sailmaker, sea), skill(sail_wise)).
+
+lifepath(id(ships_doctor, sea), page(bwg, 191), 6, [soldier, city, villager, outcast]).
+lifepath_requires(id(ships_doctor, sea), [lifepath(doctor)]).
+lifepath_requires(id(ships_doctor, sea), [lifepath(court_doctor)]).
+lifepath_requires(id(ships_doctor, sea), [lifepath(physician)]).
+lifepath_requires(id(ships_doctor, sea), [lifepath(barber)]).
+lifepath_requires(id(ships_doctor, sea), [lifepath(student)]).
+lifepath_provides(id(ships_doctor, sea), trait(incomprehensible_diagnosis)).
+lifepath_provides(id(ships_doctor, sea), trait(ugly_reputation)).
+lifepath_provides(id(ships_doctor, sea), skill(apothecary)).
+lifepath_provides(id(ships_doctor, sea), skill(bloodletting)).
+lifepath_provides(id(ships_doctor, sea), skill(surgery)).
+lifepath_provides(id(ships_doctor, sea), skill(anatomy)).
+lifepath_provides(id(ships_doctor, sea), skill(astrology)).
+lifepath_provides(id(ships_doctor, sea), skill(falsehood)).
+lifepath_provides(id(ships_doctor, sea), skill(tar_wise)).
+lifepath_provides(id(ships_doctor, sea), skill(scurvy_wise)).
+
+lifepath(id(ships_cook, sea), page(bwg, 191), 5, [soldier, city, villager, outcast]).
+lifepath_requires(id(ships_cook, sea), [lifepath(sailor)]).
+lifepath_requires(id(ships_cook, sea), [lifepath(pirate)]).
+lifepath_provides(id(ships_cook, sea), trait(crippled)).
+lifepath_provides(id(ships_cook, sea), trait(cookie)).
+lifepath_provides(id(ships_cook, sea), trait(maggot_connoisseur)).
+lifepath_provides(id(ships_cook, sea), skill(cooking)).
+lifepath_provides(id(ships_cook, sea), skill(firebuilding)).
+lifepath_provides(id(ships_cook, sea), skill(sing)).
+lifepath_provides(id(ships_cook, sea), skill(falsehood)).
+lifepath_provides(id(ships_cook, sea), skill(mystery_meat_wise)).
+
+lifepath(id(ships_chaplain, sea), page(bwg, 191), 5, [villager, city, religious, soldier]).
+lifepath_requires(id(ships_chaplain, sea), [lifepath(chaplain)]).
+lifepath_requires(id(ships_chaplain, sea), [lifepath(military_order)]).
+lifepath_requires(id(ships_chaplain, sea), [lifepath(temple_acolyte)]).
+lifepath_requires(id(ships_chaplain, sea), [lifepath(religious_acolyte)]).
+lifepath_provides(id(ships_chaplain, sea), trait(world_weary)).
+lifepath_provides(id(ships_chaplain, sea), trait(burial_at_sea)).
+lifepath_provides(id(ships_chaplain, sea), trait(secretly_worships_the_black_sea_god)).
+lifepath_provides(id(ships_chaplain, sea), skill(oratory)).
+lifepath_provides(id(ships_chaplain, sea), skill(doctrine)).
+lifepath_provides(id(ships_chaplain, sea), skill(ship_wise)).
+
+lifepath(id(weather_witch, sea), page(bwg, 191), 5, [servitude, city, villager, outcast]).
+lifepath_requires(id(weather_witch, sea), [lifepath(auger)]).
+lifepath_requires(id(weather_witch, sea), [lifepath(neophyte_sorcerer)]).
+lifepath_requires(id(weather_witch, sea), [lifepath(arcane_devotee)]).
+lifepath_requires(id(weather_witch, sea), [lifepath(rogue_wizard)]).
+lifepath_provides(id(weather_witch, sea), trait(weather_sense)).
+lifepath_provides(id(weather_witch, sea), skill(sea_wise)).
+lifepath_provides(id(weather_witch, sea), skill(summoning)).
+lifepath_provides(id(weather_witch, sea), skill(spirit_binding)).
+lifepath_provides(id(weather_witch, sea), skill(superstition_wise)).
+lifepath_provides(id(weather_witch, sea), skill(navigation)).
+lifepath_provides(id(weather_witch, sea), skill(astrology)).
+
+lifepath(id(navigator, sea), page(bwg, 191), 6, [soldier, city, servitude, outcast]).
+lifepath_requires(id(navigator, sea), [lifepath(pilot)]).
+lifepath_requires(id(navigator, sea), [lifepath(mercenary_captain)]).
+lifepath_requires(id(navigator, sea), [lifepath(sailor)]).
+lifepath_requires(id(navigator, sea), [lifepath(student)]).
+lifepath_provides(id(navigator, sea), skill(navigation)).
+lifepath_provides(id(navigator, sea), skill(sea_wise)).
+lifepath_provides(id(navigator, sea), skill(cartography)).
+lifepath_provides(id(navigator, sea), skill(astrology)).
+lifepath_provides(id(navigator, sea), skill(current_wise)).
+
+lifepath(id(carpenters_mate, sea), page(bwg, 191), 6, [soldier, servitude, villager, outcast]).
+lifepath_provides(id(carpenters_mate, sea), trait(cursing)).
+lifepath_provides(id(carpenters_mate, sea), trait(lifting_heavy_things)).
+lifepath_provides(id(carpenters_mate, sea), trait(bulls_eye_spitter)).
+lifepath_provides(id(carpenters_mate, sea), skill(mending)).
+lifepath_provides(id(carpenters_mate, sea), skill(gambling)).
+lifepath_provides(id(carpenters_mate, sea), skill(wood_wise)).
+lifepath_provides(id(carpenters_mate, sea), skill(caulking_wise)).
+
+lifepath(id(ships_carpenter, sea), page(bwg, 191), 4, [soldier, city, servitude, outcast]).
+lifepath_requires(id(ships_carpenter, sea), [lifepath(apprentice)]).
+lifepath_requires(id(ships_carpenter, sea), [lifepath(carpenters_mate)]).
+lifepath_provides(id(ships_carpenter, sea), trait(i_know_this_ship_like_my_own_hands)).
+lifepath_provides(id(ships_carpenter, sea), skill(carpentry)).
+lifepath_provides(id(ships_carpenter, sea), skill(shipwright)).
+lifepath_provides(id(ships_carpenter, sea), skill(boarwright)).
+lifepath_provides(id(ships_carpenter, sea), skill(rigging)).
+lifepath_provides(id(ships_carpenter, sea), skill(ship_wise)).
+
+lifepath(id(artillerists_mate, sea), page(bwg, 191), 4, [soldier, city, servitude, outcast]).
+lifepath_provides(id(artillerists_mate, sea), trait(disturbingly_confident)).
+lifepath_provides(id(artillerists_mate, sea), skill(mending)).
+lifepath_provides(id(artillerists_mate, sea), skill(carpentry)).
+lifepath_provides(id(artillerists_mate, sea), skill(artillerist)).
+
+lifepath(id(engineer, sea), page(bwg, 191), 4, [soldier, city, servitude, outcast]).
+lifepath_requires(id(engineer, sea), [lifepath(artillerists_mate)]).
+lifepath_requires(id(engineer, sea), [lifepath(student)]).
+lifepath_requires(id(engineer, sea), [lifepath(ships_carpenter)]).
+lifepath_requires(id(engineer, sea), [lifepath(engineer)]).
+lifepath_requires(id(engineer, sea), [lifepath(journeyman)]).
+lifepath_provides(id(engineer, sea), trait(it_just_might_work)).
+lifepath_provides(id(engineer, sea), skill(engineer)).
+lifepath_provides(id(engineer, sea), skill(munitions)).
+lifepath_provides(id(engineer, sea), skill(artillerist)).
+lifepath_provides(id(engineer, sea), skill(carpentry)).
+lifepath_provides(id(engineer, sea), skill(mending)).
+
