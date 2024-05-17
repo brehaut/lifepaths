@@ -2544,3 +2544,93 @@ lifepath_provides(id(landsman, sea), skill(knots)).
 lifepath_provides(id(landsman, sea), skill(brawling)).
 lifepath_provides(id(landsman, sea), skill(rope_wise)).
 
+lifepath(id(drummer, sea), page(bwg, 190), 5, [soldier, city, villager, outcast]).
+lifepath_provides(id(drummer, sea), trait(incessant_tapping)).
+lifepath_provides(id(drummer, sea), skill(drum)).
+lifepath_provides(id(drummer, sea), skill(sing)).
+lifepath_provides(id(drummer, sea), skill(drum_maker)).
+
+lifepath(id(sailor, sea), page(bwg, 190), 5, [servitude, soldier, city, outcast]).
+lifepath_provides(id(sailor, sea), trait(drunk)).
+lifepath_provides(id(sailor, sea), skill(seamanship)).
+lifepath_provides(id(sailor, sea), skill(rigging)).
+lifepath_provides(id(sailor, sea), skill(knots)).
+lifepath_provides(id(sailor, sea), skill(brawling)).
+lifepath_provides(id(sailor, sea), skill(sing)).
+lifepath_provides(id(sailor, sea), skill(sea_wise)).
+lifepath_provides(id(sailor, sea), skill(gambling)).
+
+lifepath(id(crazy_old_sailor, sea), page(bwg, 190), 10, [servitude, outcast]).
+lifepath_requires(id(crazy_old_sailor, sea), [lifepath(sailor)]).
+lifepath_requires(id(crazy_old_sailor, sea), [lifepath(pirate)]).
+lifepath_requires(id(crazy_old_sailor, sea), [and([
+    lifepath(mercenary_captain),
+    min(age, 40),
+    max(age, 49)
+])]).
+lifepath_provides(id(crazy_old_sailor, sea), trait(superstitious)).
+lifepath_provides(id(crazy_old_sailor, sea), trait(metal_plate_in_the_skull)).
+lifepath_provides(id(crazy_old_sailor, sea), trait(hes_a_jonah_that_one)).
+lifepath_provides(id(crazy_old_sailor, sea), skill(ugly_truth)).
+lifepath_provides(id(crazy_old_sailor, sea), skill(intimidation)).
+lifepath_provides(id(crazy_old_sailor, sea), skill(omen_wise)).
+
+lifepath(id(purser, sea), page(bwg, 190), 4, [servitude, soldier]).
+lifepath_requires(id(purser, sea), [lifepath(clerk)]).
+lifepath_requires(id(purser, sea), [lifepath(student)]).
+lifepath_requires(id(purser, sea), [lifepath(sailor)]).
+lifepath_provides(id(purser, sea), trait(gnawing_hunger)).
+lifepath_provides(id(purser, sea), trait(bitter)).
+lifepath_provides(id(purser, sea), skill(accounting)).
+lifepath_provides(id(purser, sea), skill(crew_wise)).
+lifepath_provides(id(purser, sea), skill(supply_wise)).
+lifepath_provides(id(purser, sea), skill(ship_wise)).
+
+lifepath(id(signalman, sea), page(bwg, 190), 5, [servitude, soldier]).
+lifepath_provides(id(signalman, sea), trait(cryptic)).
+lifepath_provides(id(signalman, sea), skill(signaling)).
+lifepath_provides(id(signalman, sea), skill(observation)).
+lifepath_provides(id(signalman, sea), skill(cryptography)).
+
+lifepath(id(pilot, sea), page(bwg, 190), 4, [soldier, city, villager, outcast]).
+lifepath_requires(id(pilot, sea), [lifepath(sailor)]).
+lifepath_requires(id(pilot, sea), [lifepath(pirate)]).
+lifepath_requires(id(pilot, sea), [lifepath(mercenary_captain)]).
+lifepath_provides(id(pilot, sea), trait(blisters)).
+lifepath_provides(id(pilot, sea), trait(light_sleeper)).
+lifepath_provides(id(pilot, sea), trait(bored)).
+lifepath_provides(id(pilot, sea), trait(paranoid_about_the_ship)).
+lifepath_provides(id(pilot, sea), skill(pilot)).
+lifepath_provides(id(pilot, sea), skill(ship_wise)).
+lifepath_provides(id(pilot, sea), skill(observation)).
+lifepath_provides(id(pilot, sea), skill(shoal_wise)).
+
+lifepath(id(marine, sea), page(bwg, 190), 4, [soldier, city, villager, outcast]).
+lifepath_requires(id(marine, sea), [lifepath(sailor)]).
+lifepath_requires(id(marine, sea), [lifepath(pirate)]).
+lifepath_requires(id(marine, sea), [lifepath(mercenary_captain)]).
+lifepath_provides(id(marine, sea), trait(bruiser)).
+lifepath_provides(id(marine, sea), trait(sea_legs)).
+lifepath_provides(id(marine, sea), skills(appropriate_weapons)).
+lifepath_provides(id(marine, sea), skills(knots)).
+lifepath_provides(id(marine, sea), skills(intimidation)).
+
+lifepath(id(bosun, sea), page(bwg, 190), 5, [soldier, city, villager, outcast]).
+lifepath_requires(id(bosun, sea), [lifepath(sailor)]).
+lifepath_requires(id(bosun, sea), [lifepath(pirate)]).
+lifepath_requires(id(bosun, sea), [lifepath(mercenary_captain)]).
+lifepath_provides(id(bosun, sea), trait(mean)).
+lifepath_provides(id(bosun, sea), trait(obedient)).
+lifepath_provides(id(bosun, sea), skill(intimidation)).
+lifepath_provides(id(bosun, sea), skill(brawling)).
+lifepath_provides(id(bosun, sea), skill(sailor_wise)).
+
+lifepath(id(sailmaker, sea), page(bwg, 190), 5, [soldier, city, villager, outcast]).
+lifepath_requires(id(sailmaker, sea), [lifepath(sailor)]).
+lifepath_requires(id(sailmaker, sea), [lifepath(pirate)]).
+lifepath_requires(id(sailmaker, sea), [lifepath(seamstress)]).
+lifepath_requires(id(sailmaker, sea), [lifepath(sewing)]).
+lifepath_provides(id(sailmaker, sea), skill(sewing)).
+lifepath_provides(id(sailmaker, sea), skill(weaving)).
+lifepath_provides(id(sailmaker, sea), skill(mending)).
+lifepath_provides(id(sailmaker, sea), skill(sail_wise)).

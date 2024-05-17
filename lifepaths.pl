@@ -61,6 +61,13 @@ satisfy_requirement(position(N), _, Lifepaths) :-
     length(Lifepaths, Len),
     Len =:= N - 1.
 
+satisfy_requirement(min(age, N), _, Lifepaths) :-
+    character_age(Lifepaths, Age),
+    N =< Age.
+satisfy_requirement(max(age, N), _, Lifepaths) :-
+    character_age(Lifepaths, Age),
+    Age =< N.
+
 % boolean requirements operations
 satisfy_requirement(not(Requirement), CharProps,  Lifepaths) :-
     \+ Requirement = constraint(_),
