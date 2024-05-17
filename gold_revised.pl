@@ -2500,3 +2500,47 @@ lifepath_provides(id(captain, soldier), skill(field_dressing)).
 lifepath_provides(id(captain, soldier), skill(riding)).
 lifepath_provides(id(captain, soldier), skill(strategy)).
 
+
+%%% ----- SEAFARING SETTING ----- %%%
+
+lifepath(id(son_of_a_gun, sea), page(bwg, 189), 8, [servitude, soldier, outcast]).
+lifepath_provides(id(son_of_a_gun, sea), trait(sea_legs)).
+
+lifepath(id(boy, sea), page(bwg, 189), 4, [city, servitude, soldier, outcast]).
+lifepath_requires(id(boy, sea), [position(2)]).
+lifepath_provides(id(boy, sea), trait(veneer_of_obedience)).
+lifepath_provides(id(boy, sea), trait(curses_like_a_sailer)).
+lifepath_provides(id(boy, sea), trait(sprinter)).
+lifepath_provides(id(boy, sea), skill(sailor_wise)).
+lifepath_provides(id(boy, sea), skill(ship_wise)).
+lifepath_provides(id(boy, sea), skill(captain_wise)).
+
+lifepath(id(galley_slave, sea), page(bwg, 189), 6, [servitude, soldier, outcast]).
+lifepath_provides(id(galley_slave, sea), trait(tasting_the_lash)).
+lifepath_provides(id(galley_slave, sea), trait(eating_maggots)).
+lifepath_provides(id(galley_slave, sea), trait(following_the_beat)).
+lifepath_provides(id(galley_slave, sea), trait(iron_stomach)).
+lifepath_provides(id(galley_slave, sea), trait(bottomless_stomach)).
+lifepath_provides(id(galley_slave, sea), trait(gnawing_hunger)).
+lifepath_provides(id(galley_slave, sea), skill(slave_deck_wise)).
+lifepath_provides(id(galley_slave, sea), skill(taskmaster_wise)).
+lifepath_provides(id(galley_slave, sea), skill(sing)).
+lifepath_provides(id(galley_slave, sea), skill(seamanship)).
+lifepath_provides(id(galley_slave, sea), skill(knots)).
+
+lifepath(id(ratchatcher, sea), page(bwg, 189), 6, [outcast, servitude, city]).
+lifepath_provides(id(ratchatcher, sea), trait(bilge_drinker)).
+lifepath_provides(id(ratchatcher, sea), trait(rat_speak)).
+lifepath_provides(id(ratchatcher, sea), trait(feral)).
+lifepath_provides(id(ratchatcher, sea), skill(trapper)).
+lifepath_provides(id(ratchatcher, sea), skill(poisons)).
+lifepath_provides(id(ratchatcher, sea), skill(ratiquette)).
+
+lifepath(id(landsman, sea), page(bwg, 189), 4, [servitude, soldier, outcast]).
+lifepath_provides(id(landsman, sea), trait(cursing)).
+lifepath_provides(id(landsman, sea), trait(aches_and_pains)).
+lifepath_provides(id(landsman, sea), skill(seamanship)).
+lifepath_provides(id(landsman, sea), skill(knots)).
+lifepath_provides(id(landsman, sea), skill(brawling)).
+lifepath_provides(id(landsman, sea), skill(rope_wise)).
+

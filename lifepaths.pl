@@ -26,6 +26,7 @@ lp_years(Id, Years):- lifepath(Id, _, Years, _).
 
 % born is a common enough cast that its worth handling specifically
 
+is_born_lifepath(id(son_of_a_gun, _)). 
 is_born_lifepath(id(Id, _)) :- 
     (atom_concat(born_, _, Id);
     atom_concat(_, "_born", Id)), 
