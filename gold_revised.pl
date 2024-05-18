@@ -2777,3 +2777,57 @@ lifepath_provides(id(ships_captain, sea), skill(command)).
 lifepath_provides(id(ships_captain, sea), skill(oratory)).
 lifepath_provides(id(ships_captain, sea), skill(ship_wise)).
 lifepath_provides(id(ships_captain, sea), skill(sea_wise)).
+
+
+%%% ----- SEAFARING SETTING ----- %%%
+
+
+lifepath(id(born_slave, servitude), page(bwg, 192), 12, [soldier, outcast]).
+lifepath_provides(id(born_slave, servitude), trait(broken)).
+lifepath_provides(id(born_slave, servitude), trait(scarred)).
+lifepath_provides(id(born_slave, servitude), trait(maimed)).
+lifepath_provides(id(born_slave, servitude), trait(lame)).
+lifepath_provides(id(born_slave, servitude), skill(slavery_wise)).
+
+lifepath(id(ditch_digger, servitude), page(bwg, 192), 4, [soldier, outcast]).
+lifepath_provides(id(ditch_digger, servitude), trait(blisters)).
+lifepath_provides(id(ditch_digger, servitude), trait(back_breaking_labor)).
+lifepath_provides(id(ditch_digger, servitude), skill(ditch_digging)).
+lifepath_provides(id(ditch_digger, servitude), skill(sing)).
+lifepath_provides(id(ditch_digger, servitude), skill(boss_wise)).
+
+lifepath(id(servant, servitude), page(bwg, 192), 5, [outcast, soldier, city, court]).
+lifepath_provides(id(servant, servitude), trait(mind_numbing_work)).
+lifepath_provides(id(servant, servitude), trait(obsequious)).
+lifepath_provides(id(servant, servitude), skill(soothing_platitudes)).
+lifepath_provides(id(servant, servitude), skill(inconspicuous)).
+lifepath_provides(id(servant, servitude), skill(gossip_wise)).
+
+lifepath(id(field_laborer, servitude), page(bwg, 192), 6, [outcast, soldier]).
+lifepath_provides(id(field_laborer, servitude), trait(hope)).
+lifepath_provides(id(field_laborer, servitude), skill(farming)).
+lifepath_provides(id(field_laborer, servitude), skill(mending)).
+lifepath_provides(id(field_laborer, servitude), skill(sing)).
+lifepath_provides(id(field_laborer, servitude), skill(hauling)).
+lifepath_provides(id(field_laborer, servitude), skill(driving)).
+lifepath_provides(id(field_laborer, servitude), skill(fall_grass_wise)).
+
+lifepath(id(captive_of_war, servitude), page(bwg, 192), 4, [outcast, soldier, city]).
+lifepath_provides(id(captive_of_war, servitude), trait(claustrophobic)).
+lifepath_provides(id(captive_of_war, servitude), trait(resigned_to_fate)).
+lifepath_provides(id(captive_of_war, servitude), skill(cell_wise)).
+lifepath_provides(id(captive_of_war, servitude), skill(chain_wise)).
+
+lifepath(id(gaol, servitude), page(bwg, 193), 3, [outcast, soldier, city]).
+lifepath_provides(id(gaol, servitude), trait(involuntary_shudders)).
+lifepath_provides(id(gaol, servitude), skill(gaol_wise)).
+lifepath_provides(id(gaol, servitude), skill(ratiquette)).
+
+lifepath(id(harem_slave, servitude), page(bwg, 193), 5, [outcast]).
+lifepath_provides(id(harem_slave, servitude), trait(numb)).
+lifepath_provides(id(harem_slave, servitude), trait(worldly)).
+lifepath_provides(id(harem_slave, servitude), skill(falsehood)).
+lifepath_provides(id(harem_slave, servitude), skill(seduction)).
+
+lifepath(id(bondsman, servitude), page(bwg, 193), 7, [peasant, soldier, outcast]).
+lifepath_provides(id(bondsman, servitude), trait(lucky)).
