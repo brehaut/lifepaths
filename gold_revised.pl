@@ -2857,7 +2857,7 @@ lifepath_provides(id(apostate, outcast), skill(doctrine)).
 lifepath_provides(id(apostate, outcast), skill(heretical_doctrine)).
 lifepath_provides(id(apostate, outcast), skill(foreign_doctrine)).
 
-lifepath(id(blackmailer, outcast), page(bwg, 193), 3, [city, soldier, village, sea]).
+lifepath(id(blackmailer, outcast), page(bwg, 193), 3, [city, soldier, villager, sea]).
 lifepath_provides(id(blackmailer, outcast), trait(cold_hearted)).
 lifepath_provides(id(blackmailer, outcast), skill(extortion)).
 lifepath_provides(id(blackmailer, outcast), skill(forgery)).
@@ -2869,7 +2869,7 @@ lifepath(id(kidnapper, outcast), page(bwg, 193), 10, [city, soldier, villager, s
 lifepath_provides(id(kidnapper, outcast), trait(hard_hearted)).
 lifepath_provides(id(kidnapper, outcast), trait(interrogation)).
 lifepath_provides(id(kidnapper, outcast), trait(torture)).
-lifepath_provides(id(kidnapper, outcast), trait(intimidation)).
+lifepath_provides(id(kidnapper, outcast), trait(intimidating)).
 lifepath_provides(id(kidnapper, outcast), trait(ransom_wise)).
 
 lifepath(id(pillager, outcast), page(bwg, 193), 4, [soldier, city, servitude, sea]).
@@ -2942,7 +2942,7 @@ lifepath_provides(id(ratcatcher, outcast), skill(trapper)).
 lifepath_provides(id(ratcatcher, outcast), skill(poisons)).
 lifepath_provides(id(ratcatcher, outcast), skill(ratiquette)).
 
-lifepath(id(beggar, outcast), page(bwg, 194), 3, [peasant, solder, villager]).
+lifepath(id(beggar, outcast), page(bwg, 194), 3, [peasant, soldier, villager]).
 lifepath_provides(id(beggar, outcast), trait(the_story)).
 lifepath_provides(id(beggar, outcast), skill(inconspicuous)).
 lifepath_provides(id(beggar, outcast), skill(conspicuous)).
@@ -2981,3 +2981,102 @@ lifepath_provides(id(whoremonger, outcast), skill(prostitute_wise)).
 lifepath_provides(id(whoremonger, outcast), skill(city_wise)).
 lifepath_provides(id(whoremonger, outcast), skill(guard_wise)).
 
+lifepath(id(itinerant_performer, outcast), page(bwg, 195), 4, [peasant, villager, city, soldier]).
+lifepath_provides(id(itinerant_performer, outcast), trait(odd)).
+lifepath_provides(id(itinerant_performer, outcast), skill(cooking)).
+lifepath_provides(id(itinerant_performer, outcast), skill(sewing)).
+lifepath_provides(id(itinerant_performer, outcast), skill(acting)).
+lifepath_provides(id(itinerant_performer, outcast), skill(sleight_of_hand)).
+lifepath_provides(id(itinerant_performer, outcast), skill(haggling)).
+
+lifepath(id(insurrectionist, outcast), page(bwg, 195), 3, [city, soldier]).
+lifepath_provides(id(insurrectionist, outcast), trait(zealot)).
+lifepath_provides(id(insurrectionist, outcast), skill(philosophy)).
+lifepath_provides(id(insurrectionist, outcast), skill(rule_of_law)).
+lifepath_provides(id(insurrectionist, outcast), skill(doctrine)).
+lifepath_provides(id(insurrectionist, outcast), skill(oratory)).
+lifepath_provides(id(insurrectionist, outcast), skill(arson)).
+
+lifepath(id(cultist, outcast), page(bwg, 195), 4, [peasant, servitude, soldier]).
+lifepath_provides(id(cultist, outcast), trait(zealot)).
+lifepath_provides(id(cultist, outcast), trait(rabble_rouser)).
+lifepath_provides(id(cultist, outcast), trait(speaker_of_the_secret_language)).
+lifepath_provides(id(cultist, outcast), skill(cult_doctrine)).
+lifepath_provides(id(cultist, outcast), skill(inconspicuous)).
+lifepath_provides(id(cultist, outcast), skill(conspicuous)).
+lifepath_provides(id(cultist, outcast), skill(falsehood)).
+lifepath_provides(id(cultist, outcast), skill(persuasion)).
+
+lifepath(id(poisoner, outcast), page(bwg, 195), 5, [city, villager, court]).
+lifepath_provides(id(poisoner, outcast), trait(off_kilter)).
+lifepath_provides(id(poisoner, outcast), skill(poisons)).
+lifepath_provides(id(poisoner, outcast), skill(cooking)).
+lifepath_provides(id(poisoner, outcast), skill(inconspicuous)).
+lifepath_provides(id(poisoner, outcast), skill(disguise)).
+
+lifepath(id(thug, outcast), page(bwg, 195), 4, [soldier, city]).
+lifepath_provides(id(thug, outcast), trait(cold_blooded)).
+lifepath_provides(id(thug, outcast), trait(jaded)).
+lifepath_provides(id(thug, outcast), skill(streetwise)).
+lifepath_provides(id(thug, outcast), skill(murder_wise)).
+lifepath_provides(id(thug, outcast), skill(guard_wise)).
+lifepath_provides(id(thug, outcast), skill(brawling)).
+
+lifepath(id(desperate_killer, outcast), page(bwg, 195), 3, [soldier, city, servitude]).
+lifepath_provides(id(desperate_killer, outcast), trait(desperate)).
+lifepath_provides(id(desperate_killer, outcast), trait(murderous)).
+lifepath_provides(id(desperate_killer, outcast), trait(cold_hearted)).
+lifepath_provides(id(desperate_killer, outcast), trait(hard_hearted)).
+lifepath_provides(id(desperate_killer, outcast), skill(appropriate_weapons)).
+lifepath_provides(id(desperate_killer, outcast), skill(inconspicuous)).
+lifepath_provides(id(desperate_killer, outcast), skill(assassination_wise)).
+
+lifepath(id(bandit, outcast), page(bwg, 195), 3, [soldier, peasant]).
+lifepath_provides(id(bandit, outcast), skill(appropriate_weapons)).
+lifepath_provides(id(bandit, outcast), skill(intimidation)).
+lifepath_provides(id(bandit, outcast), skill(stealthy)).
+lifepath_provides(id(bandit, outcast), skill(caravan_wise)).
+
+lifepath(id(pirate, outcast), page(bwg, 195), 4, [sea, city, villager]).
+lifepath_provides(id(pirate, outcast), trait(problem_with_authority)).
+lifepath_provides(id(pirate, outcast), trait(scurvy)).
+lifepath_provides(id(pirate, outcast), trait(maimed)).
+lifepath_provides(id(pirate, outcast), trait(crippled)).
+lifepath_provides(id(pirate, outcast), trait(lame)).
+lifepath_provides(id(pirate, outcast), skill(pirate_cove_wise)).
+lifepath_provides(id(pirate, outcast), skill(rigging)).
+lifepath_provides(id(pirate, outcast), skill(knots)).
+lifepath_provides(id(pirate, outcast), skill(knives)).
+lifepath_provides(id(pirate, outcast), skill(sea_wise)).
+lifepath_provides(id(pirate, outcast), skill(map_wise)).
+
+lifepath(id(smuggler, outcast), page(bwg, 195), 4, [soldier, city, villager]).
+lifepath_provides(id(smuggler, outcast), trait(paranoid)).
+lifepath_provides(id(smuggler, outcast), skill(persuasion)).
+lifepath_provides(id(smuggler, outcast), skill(falsehood)).
+lifepath_provides(id(smuggler, outcast), skill(appraisal)).
+lifepath_provides(id(smuggler, outcast), skill(law_wise)).
+lifepath_provides(id(smuggler, outcast), skill(forgery)).
+lifepath_provides(id(smuggler, outcast), skill(stealthy)).
+lifepath_provides(id(smuggler, outcast), skill(inconspicuous)).
+
+lifepath(id(freebooter, outcast), page(bwg, 195), 4, [soldier, peasant, servitude]).
+lifepath_requires(id(freebooter, outcast), [lifepath(bandit)]).
+lifepath_requires(id(freebooter, outcast), [lifepath(smuggler)]).
+lifepath_requires(id(freebooter, outcast), [lifepath(squire)]).
+lifepath_requires(id(freebooter, outcast), [lifepath(knight)]).
+lifepath_requires(id(freebooter, outcast), [lifepath(city_guard)]).
+lifepath_requires(id(freebooter, outcast), [lifepath(village_tough)]).
+lifepath_requires(id(freebooter, outcast), [lifepath(marine)]).
+lifepath_requires(id(freebooter, outcast), [setting(soldier)]).
+lifepath_provides(id(freebooter, outcast), trait(cold_blooded)).
+lifepath_provides(id(freebooter, outcast), trait(merciless)).
+lifepath_provides(id(freebooter, outcast), skill(intimidation)).
+lifepath_provides(id(freebooter, outcast), skill(appropriate_weapons)).
+lifepath_provides(id(freebooter, outcast), skill(countryside_wise)).
+lifepath_provides(id(freebooter, outcast), skill(fortress_wise)).
+lifepath_provides(id(freebooter, outcast), skill(mercenary_company_wise)).
+lifepath_provides(id(freebooter, outcast), skill(foreign_languages)).
+lifepath_provides(id(freebooter, outcast), skill(war_wise)).
+lifepath_provides(id(freebooter, outcast), skill(loot_wise)).
+lifepath_provides(id(freebooter, outcast), skill(extrotion_wise)).
