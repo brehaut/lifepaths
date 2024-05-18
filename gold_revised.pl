@@ -202,19 +202,19 @@ lifepath_provides(id(elder, peasant), skill(ugly_truth)).
 lifepath_provides(id(elder, peasant), skill(peasant_wise)).
 lifepath_provides(id(elder, peasant), skill(local_history)).
 
-lifepath(id(auger, peasant), page(bwg, 164), 5, [servitude, outcast]).
-lifepath_requires(id(auger, peasant), [lifepath(midwife)]).
-lifepath_requires(id(auger, peasant), [lifepath(country_wife)]).
-lifepath_requires(id(auger, peasant), [flag(female), constraint(max(lifepaths, 3))]).
-lifepath_provides(id(auger, peasant), trait(disturbed)).
-lifepath_provides(id(auger, peasant), trait(dreamer)).
-lifepath_provides(id(auger, peasant), trait(cassandra)).
-lifepath_provides(id(auger, peasant), trait(touch_of_ages)).
-lifepath_provides(id(auger, peasant), skill(astrology)).
-lifepath_provides(id(auger, peasant), skill(sorcery)).
-lifepath_provides(id(auger, peasant), skill(falsehood)).
-lifepath_provides(id(auger, peasant), skill(ugly_truth)).
-lifepath_provides(id(auger, peasant), skill(omen_wise)).
+lifepath(id(augur, peasant), page(bwg, 164), 5, [servitude, outcast]).
+lifepath_requires(id(augur, peasant), [lifepath(midwife)]).
+lifepath_requires(id(augur, peasant), [lifepath(country_wife)]).
+lifepath_requires(id(augur, peasant), [flag(female), constraint(max(lifepaths, 3))]).
+lifepath_provides(id(augur, peasant), trait(disturbed)).
+lifepath_provides(id(augur, peasant), trait(dreamer)).
+lifepath_provides(id(augur, peasant), trait(cassandra)).
+lifepath_provides(id(augur, peasant), trait(touch_of_ages)).
+lifepath_provides(id(augur, peasant), skill(astrology)).
+lifepath_provides(id(augur, peasant), skill(sorcery)).
+lifepath_provides(id(augur, peasant), skill(falsehood)).
+lifepath_provides(id(augur, peasant), skill(ugly_truth)).
+lifepath_provides(id(augur, peasant), skill(omen_wise)).
 
 lifepath(id(itinerant_priest, peasant), page(bwg, 164), 6, [villager, outcast, city, religious]).
 lifepath_requires(id(itinerant_priest, peasant), [flag(acolyte)]).
@@ -2684,7 +2684,7 @@ lifepath_provides(id(ships_chaplain, sea), skill(doctrine)).
 lifepath_provides(id(ships_chaplain, sea), skill(ship_wise)).
 
 lifepath(id(weather_witch, sea), page(bwg, 191), 5, [servitude, city, villager, outcast]).
-lifepath_requires(id(weather_witch, sea), [lifepath(auger)]).
+lifepath_requires(id(weather_witch, sea), [lifepath(augur)]).
 lifepath_requires(id(weather_witch, sea), [lifepath(neophyte_sorcerer)]).
 lifepath_requires(id(weather_witch, sea), [lifepath(arcane_devotee)]).
 lifepath_requires(id(weather_witch, sea), [lifepath(rogue_wizard)]).
@@ -3080,3 +3080,92 @@ lifepath_provides(id(freebooter, outcast), skill(foreign_languages)).
 lifepath_provides(id(freebooter, outcast), skill(war_wise)).
 lifepath_provides(id(freebooter, outcast), skill(loot_wise)).
 lifepath_provides(id(freebooter, outcast), skill(extrotion_wise)).
+
+lifepath(id(strider, outcast), page(bwg, 196), 5, [soldier, peasant, servitude]).
+lifepath_requires(id(strider, outcast), [lifepath(born_noble)]).
+lifepath_requires(id(strider, outcast), [lifepath(hunter)]).
+lifepath_requires(id(strider, outcast), [lifepath(trapper)]).
+lifepath_requires(id(strider, outcast), [lifepath(huntsman)]).
+lifepath_requires(id(strider, outcast), [lifepath(scout)]).
+lifepath_provides(id(strider, outcast), trait(loner)).
+lifepath_provides(id(strider, outcast), skill(forest_wise)).
+lifepath_provides(id(strider, outcast), skill(orienterring)).
+lifepath_provides(id(strider, outcast), skill(foraging)).
+lifepath_provides(id(strider, outcast), skill(tracking)).
+lifepath_provides(id(strider, outcast), skill(firebuilding)).
+lifepath_provides(id(strider, outcast), skill(riding)).
+lifepath_provides(id(strider, outcast), skill(stealthy)).
+lifepath_provides(id(strider, outcast), skill(appropriate_weapons)).
+
+lifepath(id(mad_summoner, outcast), page(bwg, 196), 8, [peasant, city, sea]).
+lifepath_requires(id(mad_summoner, outcast), [lifepath(cultist)]).
+lifepath_requires(id(mad_summoner, outcast), [lifepath(augur)]).
+lifepath_requires(id(mad_summoner, outcast), [lifepath(neophyte_sorcerer)]).
+lifepath_requires(id(mad_summoner, outcast), [lifepath(arcane_devotee)]).
+lifepath_provides(id(mad_summoner, outcast), trait(mad)).
+lifepath_provides(id(mad_summoner, outcast), trait(fear_of_cheese)).
+lifepath_provides(id(mad_summoner, outcast), trait(fear_of_wet_noises)).
+lifepath_provides(id(mad_summoner, outcast), trait(alarming)).
+lifepath_provides(id(mad_summoner, outcast), skill(summoning)).
+lifepath_provides(id(mad_summoner, outcast), skill(enchanting)).
+lifepath_provides(id(mad_summoner, outcast), skill(demonology)).
+lifepath_provides(id(mad_summoner, outcast), skill(empyrealia)).
+
+lifepath(id(rogue_wizard, outcast), page(bwg, 196), 6, [servitude, sea, religious]).
+lifepath_requires(id(rogue_wizard, outcast), [lifepath(cultist)]).
+lifepath_requires(id(rogue_wizard, outcast), [lifepath(augur)]).
+lifepath_requires(id(rogue_wizard, outcast), [lifepath(neophyte_sorcerer)]).
+lifepath_requires(id(rogue_wizard, outcast), [lifepath(arcane_devotee)]).
+lifepath_provides(id(rogue_wizard, outcast), trait(spooky)).
+lifepath_provides(id(rogue_wizard, outcast), trait(aura_of_fear)).
+lifepath_provides(id(rogue_wizard, outcast), trait(obscure_aura)).
+lifepath_provides(id(rogue_wizard, outcast), skill(sorcery)).
+lifepath_provides(id(rogue_wizard, outcast), skill(inconspicuous)).
+lifepath_provides(id(rogue_wizard, outcast), skill(graveyard_wise)).
+lifepath_provides(id(rogue_wizard, outcast), skill(astrology)).
+lifepath_provides(id(rogue_wizard, outcast), skill(bloodletting)).
+lifepath_provides(id(rogue_wizard, outcast), skill(ugly_truth)).
+lifepath_provides(id(rogue_wizard, outcast), skill(apocalypse_wise)).
+lifepath_provides(id(rogue_wizard, outcast), skill(enchanting)).
+lifepath_provides(id(rogue_wizard, outcast), skill(alchemy)).
+
+lifepath(id(crazy_witch, outcast), page(bwg, 196), 6, [peasant, servitude, villager]).
+lifepath_requires(id(crazy_witch, outcast), [lifepath(weather_witch)]).
+lifepath_requires(id(crazy_witch, outcast), [lifepath(young_lady)]).
+lifepath_requires(id(crazy_witch, outcast), [lifepath(augur)]).
+lifepath_requires(id(crazy_witch, outcast), [lifepath(midwife)]).
+lifepath_provides(id(crazy_witch, outcast), trait(a_little_crazy)).
+lifepath_provides(id(crazy_witch, outcast), trait(gifted)).
+lifepath_provides(id(crazy_witch, outcast), trait(mark_of_the_beast)).
+lifepath_provides(id(crazy_witch, outcast), skill(folklore)).
+lifepath_provides(id(crazy_witch, outcast), skill(herbalism)).
+lifepath_provides(id(crazy_witch, outcast), skill(poisons)).
+lifepath_provides(id(crazy_witch, outcast), skill(summoning)).
+lifepath_provides(id(crazy_witch, outcast), skill(profanity_wise)).
+
+lifepath(id(heretic_priest, outcast), page(bwg, 196), 7, [peasant, servitude]).
+lifepath_requires(id(heretic_priest, outcast), [lifepath(acolyte)]).
+lifepath_requires(id(heretic_priest, outcast), [lifepath(cultist)]).
+lifepath_requires(id(heretic_priest, outcast), [lifepath(apostate)]).
+lifepath_requires(id(heretic_priest, outcast), [lifepath(theologian)]).
+lifepath_requires(id(heretic_priest, outcast), [lifepath(venal_priest)]).
+lifepath_requires(id(heretic_priest, outcast), [lifepath(interpreter)]).
+lifepath_requires(id(heretic_priest, outcast), [lifepath(archivist)]).
+lifepath_provides(id(heretic_priest, outcast), trait(lunatic)).
+lifepath_provides(id(heretic_priest, outcast), trait(overbearing_loony)).
+lifepath_provides(id(heretic_priest, outcast), trait(faith_in_dead_gods)).
+lifepath_provides(id(heretic_priest, outcast), skill(heretical_doctrine)).
+lifepath_provides(id(heretic_priest, outcast), skill(oratory)).
+lifepath_provides(id(heretic_priest, outcast), skill(apostate_wise)).
+lifepath_provides(id(heretic_priest, outcast), skill(demonlogy)).
+lifepath_provides(id(heretic_priest, outcast), skill(summoner_wise)).
+lifepath_provides(id(heretic_priest, outcast), skill(cultist_wise)).
+
+lifepath(id(thinker, outcast), page(bwg, 196), 15, any_except([])).
+lifepath_requires(id(thinker, outcast), [constraint(min(age, 36))]).
+lifepath_provides(id(thinker, outcast), skill(philosophy)).
+lifepath_provides(id(thinker, outcast), skill(strategy)).
+lifepath_provides(id(thinker, outcast), skill(strategy_games)).
+lifepath_provides(id(thinker, outcast), skill(calligraphy)).
+lifepath_provides(id(thinker, outcast), skill(history)).
+lifepath_provides(id(thinker, outcast), skill(painting)).

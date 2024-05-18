@@ -6,7 +6,7 @@ Lots of things to do.
  * Make lifepath name normalization better and more userfriendly. 
  * Characters need to have properties defined before lifepath selection 
    begins, such as the 'female' flag that opens up special rules
-   and alternative requirements paths, such as for 'auger'. 
+   and alternative requirements paths, such as for 'augur'. 
  * Unify constraint and requirement satisfying. These systems have slightly 
    different APIs but it would be useful to support all those rules with
    one piece of code, and reuse rules more freely.

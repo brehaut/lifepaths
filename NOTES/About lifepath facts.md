@@ -44,7 +44,7 @@ that need to be satisfied in order to select it.
 
 Where `lifepath_provides`is simple and has one fact per property, `lifepath_requires` has 
 a list of properties that must all be true. Additional facts supply alternative 
-ways to satisfy requirements. For example an `auger` requires:
+ways to satisfy requirements. For example an `augur` requires:
   "Midwife, Country Wife or must be female and character has no more than three 
   lifepaths total.". Each of the three options is a separate `lifepath_provides`, with
   two rules for the final form. 

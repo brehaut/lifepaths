@@ -32,9 +32,9 @@ test(satisfy_requrements_lifepath_fails, [fail]) :-
 test(satisifies_requirements_lifepath_with_no_requirements, all(Conditions = [[]])) :-
     satisfies_requirements(id(farmer, peasant), [], [], Conditions).
 test(satisfies_requirements_lifepath, all(Conditions = [[]])) :-
-    satisfies_requirements(id(auger, peasant), [], [id(midwife, peasant), id(farmer, peasant)], Conditions).
+    satisfies_requirements(id(augur, peasant), [], [id(midwife, peasant), id(farmer, peasant)], Conditions).
 
 test(satisfies_requirements_lifepath_flag_female, all(Conditions = [[max(lifepaths, 3)]])) :-
-    satisfies_requirements(id(auger, peasant), [], [id(serving_girl, villager)], Conditions).
+    satisfies_requirements(id(augur, peasant), [], [id(serving_girl, villager)], Conditions).
 
 :- end_tests(satisfy_requirement).
