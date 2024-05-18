@@ -2831,3 +2831,58 @@ lifepath_provides(id(harem_slave, servitude), skill(seduction)).
 
 lifepath(id(bondsman, servitude), page(bwg, 193), 7, [peasant, soldier, outcast]).
 lifepath_provides(id(bondsman, servitude), trait(lucky)).
+
+
+%%% ----- OUTCAST SUBSETTING ----- %%%
+
+
+lifepath(id(urchin, outcast), page(bwg, 193), 4, [peasant, soldier, servitude]).
+lifepath_requires(id(urchin, outcast), [position(2)]).
+lifepath_provides(id(urchin, outcast), trait(addicted)).
+lifepath_provides(id(urchin, outcast), trait(the_story)).
+lifepath_provides(id(urchin, outcast), skill(inconspicuous)).
+lifepath_provides(id(urchin, outcast), skill(streetwise)).
+lifepath_provides(id(urchin, outcast), skill(sleight_of_hand)).
+
+lifepath(id(apostate, outcast), page(bwg, 193), 3, [city, soldier, religious]).
+lifepath_provides(id(apostate, outcast), trait(apostate)).
+lifepath_provides(id(apostate, outcast), skill(doctrine)).
+lifepath_provides(id(apostate, outcast), skill(heretical_doctrine)).
+lifepath_provides(id(apostate, outcast), skill(foreign_doctrine)).
+
+lifepath(id(blackmailer, outcast), page(bwg, 193), 3, [city, soldier, village, sea]).
+lifepath_provides(id(blackmailer, outcast), trait(cold_hearted)).
+lifepath_provides(id(blackmailer, outcast), skill(extortion)).
+lifepath_provides(id(blackmailer, outcast), skill(forgery)).
+lifepath_provides(id(blackmailer, outcast), skill(ugly_truth)).
+lifepath_provides(id(blackmailer, outcast), skill(falsehood)).
+lifepath_provides(id(blackmailer, outcast), skill(bribe_wise)).
+
+lifepath(id(kidnapper, outcast), page(bwg, 193), 10, [city, soldier, villager, sea]).
+lifepath_provides(id(kidnapper, outcast), trait(hard_hearted)).
+lifepath_provides(id(kidnapper, outcast), trait(interrogation)).
+lifepath_provides(id(kidnapper, outcast), trait(torture)).
+lifepath_provides(id(kidnapper, outcast), trait(intimidation)).
+lifepath_provides(id(kidnapper, outcast), trait(ransom_wise)).
+
+lifepath(id(pillager, outcast), page(bwg, 193), 4, [soldier, city, servitude, sea]).
+lifepath_provides(id(pillager, outcast), skill(scavenging)).
+lifepath_provides(id(pillager, outcast), skill(foraging)).
+lifepath_provides(id(pillager, outcast), skill(army_wise)).
+lifepath_provides(id(pillager, outcast), skill(battle_wise)).
+lifepath_provides(id(pillager, outcast), skill(haggling)).
+
+lifepath(id(vagrant, outcast), page(bwg, 193), 3, [city, soldier, servitude]).
+lifepath_provides(id(vagrant, outcast), skill(road_wise)).
+lifepath_provides(id(vagrant, outcast), skill(hostel_wise)).
+lifepath_provides(id(vagrant, outcast), skill(hospital_wise)).
+lifepath_provides(id(vagrant, outcast), skill(inconspicuous)).
+
+lifepath(id(cripple, outcast), page(bwg, 193), 6, [servitude, city]).
+lifepath_provides(id(cripple, outcast), trait(lame)).
+lifepath_provides(id(cripple, outcast), trait(missing_limb)).
+lifepath_provides(id(cripple, outcast), skill(beggardry)).
+lifepath_provides(id(cripple, outcast), skill(inconspicuous)).
+lifepath_provides(id(cripple, outcast), skill(conspicuous)).
+
+
