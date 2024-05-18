@@ -44,6 +44,7 @@ setting(soldier, human).
 setting(sea, human).
 setting(servitude, human).
 setting(outcast, human).
+setting(rats, human). % needed for the ratcatcher joke(?)
 
 % flags are used for special cases of 
 flag(female).       % selecting this lifepaths indicates the character is female
@@ -53,7 +54,8 @@ flag(sergeant).     % denotes a 'sergeant' lifepath
 flag(gm_approval).  % this lifepath needs gm approval. Only provided by passing it in as a property to character_path
 flag(wife).         % denotes a '[setting] wife' lifepath
 flag(priest).       % denotes a 'priest' lifepath
-flag(horses).        % denotes a lifepath that has something to do with horses
+flag(horses).       % denotes a lifepath that has something to do with horses
+flag(city_criminal).% denotes a lifepath from the city setting that is criminal
 
 % lifepath(id(LifepathName, SettingName), PageNumber, Years, Leads)
 % lifepath defines a basic lifepath: its name, its setting (which transitively defines a stock), 
@@ -723,6 +725,7 @@ lifepath_provides(id(duelist, city), skill(conspicuous)).
 lifepath_provides(id(duelist, city), skill(trial_by_combat_wise)).
 
 lifepath(id(coin_clipper, city), page(bwg, 170), 6, [outcast, court]).
+lifepath_provides(id(coin_clipper, city), flag(city_criminal)).
 lifepath_provides(id(coin_clipper, city), trait(light_sleeper)).
 lifepath_provides(id(coin_clipper, city), skill(streetwise)).
 lifepath_provides(id(coin_clipper, city), skill(forgery)).
@@ -732,6 +735,7 @@ lifepath_provides(id(coin_clipper, city), skill(counterfeiting)).
 lifepath_provides(id(coin_clipper, city), skill(coin_wise)).
 
 lifepath(id(pickpocket, city), page(bwg, 171), 4, [outcast, villager, servitude]).
+lifepath_provides(id(pickpocket, city), flag(city_criminal)).
 lifepath_provides(id(pickpocket, city), trait(plain_face)).
 lifepath_provides(id(pickpocket, city), skill(inconspicuous)).
 lifepath_provides(id(pickpocket, city), skill(streetwise)).
@@ -739,6 +743,7 @@ lifepath_provides(id(pickpocket, city), skill(sleight_of_hand)).
 lifepath_provides(id(pickpocket, city), skill(crowd_wise)).
 
 lifepath(id(street_thug, city), page(bwg, 171), 3, [outcast, servitude, soldier]).
+lifepath_provides(id(street_thug, city), flag(city_criminal)).
 lifepath_provides(id(street_thug, city), trait(cruel)).
 lifepath_provides(id(street_thug, city), trait(street_smart)).
 lifepath_provides(id(street_thug, city), skill(brawling)).
@@ -747,6 +752,7 @@ lifepath_provides(id(street_thug, city), skill(streetwise)).
 lifepath_provides(id(street_thug, city), skill(darkened_streets_wise)).
 
 lifepath(id(criminal, city), page(bwg, 171), 5, [outcast, villager, soldier]).
+lifepath_provides(id(criminal, city), flag(city_criminal)).
 lifepath_provides(id(criminal, city), trait(cynical)).
 lifepath_provides(id(criminal, city), trait(poker_face)).
 lifepath_provides(id(criminal, city), trait(rainman)).
@@ -758,6 +764,7 @@ lifepath_provides(id(criminal, city), skill(knives)).
 lifepath_provides(id(criminal, city), skill(climbing)).
 
 lifepath(id(confidence_man, city), page(bwg, 171), 4, [outcast, soldier, villager]).
+lifepath_provides(id(confidence_man, city), flag(city_criminal)).
 lifepath_provides(id(confidence_man, city), skill(falsehood)).
 lifepath_provides(id(confidence_man, city), skill(inconspicuous)).
 lifepath_provides(id(confidence_man, city), skill(disguise)).
@@ -892,7 +899,7 @@ lifepath_provides(id(coalman, city), skill(streetwise)).
 lifepath_provides(id(coalman, city), skill(charcoal_wise)).
 lifepath_provides(id(coalman, city), skill(haggling)).
 
-lifepath(id(seamstress, city), page(bwg, 172), 5, [villager, peasant]).
+lifepath(id(seamstress, city), page(bwg, 172), 5, [villager, peasant]). % hem hem 
 lifepath_provides(id(seamstress, city), trait(fretful)).
 lifepath_provides(id(seamstress, city), trait(sharp_dresser)).
 lifepath_provides(id(seamstress, city), skill(sewing)).
@@ -912,10 +919,10 @@ lifepath_provides(id(shopkeeper, city), skill(accounting)).
 lifepath_provides(id(shopkeeper, city), skill(observation)).
 
 lifepath(id(baker, city), page(bwg, 172), 6, [villager, peasant]).
-lifepath_provides(id(baker, city), trait(floury)).
 lifepath_provides(id(baker, city), skill(baking)).
 lifepath_provides(id(baker, city), skill(cooking)).
 lifepath_provides(id(baker, city), skill(daily_bread_wise)).
+lifepath_provides(id(baker, city), trait(floury)).
 lifepath_provides(id(baker, city), skill(sweet_tooth_wise)).
 
 lifepath(id(alewife, city), page(bwg, 172), 6, [court, peasant, villager]).
@@ -2037,12 +2044,12 @@ lifepath_provides(id(military_order, religious), skill(riding)).
 lifepath_provides(id(military_order, religious), skill(armor_training)).
 lifepath_provides(id(military_order, religious), skill(appropriate_weapons)).
 
-lifepath(id(grave_digger, religious), page(bwg, 184), 4, [outcast, servitude, city, villager]).
-lifepath_provides(id(grave_digger, religious), trait(superstitious)).
-lifepath_provides(id(grave_digger, religious), trait(burial_rites)).
-lifepath_provides(id(grave_digger, religious), skill(ditch_digging)).
-lifepath_provides(id(grave_digger, religious), skill(grave_wise)).
-lifepath_provides(id(grave_digger, religious), skill(cemetery_wise)).
+lifepath(id(gravedigger, religious), page(bwg, 184), 4, [outcast, servitude, city, villager]).
+lifepath_provides(id(gravedigger, religious), trait(superstitious)).
+lifepath_provides(id(gravedigger, religious), trait(burial_rites)).
+lifepath_provides(id(gravedigger, religious), skill(ditch_digging)).
+lifepath_provides(id(gravedigger, religious), skill(grave_wise)).
+lifepath_provides(id(gravedigger, religious), skill(cemetery_wise)).
 
 lifepath(id(porter, religious), page(bwg, 184), 3, [outcast, villager, peasant]).
 lifepath_provides(id(porter, religious), trait(keys_to_the_church)).
@@ -2885,4 +2892,92 @@ lifepath_provides(id(cripple, outcast), skill(beggardry)).
 lifepath_provides(id(cripple, outcast), skill(inconspicuous)).
 lifepath_provides(id(cripple, outcast), skill(conspicuous)).
 
+lifepath(id(poacher, outcast), page(bwg, 194), 5, [servitude, soldier, villager]).
+lifepath_provides(id(poacher, outcast), skill(royal_parks_wise)).
+lifepath_provides(id(poacher, outcast), skill(hunting)).
+lifepath_provides(id(poacher, outcast), skill(stealthy)).
+lifepath_provides(id(poacher, outcast), skill(tracking)).
+lifepath_provides(id(poacher, outcast), skill(orienteering)).
+
+lifepath(id(deranged, outcast), page(bwg, 194), 6, [servitude]).
+lifepath_provides(id(deranged, outcast), trait(sick)).
+lifepath_provides(id(deranged, outcast), trait(phobia)).
+lifepath_provides(id(deranged, outcast), trait(lunatic)).
+lifepath_provides(id(deranged, outcast), trait(linguistic)).
+lifepath_provides(id(deranged, outcast), trait(possessed)).
+lifepath_provides(id(deranged, outcast), skill(inconspicuous)).
+lifepath_provides(id(deranged, outcast), skill(quack_wise)).
+
+lifepath(id(outlaw, outcast), page(bwg, 194), 4, [soldier, city, villager, peasant, sea]).
+lifepath_provides(id(outlaw, outcast), trait(outlaw)).
+lifepath_provides(id(outlaw, outcast), skill(authority_wise)).
+lifepath_provides(id(outlaw, outcast), skill(inconspicuous)).
+lifepath_provides(id(outlaw, outcast), skill(conspicuous)).
+
+lifepath(id(fence, outcast), page(bwg, 194), 6, [servitude, city, soldier]).
+lifepath_requires(id(fence, outcast), [lifepath(shopkeeper)]).
+lifepath_requires(id(fence, outcast), [lifepath(barkeep)]).
+lifepath_requires(id(fence, outcast), [lifepath(moneylender)]).
+lifepath_requires(id(fence, outcast), [setting(outcast)]).
+lifepath_requires(id(fence, outcast), [flag(city_criminal)]).
+lifepath_provides(id(fence, outcast), trait(shrewd)).
+lifepath_provides(id(fence, outcast), skill(appraisal)).
+lifepath_provides(id(fence, outcast), skill(haggling)).
+lifepath_provides(id(fence, outcast), skill(inconspicuous)).
+lifepath_provides(id(fence, outcast), skill(streetwise)).
+lifepath_provides(id(fence, outcast), skill(guard_wise)).
+
+lifepath(id(gravedigger, outcast), page(bwg, 194), 5, [soldier, servitude]).
+lifepath_provides(id(gravedigger, outcast), trait(bitter)).
+lifepath_provides(id(gravedigger, outcast), skill(ditch_digging)).
+lifepath_provides(id(gravedigger, outcast), skill(philosophy)).
+lifepath_provides(id(gravedigger, outcast), skill(grave_wise)).
+lifepath_provides(id(gravedigger, outcast), skill(cemetery_wise)).
+lifepath_provides(id(gravedigger, outcast), skill(bone_wise)).
+
+lifepath(id(ratcatcher, outcast), page(bwg, 194), 5, [rats]).
+lifepath_provides(id(ratcatcher, outcast), trait(diseased)).
+lifepath_provides(id(ratcatcher, outcast), trait(rat_speak)).
+lifepath_provides(id(ratcatcher, outcast), skill(trapper)).
+lifepath_provides(id(ratcatcher, outcast), skill(poisons)).
+lifepath_provides(id(ratcatcher, outcast), skill(ratiquette)).
+
+lifepath(id(beggar, outcast), page(bwg, 194), 3, [peasant, solder, villager]).
+lifepath_provides(id(beggar, outcast), trait(the_story)).
+lifepath_provides(id(beggar, outcast), skill(inconspicuous)).
+lifepath_provides(id(beggar, outcast), skill(conspicuous)).
+lifepath_provides(id(beggar, outcast), skill(streetwise)).
+lifepath_provides(id(beggar, outcast), skill(falsehood)).
+
+lifepath(id(leper, outcast), page(bwg, 194), 4, [servitude, peasant]).
+lifepath_provides(id(leper, outcast), trait(leprosy)).
+lifepath_provides(id(leper, outcast), trait(unbeliever)).
+lifepath_provides(id(leper, outcast), trait(white_gold_wielder)).
+lifepath_provides(id(leper, outcast), skill(inconspicuous)).
+lifepath_provides(id(leper, outcast), skill(hospital_wise)).
+lifepath_provides(id(leper, outcast), skill(priest_wise)).
+lifepath_provides(id(leper, outcast), skill(pilgrim_wise)).
+
+lifepath(id(prostitute, outcast), page(bwg, 194), 5, [peasant, villager, city, servitude]).
+lifepath_provides(id(prostitute, outcast), trait(tolerant)).
+lifepath_provides(id(prostitute, outcast), skill(conspicuous)).
+lifepath_provides(id(prostitute, outcast), skill(inconspicuous)).
+lifepath_provides(id(prostitute, outcast), skill(persuasion)).
+lifepath_provides(id(prostitute, outcast), skill(falsehood)).
+lifepath_provides(id(prostitute, outcast), skill(haggling)).
+lifepath_provides(id(prostitute, outcast), skill(soothing_platitudes)).
+
+lifepath(id(whoremonger, outcast), page(bwg, 194), 6, [villager, city, soldier]).
+lifepath_requires(id(whoremonger, outcast), [lifepath(corrupt_sergeant)]).
+lifepath_requires(id(whoremonger, outcast), [lifepath(venal_priest)]).
+lifepath_requires(id(whoremonger, outcast), [lifepath(shopkeeper)]).
+lifepath_requires(id(whoremonger, outcast), [lifepath(barkeep)]).
+lifepath_requires(id(whoremonger, outcast), [lifepath(moneylender)]).
+lifepath_requires(id(whoremonger, outcast), [setting(outcast)]).
+lifepath_requires(id(whoremonger, outcast), [flag(city_criminal)]).
+lifepath_provides(id(whoremonger, outcast), skill(intimidation)).
+lifepath_provides(id(whoremonger, outcast), skill(haggling)).
+lifepath_provides(id(whoremonger, outcast), skill(prostitute_wise)).
+lifepath_provides(id(whoremonger, outcast), skill(city_wise)).
+lifepath_provides(id(whoremonger, outcast), skill(guard_wise)).
 
